@@ -105,11 +105,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "JumpThrow",
-"speed": 18.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": false,
 "name": "Jump",
@@ -154,6 +149,11 @@ animations = [ {
 "loop": true,
 "name": "Attack",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "JumpThrow",
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

@@ -1,34 +1,34 @@
 [gd_scene load_steps=49 format=2]
 
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_002.png" type="Texture" id=1]
+[ext_resource path="res://src/Actor/Enemy/Bandit/Bandit.gd" type="Script" id=1]
 [ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_000.png" type="Texture" id=2]
 [ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_004.png" type="Texture" id=3]
 [ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_005.png" type="Texture" id=4]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_006.png" type="Texture" id=5]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_007.png" type="Texture" id=6]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_001.png" type="Texture" id=7]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_009.png" type="Texture" id=8]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_008.png" type="Texture" id=9]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_003.png" type="Texture" id=10]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_010.png" type="Texture" id=11]
-[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_011.png" type="Texture" id=12]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_006.png" type="Texture" id=13]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_000.png" type="Texture" id=14]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_001.png" type="Texture" id=15]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_003.png" type="Texture" id=16]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_007.png" type="Texture" id=17]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_005.png" type="Texture" id=18]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_002.png" type="Texture" id=19]
-[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_004.png" type="Texture" id=20]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_006.png" type="Texture" id=21]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_003.png" type="Texture" id=22]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_000.png" type="Texture" id=23]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_004.png" type="Texture" id=24]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_007.png" type="Texture" id=25]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_002.png" type="Texture" id=26]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_005.png" type="Texture" id=27]
-[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_001.png" type="Texture" id=28]
-[ext_resource path="res://src/Actor/Enemy/BanditWalk/BanditWalk.gd" type="Script" id=29]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_002.png" type="Texture" id=5]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_006.png" type="Texture" id=6]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_007.png" type="Texture" id=7]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_001.png" type="Texture" id=8]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_009.png" type="Texture" id=9]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_008.png" type="Texture" id=10]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_003.png" type="Texture" id=11]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_010.png" type="Texture" id=12]
+[ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_011.png" type="Texture" id=13]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_006.png" type="Texture" id=14]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_000.png" type="Texture" id=15]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_001.png" type="Texture" id=16]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_003.png" type="Texture" id=17]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_007.png" type="Texture" id=18]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_005.png" type="Texture" id=19]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_002.png" type="Texture" id=20]
+[ext_resource path="res://asset/enemy/EnemyGuy/02-Walk/__Bandit02_Walk_004.png" type="Texture" id=21]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_006.png" type="Texture" id=22]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_003.png" type="Texture" id=23]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_000.png" type="Texture" id=24]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_004.png" type="Texture" id=25]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_007.png" type="Texture" id=26]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_002.png" type="Texture" id=27]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_005.png" type="Texture" id=28]
+[ext_resource path="res://asset/enemy/EnemyGuy/03-Attack/__Bandit02_Attack_001.png" type="Texture" id=29]
 [ext_resource path="res://asset/enemy/EnemyGuy/08-Die/__Bandit02_Die_004.png" type="Texture" id=30]
 [ext_resource path="res://asset/enemy/EnemyGuy/08-Die/__Bandit02_Die_001.png" type="Texture" id=31]
 [ext_resource path="res://asset/enemy/EnemyGuy/08-Die/__Bandit02_Die_007.png" type="Texture" id=32]
@@ -48,17 +48,17 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "attack",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "walk",
 "speed": 15.0
@@ -80,12 +80,12 @@ extents = Vector2( 146.913, 167.797 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 68.1468, 149.233 )
 
-[node name="BanditWalk" type="KinematicBody2D"]
+[node name="Bandit" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
 z_index = 2
 collision_layer = 2
 collision_mask = 13
-script = ExtResource( 29 )
+script = ExtResource( 1 )
 
 [node name="FloorLeftDetect" type="RayCast2D" parent="."]
 position = Vector2( -150, 0 )

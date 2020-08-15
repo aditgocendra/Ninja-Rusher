@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Bandit",
 "language": "GDScript",
-"path": "res://src/Actor/Enemy/BanditWalk/BanditWalk.gd"
+"path": "res://src/Actor/Enemy/Bandit/Bandit.gd"
 }, {
 "base": "RigidBody2D",
 "class": "Kunai",
@@ -98,6 +98,8 @@ glide={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="tile_static"
 2d_physics/layer_4="kunai"
+2d_physics/layer_5="trap"
+2d_physics/layer_6="coin"
 
 [rendering]
 

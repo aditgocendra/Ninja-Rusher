@@ -116,15 +116,7 @@ func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) 
 	if glide:
 		new_velocity.y *= 0.7
 		
-#	for i in get_slide_count():
-#		var collision = get_slide_collision(i)
-#		var collider = collision.collider
-#		var is_stomping = (collider is Bandit and 
-#		is_on_floor() and collision.normal.dot(Vector2.UP) > 0.7)
-#
-#		if is_stomping:
-#			print(true)
-#			new_velocity.y -= 1000
+
 
 	return new_velocity
 
@@ -172,7 +164,7 @@ func _on_AreaAttack_body_entered(body):
 
 func _die(_direction_stomp):
 	stomp_direct = _direction_stomp
-	if $StompTimer.is_stopped() and stomp_direct != 0:
+	if $StompTimer.is_stopped():
 		velocity.y -= 500
 		stomp_attack = true
 		$StompTimer.start()

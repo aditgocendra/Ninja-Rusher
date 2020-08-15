@@ -10,8 +10,11 @@ var speed = 300
 var speed_up = false
 var health = 100
 
+var direct_player_attack = 0
+
 var _state = State.WALK 
 enum State {IDLE, ATTACK, WALK, DEAD}
+
 
 onready var floor_left = $FloorLeftDetect
 onready var floor_right = $FloorRightDetect
@@ -24,6 +27,11 @@ func _ready():
 	
 
 func _physics_process(_delta):
+#	if direct_player_attack != 0:
+#		if direct_player_attack == -1: 
+#			$AnimatedSprite.scale.x = 1
+#		else: 
+#			$AnimatedSprite.scale.x = 1
 	if velocity.x != 0:
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
@@ -33,6 +41,8 @@ func _physics_process(_delta):
 			$AnimatedSprite.scale.x = -1
 			col_sword_attack.scale.x = -1
 			area_attack.position = Vector2(-100,0)
+	
+	
 	
 	velocity = set_velocity(velocity)
 	velocity.y = move_and_slide(velocity, FLOOR_NORMAL).y
@@ -66,6 +76,7 @@ func set_velocity(linear_velocity):
 	if is_on_wall():
 		new_velocity.x *= -1
 	
+	
 	return new_velocity
 
 func set_anim():
@@ -76,6 +87,8 @@ func set_anim():
 		new_anim = "attack"
 	elif _state == State.DEAD:
 		new_anim = "dead"
+#	elif _state == State.IDLE:
+#		new_anim = "idle"
 	
 	return new_anim
 
@@ -86,6 +99,7 @@ func enemy_walk():
 			velocity.x = speed
 		else : velocity.x = -speed
 
+
 func enemy_attack():
 	if _state != State.DEAD:
 		_state = State.ATTACK
@@ -93,6 +107,7 @@ func enemy_attack():
 	
 
 func enemy_dead():
+	
 	if health != 0:
 		health -= 25
 	
@@ -116,3 +131,6 @@ func _on_SwordAttack_body_entered(body):
 		enemy_walk()
 		
 		
+
+
+
