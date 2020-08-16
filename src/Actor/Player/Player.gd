@@ -10,26 +10,38 @@ var dashing = false
 var glide = false
 var stomp_direct = 0
 
+var max_health = 100
+
 onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
 onready var col_body = $CollisionShape2D
 onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
+onready var health_bar = $CanvasLayer/HealthBar/HBoxContainer/HeatlhBG/TextureProgress
+
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	direction = calculate_direction()
 	
+	# is player dead -------------------------------------------------
+	var is_dead = false
+	if max_health <= 0:
+		print("DEAD")
+		is_dead = true
+	# ----------------------------------------------------------------
 	
 	# dash player-------------------------------------------------------------
-	if Input.is_action_pressed("dash") and $AnimatedPlayer.animation != "Idle" and not glide:
+	if Input.is_action_pressed("dash") and $AnimatedPlayer.animation != "Idle" and not glide and not is_dead:
 		dashing = true
 	
 	if dashing == false:
 		speed = 500 if glide else 800
-	else : speed = 1500
+	else :
+		if not is_dead: 
+			speed = 1500
 	#-------------------------------------------------------------------------
 	
-	if direction.x != 0:
+	if direction.x != 0 and not is_dead:
 		$AnimatedPlayer.scale.x = 1 if direction.x > 0 else -1
 		col_attack.scale.x = $AnimatedPlayer.scale.x
 		
@@ -37,24 +49,25 @@ func _physics_process(_delta):
 	var is_on_platform = platform.is_colliding()
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	
-	velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
+	if not is_dead:
+		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	
 	if stomp_attack:
 		velocity.x = 500 * stomp_direct
 	
-	velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
-	is_on_platform, 4, 0.9, false)
 	
+	velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
+		is_on_platform, 4, 0.9, false)
 	
 	
 	if $AttackTimer.is_stopped() == false:
 		col_attack.disabled = false
 	else: col_attack.disabled = true
 	
-	
+
 	# basic attack player-----------------------------------------
 	var is_attack = false
-	if Input.is_action_just_pressed("attack") and not glide:
+	if Input.is_action_just_pressed("attack") and not glide and not is_dead:
 		is_attack = true
 		
 	#----------------------------------------------------------------
@@ -62,7 +75,7 @@ func _physics_process(_delta):
 	
 	#slide player-------------------------------------------------- 
 	var slide = false
-	if Input.is_action_pressed("slide") and $AnimatedPlayer.animation != "Idle" and $AnimatedPlayer.animation != "Attack" and $AnimatedPlayer.animation != "Throw" and $AnimatedPlayer.animation != "JumpThrow" and $AnimatedPlayer.animation != "Jump" and not glide:
+	if Input.is_action_pressed("slide") and not is_dead and $AnimatedPlayer.animation != "Idle" and $AnimatedPlayer.animation != "Attack" and $AnimatedPlayer.animation != "Throw" and $AnimatedPlayer.animation != "JumpThrow" and $AnimatedPlayer.animation != "Jump" and not glide:
 		if direction.x != 0.0:
 			slide = true
 	#---------------------------------------------------------------
@@ -70,13 +83,13 @@ func _physics_process(_delta):
 
 	# throw player--------------------------------------------------
 	var throw = false
-	if Input.is_action_just_pressed("throw") and slide == false and not glide:
+	if Input.is_action_just_pressed("throw") and not is_dead and slide == false and not glide:
 		throw = spawn_kunai.throw($AnimatedPlayer.scale.x)
 	#---------------------------------------------------------------
 	
 	
 	#glide player---------------------------------------------------
-	if Input.is_action_just_pressed("glide") and not is_on_floor():
+	if Input.is_action_just_pressed("glide") and not is_dead and not is_on_floor():
 		glide = false if glide else true
 	
 	if glide and is_on_floor():
@@ -85,7 +98,7 @@ func _physics_process(_delta):
 	
 	
 	col_body.scale = Vector2(1, 0.6) if slide else Vector2(1,1)
-	var animation = setAnimation(is_attack, throw, slide)
+	var animation = setAnimation(is_attack, throw, slide, is_dead)
 	
 	if $AnimatedPlayer.animation != animation and $AttackTimer.is_stopped():
 		if is_attack or throw:
@@ -103,6 +116,7 @@ func calculate_direction():
 	
 # calculate movement player
 func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) -> Vector2:
+	
 	if $AttackTimer.is_stopped() == false :
 		new_velocity.x = 0.0
 	else:new_velocity.x = direction.x * speed 
@@ -122,7 +136,7 @@ func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) 
 
 
 # set animation player
-func setAnimation(is_attack, throw, slide):
+func setAnimation(is_attack, throw, slide, is_dead):
 	var new_animation = ""
 	
 	if is_on_floor():
@@ -141,6 +155,9 @@ func setAnimation(is_attack, throw, slide):
 	
 	if glide and not is_on_floor():
 		new_animation = "Glide"
+		
+	if is_dead:
+		new_animation = "Dead"
 	
 	return new_animation
 
@@ -162,13 +179,16 @@ func _on_AreaAttack_body_entered(body):
 		body.enemy_dead()
 
 
-func _die(_direction_stomp):
+func _die(_direction_stomp, damage):
 	stomp_direct = _direction_stomp
 	if $StompTimer.is_stopped():
 		velocity.y -= 500
 		stomp_attack = true
 		$StompTimer.start()
 		velocity = move_and_slide(velocity)
+	
+	max_health -= damage
+	self.health_bar.value = max_health
 		
 
 func _on_StompTimer_timeout():

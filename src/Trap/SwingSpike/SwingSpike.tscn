@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://asset/trap/bundle-trap/swinging_spikes/swinging_blade.png" type="Texture" id=1]
 [ext_resource path="res://asset/trap/bundle-trap/ropes_chains/long_chain_piece.png" type="Texture" id=2]
+[ext_resource path="res://src/Trap/SwingSpike/SwingSpike.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "play_spike"
@@ -46,6 +47,7 @@ tracks/2/keys = {
 
 [node name="SwingSpike" type="Area2D"]
 z_index = -1
+script = ExtResource( 3 )
 
 [node name="Rope" type="Sprite" parent="."]
 rotation = -0.959931
@@ -55,7 +57,6 @@ offset = Vector2( 0, 350 )
 
 [node name="Spike" type="Sprite" parent="Rope"]
 position = Vector2( 9.43874, 1117.3 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 1 )
 
@@ -67,3 +68,4 @@ polygon = PoolVector2Array( 48.6988, -9.994, 47.6381, -0.801605, 45.8703, 7.1533
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "play_spike"
 anims/play_spike = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_SwingSpike_body_entered"]

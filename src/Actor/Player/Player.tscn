@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://asset/player/png/Idle__006.png" type="Texture" id=1]
 [ext_resource path="res://asset/player/png/Idle__005.png" type="Texture" id=2]
@@ -102,14 +102,10 @@
 [ext_resource path="res://asset/player/png/Jump_Throw__007.png" type="Texture" id=100]
 [ext_resource path="res://asset/player/png/Jump_Throw__001.png" type="Texture" id=101]
 [ext_resource path="res://asset/player/png/Jump_Throw__000.png" type="Texture" id=102]
+[ext_resource path="res://src/Actor/Player/HealthBar.tscn" type="PackedScene" id=103]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
 "loop": true,
 "name": "Throw",
@@ -141,9 +137,9 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
-"loop": true,
+"loop": false,
 "name": "Dead",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
@@ -154,6 +150,11 @@ animations = [ {
 "loop": true,
 "name": "JumpThrow",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -203,6 +204,10 @@ collision_mask = 2
 [node name="CollAttack" type="CollisionPolygon2D" parent="AreaAttack"]
 polygon = PoolVector2Array( 49.8756, -193.307, 94.0227, -195.409, 143.425, -183.846, 197.032, -151.262, 228.566, -119.728, 249.588, -82.9389, 263.253, -42.9963, 268.509, 3.25294, 260.1, 51.6045, 243.282, 98.9049, 215.953, 134.643, 179.163, 165.126, 140.272, 185.097, 102.432, 193.506, 60.3868, 196.659, 49.8756, 196.659 )
 disabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 103 )]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]

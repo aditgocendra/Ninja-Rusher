@@ -8,7 +8,9 @@ var FLOOR_NORMAL = Vector2.UP
 
 var speed = 300
 var speed_up = false
+
 var health = 100
+var damage_player = 20
 
 var direct_player_attack = 0
 
@@ -20,6 +22,7 @@ onready var floor_left = $FloorLeftDetect
 onready var floor_right = $FloorRightDetect
 onready var area_attack = $AreaAttack
 onready var col_sword_attack = $SwordAttack/CollisionPolygon2D
+onready var update_tween = $UpdateTween
 
 
 func _ready():
@@ -110,6 +113,7 @@ func enemy_dead():
 	
 	if health != 0:
 		health -= 25
+		$HealthBar.value = health
 	
 	if health == 0:
 		_state = State.DEAD
@@ -127,10 +131,17 @@ func _on_AreaAttack_body_exited(body):
 
 func _on_SwordAttack_body_entered(body):
 	if body.name == "Player":
-		body._die($AnimatedSprite.scale.x)
+		body._die($AnimatedSprite.scale.x, damage_player)
 		enemy_walk()
 		
 		
 
 
 
+
+
+func _on_HealthBar_value_changed(_value):
+	if $HealthBar.visible == false:
+		$HealthBar.visible = true
+	update_tween.interpolate_property($HealthBar, "value", $HealthBar.value, health, 0.4, Tween.TRANS_SINE, Tween.EASE_OUT, 0.4)
+	update_tween.start()

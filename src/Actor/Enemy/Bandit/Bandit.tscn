@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://src/Actor/Enemy/Bandit/Bandit.gd" type="Script" id=1]
 [ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_000.png" type="Texture" id=2]
@@ -45,6 +45,9 @@
 [ext_resource path="res://asset/enemy/EnemyGuy/07-Hurt/__Bandit02_Hurt_006.png" type="Texture" id=43]
 [ext_resource path="res://asset/enemy/EnemyGuy/07-Hurt/__Bandit02_Hurt_007.png" type="Texture" id=44]
 [ext_resource path="res://asset/enemy/EnemyGuy/07-Hurt/__Bandit02_Hurt_003.png" type="Texture" id=45]
+[ext_resource path="res://asset/healthbar/health_bar_enemy_1.png" type="Texture" id=46]
+[ext_resource path="res://asset/healthbar/heatl_bar_enemy_3.png" type="Texture" id=47]
+[ext_resource path="res://asset/healthbar/health_bar_enemy_2.png" type="Texture" id=48]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -87,6 +90,23 @@ collision_layer = 2
 collision_mask = 13
 script = ExtResource( 1 )
 
+[node name="HealthBar" type="TextureProgress" parent="."]
+visible = false
+margin_left = -67.4527
+margin_top = -276.579
+margin_right = -2.4527
+margin_bottom = -259.579
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+texture_under = ExtResource( 46 )
+texture_over = ExtResource( 48 )
+texture_progress = ExtResource( 47 )
+tint_over = Color( 1, 1, 1, 0 )
+tint_progress = Color( 0.713726, 0.0509804, 0.0509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="FloorLeftDetect" type="RayCast2D" parent="."]
 position = Vector2( -150, 0 )
 enabled = true
@@ -121,6 +141,9 @@ shape = SubResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordAttack"]
 polygon = PoolVector2Array( 137.287, 125.517, 297.972, 104.328, 284.879, -141.214, 156.711, -157.006 )
 disabled = true
+
+[node name="UpdateTween" type="Tween" parent="."]
+[connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="body_exited" from="AreaAttack" to="." method="_on_AreaAttack_body_exited"]
 [connection signal="body_entered" from="SwordAttack" to="." method="_on_SwordAttack_body_entered"]
