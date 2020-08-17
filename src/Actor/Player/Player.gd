@@ -16,12 +16,13 @@ onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
 onready var col_body = $CollisionShape2D
 onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
-onready var health_bar = $CanvasLayer/HealthBar/HBoxContainer/HeatlhBG/TextureProgress
+onready var health_bar = $UserInterface/HealthBar/HBoxContainer/HeatlhBG/TextureProgress
 
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	direction = calculate_direction()
+	
 	
 	# is player dead -------------------------------------------------
 	var is_dead = false
@@ -29,6 +30,7 @@ func _physics_process(_delta):
 		print("DEAD")
 		is_dead = true
 	# ----------------------------------------------------------------
+	
 	
 	# dash player-------------------------------------------------------------
 	if Input.is_action_pressed("dash") and $AnimatedPlayer.animation != "Idle" and not glide and not is_dead:
@@ -41,6 +43,7 @@ func _physics_process(_delta):
 			speed = 1500
 	#-------------------------------------------------------------------------
 	
+	
 	if direction.x != 0 and not is_dead:
 		$AnimatedPlayer.scale.x = 1 if direction.x > 0 else -1
 		col_attack.scale.x = $AnimatedPlayer.scale.x
@@ -49,21 +52,30 @@ func _physics_process(_delta):
 	var is_on_platform = platform.is_colliding()
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	
+	
+	# move and slide---------------------------------------------------------
 	if not is_dead:
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	
 	if stomp_attack:
 		velocity.x = 500 * stomp_direct
 	
-	
 	velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
 		is_on_platform, 4, 0.9, false)
+	# -----------------------------------------------------------------------
 	
 	
+	#Show game over scene-------------
+	showGameOver(is_dead)
+	#---------------------------------
+
+
+	# collison attack disable true or false------------
 	if $AttackTimer.is_stopped() == false:
 		col_attack.disabled = false
 	else: col_attack.disabled = true
-	
+	#--------------------------------------------------
+
 
 	# basic attack player-----------------------------------------
 	var is_attack = false
@@ -97,13 +109,19 @@ func _physics_process(_delta):
 	#----------------------------------------------------------------
 	
 	
+	#Scale body glide or not-----------------------------------------
 	col_body.scale = Vector2(1, 0.6) if slide else Vector2(1,1)
+	#----------------------------------------------------------------
+	
+	
+	#Animated Player setter--------------------------------------------
 	var animation = setAnimation(is_attack, throw, slide, is_dead)
 	
 	if $AnimatedPlayer.animation != animation and $AttackTimer.is_stopped():
 		if is_attack or throw:
 			$AttackTimer.start()
 		$AnimatedPlayer.play(animation)
+	#------------------------------------------------------------------
 
 
 #calculate direction
@@ -162,6 +180,28 @@ func setAnimation(is_attack, throw, slide, is_dead):
 	return new_animation
 
 
+#calculate die player
+func _die(_direction_stomp, damage):
+	stomp_direct = _direction_stomp
+	if $StompTimer.is_stopped():
+		velocity.y -= 500
+		stomp_attack = true
+		$StompTimer.start()
+		velocity = move_and_slide(velocity)
+	
+	max_health -= damage
+	self.health_bar.value = max_health
+		
+
+
+#Show Game Over Scene
+func showGameOver(is_dead):
+	if is_dead == true and $AnimatedPlayer.animation == "Dead" and velocity.y > 0:
+		yield($AnimatedPlayer,"animation_finished")
+		$UserInterface/GameOver.show()
+		get_tree().paused = true
+
+
 #dash loop ghost
 func _on_DashTimer_timeout():
 	if dashing == true:
@@ -179,17 +219,6 @@ func _on_AreaAttack_body_entered(body):
 		body.enemy_dead()
 
 
-func _die(_direction_stomp, damage):
-	stomp_direct = _direction_stomp
-	if $StompTimer.is_stopped():
-		velocity.y -= 500
-		stomp_attack = true
-		$StompTimer.start()
-		velocity = move_and_slide(velocity)
-	
-	max_health -= damage
-	self.health_bar.value = max_health
-		
-
 func _on_StompTimer_timeout():
 	stomp_attack = false
+
