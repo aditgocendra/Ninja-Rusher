@@ -20,6 +20,11 @@ onready var health_bar = $UserInterface/HealthBar/HBoxContainer/HeatlhBG/Texture
 
 
 func _physics_process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		$UserInterface/Pause.show()
+		
+	
 	var direction = Vector2.ZERO
 	direction = calculate_direction()
 	
