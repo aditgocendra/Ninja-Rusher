@@ -27,7 +27,7 @@ func _physics_process(_delta):
 	# is player dead -------------------------------------------------
 	var is_dead = false
 	if max_health <= 0:
-		print("DEAD")
+		
 		is_dead = true
 	# ----------------------------------------------------------------
 	

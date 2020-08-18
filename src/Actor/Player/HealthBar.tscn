@@ -36,6 +36,9 @@ margin_right = 351.0
 margin_bottom = 51.0
 size_flags_vertical = 4
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureProgress" type="TextureProgress" parent="HBoxContainer/HeatlhBG"]
 anchor_left = 0.5

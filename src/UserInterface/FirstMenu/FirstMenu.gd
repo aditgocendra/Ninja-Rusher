@@ -2,13 +2,15 @@ extends Control
 
 
 
-func _on_Play_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			print(true)
+
+func _on_Play_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://src/Map/MapTemplate.tscn")
 
 
-func _on_Quit_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			get_tree().quit()
+func _on_Quit_pressed():
+	get_tree().quit()
+
+
+func _on_Share_pressed():
+	pass
