@@ -108,29 +108,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
-"loop": true,
-"name": "Glide",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": true,
-"name": "Attack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "JumpAttack",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Slide",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
+"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
 "loop": true,
-"name": "Throw",
+"name": "JumpAttack",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
@@ -138,25 +123,40 @@ animations = [ {
 "name": "Idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
 "loop": true,
 "name": "JumpThrow",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "Throw",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "Glide",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": false,
 "name": "Jump",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Run",
-"speed": 15.0
+"frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -188,6 +188,19 @@ one_shot = true
 position = Vector2( 2.11896, -16.4593 )
 shape = SubResource( 2 )
 
+[node name="AreaAttack" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollAttack" type="CollisionPolygon2D" parent="AreaAttack"]
+polygon = PoolVector2Array( 49.8756, -193.307, 94.0227, -195.409, 143.425, -183.846, 197.032, -151.262, 228.566, -119.728, 249.588, -82.9389, 263.253, -42.9963, 268.509, 3.25294, 260.1, 51.6045, 243.282, 98.9049, 215.953, 134.643, 179.163, 165.126, 140.272, 185.097, 102.432, 193.506, 60.3868, 196.659, 49.8756, 196.659 )
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+process_mode = 0
+limit_left = 0
+
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
@@ -200,13 +213,6 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
-[node name="AreaAttack" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollAttack" type="CollisionPolygon2D" parent="AreaAttack"]
-polygon = PoolVector2Array( 49.8756, -193.307, 94.0227, -195.409, 143.425, -183.846, 197.032, -151.262, 228.566, -119.728, 249.588, -82.9389, 263.253, -42.9963, 268.509, 3.25294, 260.1, 51.6045, 243.282, 98.9049, 215.953, 134.643, 179.163, 165.126, 140.272, 185.097, 102.432, 193.506, 60.3868, 196.659, 49.8756, 196.659 )
-disabled = true
-
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="UserInterface" instance=ExtResource( 103 )]
@@ -216,6 +222,6 @@ visible = false
 
 [node name="Pause" parent="UserInterface" instance=ExtResource( 105 )]
 visible = false
+[connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]
-[connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]

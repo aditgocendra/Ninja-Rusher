@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.46875, 0.46875, 0.46875, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.572549, 0.0980392, 0.498039, 1 )
+
+[node name="Separator" type="Panel" parent="Background"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -215.718
+margin_top = -175.0
+margin_right = -210.718
+margin_bottom = 175.0
+rect_min_size = Vector2( 5, 350 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderSettings" type="Label" parent="Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -192.97
+margin_top = 2.82843
+margin_right = -16.9705
+margin_bottom = 44.8284
+custom_fonts/font = ExtResource( 1 )
+text = "Game Settings"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -191.556
+margin_top = -175.0
+margin_right = -15.5564
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 350 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="General" type="Label" parent="Background/VBoxContainer"]
+margin_right = 176.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "General"
+align = 1
