@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=1]
+
+[node name="General" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -660.0
+margin_bottom = -445.0
+rect_min_size = Vector2( 180, 0 )
+size_flags_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 152.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Show FPS"
+valign = 1
+
+[node name="CheckFPS" type="CheckBox" parent="."]
+margin_left = 156.0
+margin_top = 5.0
+margin_right = 180.0
+margin_bottom = 29.0
+size_flags_vertical = 4

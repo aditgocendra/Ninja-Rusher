@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UserInterface/SubSettings/Sound/Sound.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/Settings/Settings.gd" type="Script" id=3]
+[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
@@ -17,9 +20,14 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=4]
+
 [node name="Settings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,7 +35,7 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.572549, 0.0980392, 0.498039, 1 )
+color = Color( 0.392157, 0.054902, 0.337255, 1 )
 
 [node name="Separator" type="Panel" parent="Background"]
 anchor_left = 1.0
@@ -73,10 +81,99 @@ __meta__ = {
 }
 
 [node name="General" type="Label" parent="Background/VBoxContainer"]
-margin_right = 176.0
-margin_bottom = 52.0
+margin_top = 31.0
+margin_right = 175.0
+margin_bottom = 83.0
 size_flags_horizontal = 3
+size_flags_vertical = 6
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 1 )
 text = "General"
 align = 1
+
+[node name="TouchGeneral" type="TouchScreenButton" parent="Background/VBoxContainer/General"]
+scale = Vector2( 8.72, 2.56 )
+shape = SubResource( 3 )
+
+[node name="Sound" type="Label" parent="Background/VBoxContainer"]
+margin_top = 149.0
+margin_right = 175.0
+margin_bottom = 201.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sound"
+align = 1
+
+[node name="TouchSound" type="TouchScreenButton" parent="Background/VBoxContainer/Sound"]
+position = Vector2( 0, 0.0440826 )
+scale = Vector2( 8.72, 2.56 )
+shape = SubResource( 3 )
+
+[node name="Control" type="Label" parent="Background/VBoxContainer"]
+margin_top = 267.0
+margin_right = 175.0
+margin_bottom = 319.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Control"
+align = 1
+
+[node name="TouchControl" type="TouchScreenButton" parent="Background/VBoxContainer/Control"]
+position = Vector2( 0, 0.703949 )
+scale = Vector2( 8.72, 2.56 )
+shape = SubResource( 3 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -348.53
+margin_right = 151.47
+margin_bottom = 400.0
+rect_min_size = Vector2( 500, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSetting" type="Label" parent="Background/VBoxContainer2"]
+margin_top = -1.0
+margin_right = 500.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 1 )
+text = "General"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" parent="Background/VBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 300.0
+margin_bottom = 164.0
+
+[node name="Back" type="Label" parent="Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -44.0
+margin_right = 59.0
+margin_bottom = -9.0
+custom_fonts/font = ExtResource( 4 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchBack" type="TouchScreenButton" parent="Background/Back"]
+scale = Vector2( 2.48, 1.64 )
+shape = SubResource( 4 )
+[connection signal="pressed" from="Background/VBoxContainer/General/TouchGeneral" to="." method="_on_TouchGeneral_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Sound/TouchSound" to="." method="_on_TouchSound_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Control/TouchControl" to="." method="_on_TouchControl_pressed"]
+[connection signal="pressed" from="Background/Back/TouchBack" to="." method="_on_TouchBack_pressed"]

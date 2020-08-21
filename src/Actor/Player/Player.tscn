@@ -108,11 +108,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
-"loop": true,
-"name": "Slide",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
 "loop": true,
 "name": "JumpAttack",
@@ -156,6 +151,11 @@ animations = [ {
 "frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
 "loop": false,
 "name": "Dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "Slide",
 "speed": 10.0
 } ]
 

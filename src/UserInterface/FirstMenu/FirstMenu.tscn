@@ -172,5 +172,6 @@ texture_pressed = ExtResource( 15 )
 autoplay = "_start"
 anims/_start = SubResource( 1 )
 [connection signal="pressed" from="Background/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Share" to="." method="_on_Share_pressed"]

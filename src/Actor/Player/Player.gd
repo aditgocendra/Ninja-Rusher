@@ -220,7 +220,7 @@ func _on_DashTimer_timeout():
 
 
 func _on_AreaAttack_body_entered(body):
-	if body is Bandit or ReaperMan:
+	if body is Bandit or body is ReaperMan:
 		body.enemy_dead()
 
 
