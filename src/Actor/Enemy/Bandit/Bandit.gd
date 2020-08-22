@@ -136,10 +136,6 @@ func _on_SwordAttack_body_entered(body):
 		
 		
 
-
-
-
-
 func _on_HealthBar_value_changed(_value):
 	if $HealthBar.visible == false:
 		$HealthBar.visible = true

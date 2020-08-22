@@ -58,14 +58,36 @@ func _physics_process(_delta):
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	
 	
-	# move and slide---------------------------------------------------------
+	# calculate movement-----------------------------------------------------
 	if not is_dead:
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
+	#------------------------------------------------------------------------
 	
+	
+	#stomp attack enemy-------------------------------------------------------
 	if stomp_attack:
 		velocity.x = 500 * stomp_direct
+	#-------------------------------------------------------------------------
 	
-	velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
+	
+	#detect stomp enemy---------------------------------------------------------
+	var stomp_enemy 
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.collider
+		var is_stomping = (collider is ReaperMan or collider is Bandit
+			and is_on_floor() 
+			and collision.normal.dot(Vector2.UP) > 0.7)
+		stomp_enemy = is_stomping
+	#---------------------------------------------------------------------------
+	
+	
+	# excecute movement player-----------------------------------------------
+	if stomp_enemy:
+		velocity.y = -500
+		velocity = move_and_slide(velocity, FLOOR_NORMAL, true)
+	else :
+		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
 		is_on_platform, 4, 0.9, false)
 	# -----------------------------------------------------------------------
 	
@@ -153,8 +175,6 @@ func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) 
 	if glide:
 		new_velocity.y *= 0.7
 		
-
-
 	return new_velocity
 
 

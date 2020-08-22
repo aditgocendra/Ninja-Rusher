@@ -23,25 +23,22 @@ onready var area_attack = $AreaAttack
 onready var col_sword_attack = $SwordAttack/CollisionPolygon2D
 onready var update_tween = $UpdateTween
 
-
 func _ready():
 	enemy_walk()
 	
 
 func _physics_process(_delta):
-
-	if velocity.x != 0:
+	
+	if velocity.x != 0 and _state != State.ATTACK:
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
 			col_sword_attack.scale.x = 1
-			area_attack.position = Vector2(160,33)
 		else: 
 			$AnimatedSprite.scale.x = -1
+			
 			col_sword_attack.scale.x = -1
-			area_attack.position = Vector2(-160,33)
-	
-	
-	
+			
+
 	velocity = set_velocity(velocity)
 	velocity.y = move_and_slide(velocity, FLOOR_NORMAL).y
 	
@@ -116,6 +113,12 @@ func enemy_dead():
 
 func _on_AreaAttack_body_entered(body):
 	if body.name == "Player":
+		if self.global_position.x < body.global_position.x:
+			$AnimatedSprite.scale.x = 1
+			col_sword_attack.scale.x = 1
+		else:
+			$AnimatedSprite.scale.x = -1
+			col_sword_attack.scale.x = -1
 		enemy_attack()
 
 
