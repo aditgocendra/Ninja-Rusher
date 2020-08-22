@@ -1,2 +1,2 @@
-﻿46253
+﻿35685
 /home/gocendra/GodotEngine/Godot_v3.2.2-stable_mono_x11.64

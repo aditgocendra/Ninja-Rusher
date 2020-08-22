@@ -5,7 +5,7 @@ onready var setting_scene = "res://src/UserInterface/Settings/Settings.tscn"
 
 func _on_Play_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://src/Map/MapTemplate.tscn")
+	get_tree().change_scene("res://src/UserInterface/Loading/Game.tscn")
 
 
 func _on_Quit_pressed():
