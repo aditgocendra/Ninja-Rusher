@@ -50,6 +50,10 @@ boot_splash/image="res://asset/logo/Ark-circle.png"
 boot_splash/fullsize=false
 config/icon="res://asset/logo/Logo Game.png"
 
+[autoload]
+
+Autoload="*res://src/Autoload/Autoload.gd"
+
 [display]
 
 window/size/width=840
@@ -119,6 +123,10 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_5="trap"
 2d_physics/layer_6="coin"
 2d_physics/layer_7="platform"
+
+[memory]
+
+limits/message_queue/max_size_kb=2048
 
 [rendering]
 

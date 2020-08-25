@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
-[ext_resource path="res://src/UserInterface/SubSettings/Sound/Sound.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/SubSettings/General/General.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/Settings/Settings.gd" type="Script" id=3]
 [ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=4]
 
@@ -35,7 +35,7 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.392157, 0.054902, 0.337255, 1 )
+color = Color( 0.215686, 0.0352941, 0.184314, 1 )
 
 [node name="Separator" type="Panel" parent="Background"]
 anchor_left = 1.0
@@ -127,7 +127,7 @@ position = Vector2( 0, 0.703949 )
 scale = Vector2( 8.72, 2.56 )
 shape = SubResource( 3 )
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Background"]
+[node name="ContainerSetting" type="VBoxContainer" parent="Background"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -348.53
@@ -138,10 +138,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelSetting" type="Label" parent="Background/VBoxContainer2"]
-margin_top = -1.0
+[node name="LabelSetting" type="Label" parent="Background/ContainerSetting"]
 margin_right = 500.0
-margin_bottom = 59.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 custom_fonts/font = ExtResource( 1 )
 text = "General"
@@ -150,12 +149,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sound" parent="Background/VBoxContainer2" instance=ExtResource( 2 )]
+[node name="General" parent="Background/ContainerSetting" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 64.0
-margin_right = 300.0
-margin_bottom = 164.0
+margin_right = 180.0
+margin_bottom = 216.0
 
 [node name="Back" type="Label" parent="Background"]
 anchor_top = 1.0

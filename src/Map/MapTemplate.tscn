@@ -444,6 +444,20 @@ motion_mirroring = Vector2( 840, 0 )
 texture = ExtResource( 16 )
 centered = false
 
+[node name="LayerFPS" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="LayerFPS"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -60.0
+margin_top = 55.0921
+margin_bottom = 69.0921
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FPS Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TileGround" type="TileMap" parent="."]
 scale = Vector2( 0.25, 0.25 )
 tile_set = SubResource( 17 )
@@ -616,4 +630,4 @@ z_index = -1
 texture = ExtResource( 38 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1660.16, -27.334 )
+position = Vector2( 48.0228, 323.787 )

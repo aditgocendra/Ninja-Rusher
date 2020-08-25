@@ -201,6 +201,8 @@ current = true
 zoom = Vector2( 1.5, 1.5 )
 process_mode = 0
 limit_left = 0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.05

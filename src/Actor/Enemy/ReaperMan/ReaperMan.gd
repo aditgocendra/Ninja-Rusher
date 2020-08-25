@@ -9,7 +9,7 @@ var FLOOR_NORMAL = Vector2.UP
 var speed = 250
 var speed_up = false
 
-var health = 100
+var health = 200
 var damage_player = 40
 
 

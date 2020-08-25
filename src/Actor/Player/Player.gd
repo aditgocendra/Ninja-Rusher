@@ -77,7 +77,7 @@ func _physics_process(_delta):
 		var collider = collision.collider
 		var is_stomping = (collider is ReaperMan or collider is Bandit
 			and is_on_floor() 
-			and collision.normal.dot(Vector2.UP) > 0.7)
+			and collision.normal.dot(Vector2.UP) > 0.5)
 		stomp_enemy = is_stomping
 	#---------------------------------------------------------------------------
 	
@@ -165,6 +165,7 @@ func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) 
 	if $AttackTimer.is_stopped() == false :
 		new_velocity.x = 0.0
 	else:new_velocity.x = direction.x * speed 
+	
 	
 	if direction.y != 0.0:
 		new_velocity.y = jump_power * direction.y
