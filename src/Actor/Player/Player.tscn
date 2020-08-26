@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=124 format=2]
 
 [ext_resource path="res://asset/player/png/Idle__006.png" type="Texture" id=1]
 [ext_resource path="res://asset/player/png/Idle__005.png" type="Texture" id=2]
@@ -105,42 +105,39 @@
 [ext_resource path="res://src/Actor/Player/HealthBar.tscn" type="PackedScene" id=103]
 [ext_resource path="res://src/UserInterface/GameOver/GameOver.tscn" type="PackedScene" id=104]
 [ext_resource path="res://src/UserInterface/Pause/Pause.tscn" type="PackedScene" id=105]
+[ext_resource path="res://asset/control/Direction.png" type="Texture" id=107]
+[ext_resource path="res://asset/control/BasicAttack.png" type="Texture" id=108]
+[ext_resource path="res://asset/control/Slide.png" type="Texture" id=109]
+[ext_resource path="res://asset/control/Glide.png" type="Texture" id=110]
+[ext_resource path="res://asset/control/Jump.png" type="Texture" id=111]
+[ext_resource path="res://asset/control/Throw.png" type="Texture" id=112]
+[ext_resource path="res://asset/control/Dash.png" type="Texture" id=113]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "JumpThrow",
-"speed": 18.0
-}, {
-"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
-"loop": true,
-"name": "Throw",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
 "loop": false,
-"name": "Dead",
+"name": "Jump",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "JumpAttack",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Slide",
 "speed": 10.0
 }, {
+"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "Throw",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
 "loop": true,
 "name": "Glide",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Run",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "JumpAttack",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
@@ -148,19 +145,96 @@ animations = [ {
 "name": "Attack",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "JumpThrow",
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64.6468, 220.026 )
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends CanvasLayer
+
+
+var is_throw = false
+var is_slide = false
+var is_glide = false
+var pressed = 1
+
+var _is_attack = false
+
+
+
+func is_dash():
+	var _is_dash = false
+	if $Dash/Dash.is_pressed():
+		_is_dash = true
+	return _is_dash
+	
+
+func is_attack():
+	if $BasicAttack/BasicAttack.is_pressed() and _is_attack:
+		_is_attack = true
+		if pressed > 0 and _is_attack:
+			pressed -= 1
+	return _is_attack
+
+
+func calculate_direction_ui():
+	var direction = Vector2.ZERO
+	if $Left/Left.is_pressed():
+		direction.x -= 1
+
+	if $Right/Right.is_pressed():
+		direction.x += 1
+	
+	if $Jump/Jump.is_pressed():
+		direction.y -= 1
+	
+	return direction
+
+"
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 64.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.2, 0.2 )
@@ -225,6 +299,87 @@ visible = false
 
 [node name="Pause" parent="UserInterface" instance=ExtResource( 105 )]
 visible = false
+
+[node name="ControlUI" type="CanvasLayer" parent="."]
+script = SubResource( 11 )
+
+[node name="Right" type="Sprite" parent="ControlUI"]
+position = Vector2( 134.526, 413.377 )
+texture = ExtResource( 107 )
+
+[node name="Right" type="TouchScreenButton" parent="ControlUI/Right"]
+shape = SubResource( 3 )
+shape_centered = false
+action = "move_right"
+
+[node name="Left" type="Sprite" parent="ControlUI"]
+position = Vector2( 57.9084, 413.377 )
+rotation = 3.14159
+texture = ExtResource( 107 )
+
+[node name="Left" type="TouchScreenButton" parent="ControlUI/Left"]
+rotation = -3.14159
+shape = SubResource( 4 )
+shape_centered = false
+action = "move_left"
+
+[node name="Jump" type="Sprite" parent="ControlUI"]
+position = Vector2( 783.019, 284.294 )
+texture = ExtResource( 111 )
+
+[node name="Jump" type="TouchScreenButton" parent="ControlUI/Jump"]
+shape = SubResource( 5 )
+shape_centered = false
+passby_press = true
+action = "jump"
+
+[node name="Throw" type="Sprite" parent="ControlUI"]
+position = Vector2( 655.74, 363.49 )
+texture = ExtResource( 112 )
+
+[node name="Throw" type="TouchScreenButton" parent="ControlUI/Throw"]
+shape = SubResource( 8 )
+shape_centered = false
+passby_press = true
+action = "throw"
+
+[node name="Glide" type="Sprite" parent="ControlUI"]
+position = Vector2( 708.066, 310.457 )
+texture = ExtResource( 110 )
+
+[node name="Glide" type="TouchScreenButton" parent="ControlUI/Glide"]
+shape = SubResource( 9 )
+shape_centered = false
+passby_press = true
+action = "glide"
+
+[node name="Slide" type="Sprite" parent="ControlUI"]
+position = Vector2( 657.861, 435.615 )
+texture = ExtResource( 109 )
+
+[node name="Slide" type="TouchScreenButton" parent="ControlUI/Slide"]
+shape = SubResource( 10 )
+shape_centered = false
+action = "slide"
+
+[node name="Dash" type="Sprite" parent="ControlUI"]
+position = Vector2( 581.493, 435.615 )
+texture = ExtResource( 113 )
+
+[node name="Dash" type="TouchScreenButton" parent="ControlUI/Dash"]
+shape = SubResource( 6 )
+shape_centered = false
+action = "dash"
+
+[node name="BasicAttack" type="Sprite" parent="ControlUI"]
+position = Vector2( 763.95, 398.785 )
+texture = ExtResource( 108 )
+
+[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI/BasicAttack"]
+shape = SubResource( 7 )
+shape_centered = false
+passby_press = true
+action = "attack"
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]

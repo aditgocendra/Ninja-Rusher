@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Asset 1.png-8e3fcafa80baf03c649a00c183465e28.stex"
+path="res://.import/BasicAttack-Active.png-b5286d0dda94d51ad3a62ee2be566734.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/control/Asset 1.png"
-dest_files=[ "res://.import/Asset 1.png-8e3fcafa80baf03c649a00c183465e28.stex" ]
+source_file="res://asset/control/BasicAttack-Active.png"
+dest_files=[ "res://.import/BasicAttack-Active.png-b5286d0dda94d51ad3a62ee2be566734.stex" ]
 
 [params]
 
