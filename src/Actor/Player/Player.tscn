@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=2]
+[gd_scene load_steps=129 format=2]
 
 [ext_resource path="res://asset/player/png/Idle__006.png" type="Texture" id=1]
 [ext_resource path="res://asset/player/png/Idle__005.png" type="Texture" id=2]
@@ -112,6 +112,12 @@
 [ext_resource path="res://asset/control/Jump.png" type="Texture" id=111]
 [ext_resource path="res://asset/control/Throw.png" type="Texture" id=112]
 [ext_resource path="res://asset/control/Dash.png" type="Texture" id=113]
+[ext_resource path="res://asset/control/BasicAttack-Active.png" type="Texture" id=114]
+[ext_resource path="res://asset/control/Throw-Active.png" type="Texture" id=115]
+[ext_resource path="res://asset/control/Jump-Active.png" type="Texture" id=116]
+[ext_resource path="res://asset/control/Glide-Active.png" type="Texture" id=117]
+[ext_resource path="res://asset/control/Dash-Active.png" type="Texture" id=118]
+[ext_resource path="res://asset/control/Slide-Active.png" type="Texture" id=119]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -169,49 +175,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64.6468, 220.026 )
 
-[sub_resource type="GDScript" id=11]
-script/source = "extends CanvasLayer
-
-
-var is_throw = false
-var is_slide = false
-var is_glide = false
-var pressed = 1
-
-var _is_attack = false
-
-
-
-func is_dash():
-	var _is_dash = false
-	if $Dash/Dash.is_pressed():
-		_is_dash = true
-	return _is_dash
-	
-
-func is_attack():
-	if $BasicAttack/BasicAttack.is_pressed() and _is_attack:
-		_is_attack = true
-		if pressed > 0 and _is_attack:
-			pressed -= 1
-	return _is_attack
-
-
-func calculate_direction_ui():
-	var direction = Vector2.ZERO
-	if $Left/Left.is_pressed():
-		direction.x -= 1
-
-	if $Right/Right.is_pressed():
-		direction.x += 1
-	
-	if $Jump/Jump.is_pressed():
-		direction.y -= 1
-	
-	return direction
-
-"
-
 [sub_resource type="CircleShape2D" id=3]
 radius = 32.0
 
@@ -221,6 +184,12 @@ radius = 32.0
 [sub_resource type="CircleShape2D" id=5]
 radius = 32.0
 
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 32.0
+
 [sub_resource type="CircleShape2D" id=8]
 radius = 32.0
 
@@ -228,12 +197,6 @@ radius = 32.0
 radius = 32.0
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 32.0
-
-[sub_resource type="CircleShape2D" id=6]
-radius = 32.0
-
-[sub_resource type="CircleShape2D" id=7]
 radius = 64.0
 
 [node name="Player" type="KinematicBody2D"]
@@ -301,85 +264,73 @@ visible = false
 visible = false
 
 [node name="ControlUI" type="CanvasLayer" parent="."]
-script = SubResource( 11 )
 
-[node name="Right" type="Sprite" parent="ControlUI"]
-position = Vector2( 134.526, 413.377 )
-texture = ExtResource( 107 )
-
-[node name="Right" type="TouchScreenButton" parent="ControlUI/Right"]
+[node name="Right" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 107.799, 373.11 )
+normal = ExtResource( 107 )
 shape = SubResource( 3 )
-shape_centered = false
 action = "move_right"
+visibility_mode = 1
 
-[node name="Left" type="Sprite" parent="ControlUI"]
-position = Vector2( 57.9084, 413.377 )
+[node name="Left" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 96.7863, 439.781 )
 rotation = 3.14159
-texture = ExtResource( 107 )
-
-[node name="Left" type="TouchScreenButton" parent="ControlUI/Left"]
-rotation = -3.14159
+normal = ExtResource( 107 )
 shape = SubResource( 4 )
-shape_centered = false
 action = "move_left"
+visibility_mode = 1
 
-[node name="Jump" type="Sprite" parent="ControlUI"]
-position = Vector2( 783.019, 284.294 )
-texture = ExtResource( 111 )
-
-[node name="Jump" type="TouchScreenButton" parent="ControlUI/Jump"]
+[node name="Jump" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 747.383, 249.549 )
+normal = ExtResource( 111 )
+pressed = ExtResource( 116 )
 shape = SubResource( 5 )
-shape_centered = false
 passby_press = true
 action = "jump"
+visibility_mode = 1
 
-[node name="Throw" type="Sprite" parent="ControlUI"]
-position = Vector2( 655.74, 363.49 )
-texture = ExtResource( 112 )
-
-[node name="Throw" type="TouchScreenButton" parent="ControlUI/Throw"]
-shape = SubResource( 8 )
-shape_centered = false
+[node name="Throw" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 604.068, 318.945 )
+normal = ExtResource( 112 )
+pressed = ExtResource( 115 )
+shape = SubResource( 6 )
 passby_press = true
 action = "throw"
+visibility_mode = 1
 
-[node name="Glide" type="Sprite" parent="ControlUI"]
-position = Vector2( 708.066, 310.457 )
-texture = ExtResource( 110 )
-
-[node name="Glide" type="TouchScreenButton" parent="ControlUI/Glide"]
-shape = SubResource( 9 )
-shape_centered = false
+[node name="Glide" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 668.867, 274.821 )
+normal = ExtResource( 110 )
+pressed = ExtResource( 117 )
+shape = SubResource( 7 )
 passby_press = true
 action = "glide"
+visibility_mode = 1
 
-[node name="Slide" type="Sprite" parent="ControlUI"]
-position = Vector2( 657.861, 435.615 )
-texture = ExtResource( 109 )
-
-[node name="Slide" type="TouchScreenButton" parent="ControlUI/Slide"]
-shape = SubResource( 10 )
-shape_centered = false
+[node name="Slide" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 607.971, 391.961 )
+normal = ExtResource( 109 )
+pressed = ExtResource( 119 )
+shape = SubResource( 8 )
 action = "slide"
+visibility_mode = 1
 
-[node name="Dash" type="Sprite" parent="ControlUI"]
-position = Vector2( 581.493, 435.615 )
-texture = ExtResource( 113 )
-
-[node name="Dash" type="TouchScreenButton" parent="ControlUI/Dash"]
-shape = SubResource( 6 )
-shape_centered = false
+[node name="Dash" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 531.603, 392.852 )
+normal = ExtResource( 113 )
+pressed = ExtResource( 118 )
+shape = SubResource( 9 )
 action = "dash"
+visibility_mode = 1
 
-[node name="BasicAttack" type="Sprite" parent="ControlUI"]
-position = Vector2( 763.95, 398.785 )
-texture = ExtResource( 108 )
-
-[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI/BasicAttack"]
-shape = SubResource( 7 )
-shape_centered = false
+[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 691.787, 335.531 )
+normal = ExtResource( 108 )
+pressed = ExtResource( 114 )
+shape = SubResource( 10 )
 passby_press = true
 action = "attack"
+visibility_mode = 1
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]

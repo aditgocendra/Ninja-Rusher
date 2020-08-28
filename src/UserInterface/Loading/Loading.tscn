@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asset/loading/loading-1.png" type="Texture" id=1]
+[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/UserInterface/Loading/Loading.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "load"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Loading:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Loading" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -104.0
+margin_top = -43.0
+margin_right = -10.0
+margin_bottom = -8.0
+custom_fonts/font = ExtResource( 2 )
+text = "Loading..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "load"
+anims/load = SubResource( 1 )

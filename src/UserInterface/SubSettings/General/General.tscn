@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UserInterface/SubSettings/General/General.gd" type="Script" id=2]
 
 [node name="General" type="VBoxContainer"]
 anchor_right = 1.0
@@ -8,7 +9,10 @@ anchor_bottom = 1.0
 margin_right = -660.0
 margin_bottom = -445.0
 rect_min_size = Vector2( 180, 0 )
-size_flags_horizontal = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ShowFPS" type="HBoxContainer" parent="."]
 margin_right = 180.0
@@ -16,7 +20,7 @@ margin_bottom = 35.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="ShowFPS"]
-margin_right = 152.0
+margin_right = 102.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
@@ -24,71 +28,88 @@ text = "Show FPS"
 valign = 1
 
 [node name="CheckFPS" type="CheckBox" parent="ShowFPS"]
-margin_left = 156.0
+margin_left = 106.0
 margin_top = 5.0
 margin_right = 180.0
 margin_bottom = 29.0
+size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="30FPS" type="HBoxContainer" parent="."]
+[node name="FPS30" type="HBoxContainer" parent="."]
 margin_top = 39.0
 margin_right = 180.0
 margin_bottom = 74.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="30FPS"]
-margin_right = 152.0
+[node name="Label" type="Label" parent="FPS30"]
+margin_right = 88.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "30 FPS"
 valign = 1
 
-[node name="Check" type="CheckBox" parent="30FPS"]
-margin_left = 156.0
+[node name="Check" type="CheckBox" parent="FPS30"]
+margin_left = 92.0
 margin_top = 5.0
 margin_right = 180.0
 margin_bottom = 29.0
+size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="60FPS" type="HBoxContainer" parent="."]
+[node name="FPS60" type="HBoxContainer" parent="."]
 margin_top = 78.0
 margin_right = 180.0
 margin_bottom = 113.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="60FPS"]
-margin_right = 152.0
+[node name="Label" type="Label" parent="FPS60"]
+margin_right = 88.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "60 FPS"
 valign = 1
 
-[node name="Check" type="CheckBox" parent="60FPS"]
-margin_left = 156.0
+[node name="Check" type="CheckBox" parent="FPS60"]
+margin_left = 92.0
 margin_top = 5.0
 margin_right = 180.0
 margin_bottom = 29.0
+size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="120FPS" type="HBoxContainer" parent="."]
+[node name="FPS120" type="HBoxContainer" parent="."]
 margin_top = 117.0
 margin_right = 180.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="120FPS"]
-margin_right = 152.0
+[node name="Label" type="Label" parent="FPS120"]
+margin_right = 92.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "120 FPS"
 valign = 1
 
-[node name="Check" type="CheckBox" parent="120FPS"]
-margin_left = 156.0
+[node name="Check" type="CheckBox" parent="FPS120"]
+margin_left = 96.0
 margin_top = 5.0
 margin_right = 180.0
 margin_bottom = 29.0
+size_flags_horizontal = 3
 size_flags_vertical = 4
+
+[node name="SaveFPS" type="Button" parent="."]
+margin_left = 108.0
+margin_top = 156.0
+margin_right = 180.0
+margin_bottom = 197.0
+size_flags_horizontal = 8
+custom_fonts/font = ExtResource( 1 )
+text = "Apply"
+[connection signal="gui_input" from="FPS30/Check" to="." method="_on_Check_30FPS_gui_input"]
+[connection signal="gui_input" from="FPS60/Check" to="." method="_on_Check_60FPS_gui_input"]
+[connection signal="gui_input" from="FPS120/Check" to="." method="_on_Check_120FPS_gui_input"]
+[connection signal="pressed" from="SaveFPS" to="." method="_on_SaveFPS_pressed"]

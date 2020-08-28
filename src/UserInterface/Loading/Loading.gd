@@ -7,7 +7,6 @@ var queue = preload("res://src/UserInterface/Loading/resource_queue.gd").new()
 	
 func _ready():
 	queue.start()
-	
 	queue.queue_resource(scene, true)
 	
 	
