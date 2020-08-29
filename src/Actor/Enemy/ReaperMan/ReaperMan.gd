@@ -33,10 +33,11 @@ func _physics_process(_delta):
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
 			col_sword_attack.scale.x = 1
+			$AreaAttack.position = Vector2(97.888, 0)
 		else: 
 			$AnimatedSprite.scale.x = -1
-			
 			col_sword_attack.scale.x = -1
+			$AreaAttack.position = Vector2(-97.888, 0)
 			
 
 	velocity = set_velocity(velocity)

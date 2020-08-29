@@ -115,16 +115,16 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 108.233, 240.378 )
+extents = Vector2( 160.833, 266.211 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 227.192, 233.857 )
+extents = Vector2( 98.1199, 233.857 )
 
 [node name="ReaperMan" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
-z_index = 2
+z_index = 1
 collision_layer = 2
-collision_mask = 2147483661
+collision_mask = 2147483660
 script = ExtResource( 94 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
@@ -162,11 +162,11 @@ frames = SubResource( 1 )
 animation = "idle"
 
 [node name="CollisionBody" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 22.0448 )
+position = Vector2( 0, 0.378128 )
 shape = SubResource( 2 )
 
 [node name="AreaAttack" type="Area2D" parent="."]
-position = Vector2( 0, 27.7482 )
+position = Vector2( 97.8882, 0 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack"]
@@ -176,7 +176,7 @@ shape = SubResource( 3 )
 [node name="SwordAttack" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordAttack"]
-polygon = PoolVector2Array( 122.089, 240, 394.593, 246.614, 407.821, 161.953, 399.884, 44.2204, 324.483, -92.0315, 156.711, -157.006 )
+polygon = PoolVector2Array( -0.763397, 248.143, 394.593, 246.614, 407.821, 161.953, 399.884, 44.2204, 324.483, -92.0315, 1.88527, -179.174 )
 disabled = true
 
 [node name="UpdateTween" type="Tween" parent="."]

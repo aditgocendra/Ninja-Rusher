@@ -4,7 +4,8 @@ class_name Player
 export var jump_power = 750.0 
 const FLOOR_DETECT_DISTANCE = 20.0
 
-var speed = 500.0
+var max_speed = 800.0
+var acceleration = 120
 var stomp_attack = false
 var dashing = false
 var glide = false
@@ -42,10 +43,12 @@ func _physics_process(_delta):
 		dashing = true
 	
 	if dashing == false:
-		speed = 500 if glide else 800
+		max_speed = 500 if glide else 800
+		acceleration = 80 if glide else 120
 	else :
 		if not is_dead: 
-			speed = 1500
+			max_speed = 1500
+			acceleration = 240
 	#-------------------------------------------------------------------------
 	
 	
@@ -55,7 +58,7 @@ func _physics_process(_delta):
 		
 	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var is_on_platform = platform.is_colliding()
-	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
+	#var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	
 	
 	# calculate movement-----------------------------------------------------
@@ -63,32 +66,28 @@ func _physics_process(_delta):
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	#------------------------------------------------------------------------
 	
+	#detect stomp enemy---------------------------------------------------------
+	var stomp_enemy 
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.collider
+		var is_stomping = (collider is Bandit
+			and is_on_floor() 
+			and collision.normal.dot(Vector2.UP) > 0.5)
+		stomp_enemy = is_stomping
+		
+		if stomp_enemy:
+			velocity.y = -500
+	#---------------------------------------------------------------------------
 	
 	#stomp attack enemy-------------------------------------------------------
 	if stomp_attack:
 		velocity.x = 500 * stomp_direct
 	#-------------------------------------------------------------------------
 	
-	
-	#detect stomp enemy---------------------------------------------------------
-	var stomp_enemy 
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.collider
-		var is_stomping = (collider is ReaperMan or collider is Bandit
-			and is_on_floor() 
-			and collision.normal.dot(Vector2.UP) > 0.5)
-		stomp_enemy = is_stomping
-	#---------------------------------------------------------------------------
-	
-	
 	# excecute movement player-----------------------------------------------
-	if stomp_enemy:
-		velocity.y = -500
-		velocity = move_and_slide(velocity, FLOOR_NORMAL, true)
-	else :
-		velocity = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL, 
-		is_on_platform, 4, 0.9, false)
+	velocity = move_and_slide(velocity, FLOOR_NORMAL, is_on_platform, 4, 0.9, true)
+	
 	# -----------------------------------------------------------------------
 	
 	
@@ -163,8 +162,8 @@ func calculate_direction():
 func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) -> Vector2:
 	
 	if $AttackTimer.is_stopped() == false :
-		new_velocity.x = 0.0
-	else:new_velocity.x = direction.x * speed 
+		new_velocity = new_velocity.move_toward(Vector2(0, new_velocity.y), acceleration) 
+	else:new_velocity = new_velocity.move_toward(Vector2(direction.x * max_speed, new_velocity.y), acceleration) 
 	
 	
 	if direction.y != 0.0:
@@ -175,6 +174,7 @@ func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) 
 		
 	if glide:
 		new_velocity.y *= 0.7
+		
 		
 	return new_velocity
 
@@ -213,7 +213,6 @@ func _die(_direction_stomp, damage):
 		velocity.y -= 500
 		stomp_attack = true
 		$StompTimer.start()
-		velocity = move_and_slide(velocity)
 	
 	max_health -= damage
 	self.health_bar.value = max_health
@@ -247,4 +246,3 @@ func _on_AreaAttack_body_entered(body):
 
 func _on_StompTimer_timeout():
 	stomp_attack = false
-
