@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://asset/player/png/Idle__006.png" type="Texture" id=1]
 [ext_resource path="res://asset/player/png/Idle__005.png" type="Texture" id=2]
@@ -105,6 +105,7 @@
 [ext_resource path="res://src/Actor/Player/HealthBar.tscn" type="PackedScene" id=103]
 [ext_resource path="res://src/UserInterface/GameOver/GameOver.tscn" type="PackedScene" id=104]
 [ext_resource path="res://src/UserInterface/Pause/Pause.tscn" type="PackedScene" id=105]
+[ext_resource path="res://asset/sound_effect/throw.wav" type="AudioStream" id=106]
 [ext_resource path="res://asset/control/Direction.png" type="Texture" id=107]
 [ext_resource path="res://asset/control/BasicAttack.png" type="Texture" id=108]
 [ext_resource path="res://asset/control/Slide.png" type="Texture" id=109]
@@ -204,6 +205,9 @@ scale = Vector2( 0.2, 0.2 )
 z_index = 1
 collision_mask = 68
 script = ExtResource( 41 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 40.1877 ]
+}
 
 [node name="PlatformerDetector" type="RayCast2D" parent="."]
 position = Vector2( 0, 203.784 )
@@ -281,7 +285,7 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="Jump" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 747.383, 249.549 )
+position = Vector2( 764.051, 249.549 )
 normal = ExtResource( 111 )
 pressed = ExtResource( 116 )
 shape = SubResource( 5 )
@@ -290,7 +294,7 @@ action = "jump"
 visibility_mode = 1
 
 [node name="Throw" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 604.068, 318.945 )
+position = Vector2( 620.736, 318.945 )
 normal = ExtResource( 112 )
 pressed = ExtResource( 115 )
 shape = SubResource( 6 )
@@ -299,7 +303,7 @@ action = "throw"
 visibility_mode = 1
 
 [node name="Glide" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 668.867, 274.821 )
+position = Vector2( 685.535, 274.821 )
 normal = ExtResource( 110 )
 pressed = ExtResource( 117 )
 shape = SubResource( 7 )
@@ -308,7 +312,7 @@ action = "glide"
 visibility_mode = 1
 
 [node name="Slide" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 607.971, 391.961 )
+position = Vector2( 624.639, 391.961 )
 normal = ExtResource( 109 )
 pressed = ExtResource( 119 )
 shape = SubResource( 8 )
@@ -316,7 +320,7 @@ action = "slide"
 visibility_mode = 1
 
 [node name="Dash" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 531.603, 392.852 )
+position = Vector2( 548.271, 392.852 )
 normal = ExtResource( 113 )
 pressed = ExtResource( 118 )
 shape = SubResource( 9 )
@@ -324,13 +328,18 @@ action = "dash"
 visibility_mode = 1
 
 [node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 691.787, 335.531 )
+position = Vector2( 708.455, 335.531 )
 normal = ExtResource( 108 )
 pressed = ExtResource( 114 )
 shape = SubResource( 10 )
 passby_press = true
 action = "attack"
 visibility_mode = 1
+
+[node name="ThrowEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 106 )
+
+[node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]

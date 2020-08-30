@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ninja Rusher"
-run/main_scene="res://src/UserInterface/FirstMenu/FirstMenu.tscn"
+run/main_scene="res://src/Intro/Intro.tscn"
 boot_splash/image="res://asset/logo/Ark-circle.png"
 boot_splash/fullsize=false
 config/icon="res://asset/logo/Logo Game.png"
@@ -59,7 +59,6 @@ Autoload="*res://Autoload/Autoload.gd"
 window/size/width=840
 window/size/height=480
 window/size/always_on_top=true
-window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
@@ -127,11 +126,11 @@ pointing/emulate_touch_from_mouse=true
 
 [memory]
 
-limits/message_queue/max_size_kb=2048
+limits/message_queue/max_size_kb=20480
 
 [rendering]
 
-quality/intended_usage/framebuffer_allocation=0
-quality/intended_usage/framebuffer_allocation.mobile=1
+quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

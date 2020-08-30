@@ -39,6 +39,7 @@ func save_new_fps():
 	data["game_settings"]["fps"] = new_sett
 	
 	Autoload.save_data(data)
+	Autoload.set_target_fps(data)
 	
 
 func get_target_fps():
@@ -55,6 +56,7 @@ func get_target_fps():
 
 func _on_SaveFPS_pressed():
 	save_new_fps()
+	
 
 
 func _on_Check_30FPS_gui_input(event):

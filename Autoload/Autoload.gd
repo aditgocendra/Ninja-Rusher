@@ -44,4 +44,9 @@ func save_data(new_data):
 
 func set_target_fps(data_game):
 	var targetFPS = data_game["game_settings"]["fps"]["target_fps"]
+	
+	if targetFPS > 60:
+		OS.vsync_enabled = false 
+	else : OS.vsync_enabled = true
+	
 	Engine.target_fps = targetFPS
