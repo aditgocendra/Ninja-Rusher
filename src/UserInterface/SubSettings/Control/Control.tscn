@@ -1,6 +1,51 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/UserInterface/SubSettings/Control/ControlSetting.gd" type="Script" id=1]
+[ext_resource path="res://asset/control/Slide-Active.png" type="Texture" id=2]
+[ext_resource path="res://asset/control/BasicAttack-Active.png" type="Texture" id=3]
+[ext_resource path="res://asset/control/Dash.png" type="Texture" id=4]
+[ext_resource path="res://asset/control/Dash-Active.png" type="Texture" id=5]
+[ext_resource path="res://asset/control/Glide.png" type="Texture" id=6]
+[ext_resource path="res://asset/control/Jump.png" type="Texture" id=7]
+[ext_resource path="res://asset/control/Slide.png" type="Texture" id=8]
+[ext_resource path="res://asset/control/Glide-Active.png" type="Texture" id=9]
+[ext_resource path="res://asset/control/Throw-Active.png" type="Texture" id=10]
+[ext_resource path="res://asset/control/Jump-Active.png" type="Texture" id=11]
+[ext_resource path="res://asset/control/BasicAttack.png" type="Texture" id=12]
+[ext_resource path="res://asset/control/Throw.png" type="Texture" id=13]
+[ext_resource path="res://asset/control/Direction.png" type="Texture" id=14]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Left.gd" type="Script" id=15]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Jump.gd" type="Script" id=16]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Dash.gd" type="Script" id=17]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Glide.gd" type="Script" id=18]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Slide.gd" type="Script" id=19]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/BasicAttack.gd" type="Script" id=20]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Throw.gd" type="Script" id=21]
+[ext_resource path="res://src/UserInterface/SubSettings/Control/Right.gd" type="Script" id=22]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 64.0
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -79,6 +124,9 @@ margin_right = 240.0
 margin_bottom = 21.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
 
 [node name="HboxScale" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_top = 62.0
@@ -100,6 +148,9 @@ margin_right = 240.0
 margin_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 2.0
+step = 0.0
+value = 1.0
 
 [node name="HboxButton" type="HBoxContainer" parent="Panel"]
 anchor_left = 0.5
@@ -140,4 +191,97 @@ rect_min_size = Vector2( 60, 30 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "Save"
+
+[node name="ControlUI" type="CanvasLayer" parent="."]
+
+[node name="Right" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 107.799, 373.11 )
+normal = ExtResource( 14 )
+shape = SubResource( 1 )
+action = "move_right"
+visibility_mode = 1
+script = ExtResource( 22 )
+
+[node name="Left" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 96.7863, 439.781 )
+rotation = 3.14159
+normal = ExtResource( 14 )
+shape = SubResource( 2 )
+action = "move_left"
+visibility_mode = 1
+script = ExtResource( 15 )
+
+[node name="Jump" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 764.051, 249.549 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 11 )
+shape = SubResource( 3 )
+action = "jump"
+visibility_mode = 1
+script = ExtResource( 16 )
+
+[node name="Throw" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 620.736, 318.945 )
+normal = ExtResource( 13 )
+pressed = ExtResource( 10 )
+shape = SubResource( 4 )
+action = "throw"
+visibility_mode = 1
+script = ExtResource( 21 )
+
+[node name="Glide" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 685.535, 274.821 )
+normal = ExtResource( 6 )
+pressed = ExtResource( 9 )
+shape = SubResource( 5 )
+action = "glide"
+visibility_mode = 1
+script = ExtResource( 18 )
+
+[node name="Slide" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 624.639, 391.961 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 2 )
+shape = SubResource( 6 )
+action = "slide"
+visibility_mode = 1
+script = ExtResource( 19 )
+
+[node name="Dash" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 548.271, 392.852 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
+shape = SubResource( 7 )
+action = "dash"
+visibility_mode = 1
+script = ExtResource( 17 )
+
+[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 705.458, 335.531 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 3 )
+shape = SubResource( 8 )
+action = "attack"
+visibility_mode = 1
+script = ExtResource( 20 )
+[connection signal="value_changed" from="Panel/VBoxContainer/HboxTransparency/HSlider" to="." method="_on_Transparency_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/HboxScale/HSlider" to="." method="_on_Scale_value_changed"]
 [connection signal="pressed" from="Panel/HboxButton/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="gui_input" from="Panel/HboxButton/Reset" to="." method="_on_Reset_gui_input"]
+[connection signal="gui_input" from="Panel/HboxButton/Save" to="." method="_on_Save_gui_input"]
+[connection signal="pressed" from="ControlUI/Right" to="ControlUI/Right" method="_on_Right_pressed"]
+[connection signal="released" from="ControlUI/Right" to="ControlUI/Right" method="_on_Right_released"]
+[connection signal="pressed" from="ControlUI/Left" to="ControlUI/Left" method="_on_Left_pressed"]
+[connection signal="released" from="ControlUI/Left" to="ControlUI/Left" method="_on_Left_released"]
+[connection signal="pressed" from="ControlUI/Jump" to="ControlUI/Jump" method="_on_Jump_pressed"]
+[connection signal="released" from="ControlUI/Jump" to="ControlUI/Jump" method="_on_Jump_released"]
+[connection signal="pressed" from="ControlUI/Throw" to="ControlUI/Throw" method="_on_Throw_pressed"]
+[connection signal="released" from="ControlUI/Throw" to="ControlUI/Throw" method="_on_Throw_released"]
+[connection signal="pressed" from="ControlUI/Glide" to="ControlUI/Glide" method="_on_Glide_pressed"]
+[connection signal="released" from="ControlUI/Glide" to="ControlUI/Glide" method="_on_Glide_released"]
+[connection signal="pressed" from="ControlUI/Slide" to="ControlUI/Slide" method="_on_Slide_pressed"]
+[connection signal="released" from="ControlUI/Slide" to="ControlUI/Slide" method="_on_Slide_released"]
+[connection signal="pressed" from="ControlUI/Dash" to="ControlUI/Dash" method="_on_Dash_pressed"]
+[connection signal="released" from="ControlUI/Dash" to="ControlUI/Dash" method="_on_Dash_released"]
+[connection signal="pressed" from="ControlUI/BasicAttack" to="ControlUI/BasicAttack" method="_on_BasicAttack_pressed"]
+[connection signal="released" from="ControlUI/BasicAttack" to="ControlUI/BasicAttack" method="_on_BasicAttack_released"]
