@@ -45,9 +45,9 @@
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_017.png" type="Texture" id=43]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_007.png" type="Texture" id=44]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_008.png" type="Texture" id=45]
-[ext_resource path="res://asset/healthbar/health_bar_enemy_1.png" type="Texture" id=46]
+[ext_resource path="res://asset/bar/health_bar_enemy_1.png" type="Texture" id=46]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_010.png" type="Texture" id=47]
-[ext_resource path="res://asset/healthbar/health_bar_enemy_2.png" type="Texture" id=48]
+[ext_resource path="res://asset/bar/heatl_bar_enemy_3.png" type="Texture" id=48]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_012.png" type="Texture" id=49]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_018.png" type="Texture" id=50]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_020.png" type="Texture" id=51]
@@ -69,7 +69,7 @@
 [ext_resource path="res://asset/enemy/ReaperMan/Dying/0_Reaper_Man_Dying_012.png" type="Texture" id=67]
 [ext_resource path="res://asset/enemy/ReaperMan/Dying/0_Reaper_Man_Dying_013.png" type="Texture" id=68]
 [ext_resource path="res://asset/enemy/ReaperMan/Dying/0_Reaper_Man_Dying_014.png" type="Texture" id=69]
-[ext_resource path="res://asset/healthbar/heatl_bar_enemy_3.png" type="Texture" id=70]
+[ext_resource path="res://asset/bar/health_bar_enemy_2.png" type="Texture" id=70]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_019.png" type="Texture" id=71]
 [ext_resource path="res://asset/enemy/ReaperMan/Walking/0_Reaper_Man_Walking_011.png" type="Texture" id=72]
 [ext_resource path="res://asset/enemy/ReaperMan/Throwing/0_Reaper_Man_Throwing_000.png" type="Texture" id=74]
@@ -98,11 +98,6 @@ animations = [ {
 "name": "throw",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 47 ), ExtResource( 72 ), ExtResource( 49 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 50 ), ExtResource( 71 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "dead",
@@ -112,6 +107,11 @@ animations = [ {
 "loop": true,
 "name": "attack",
 "speed": 25.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 47 ), ExtResource( 72 ), ExtResource( 49 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 50 ), ExtResource( 71 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "walk",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -137,8 +137,8 @@ rect_scale = Vector2( 2, 2 )
 max_value = 200.0
 value = 200.0
 texture_under = ExtResource( 46 )
-texture_over = ExtResource( 48 )
-texture_progress = ExtResource( 70 )
+texture_over = ExtResource( 70 )
+texture_progress = ExtResource( 48 )
 tint_over = Color( 1, 1, 1, 0 )
 tint_progress = Color( 0.713726, 0.0509804, 0.0509804, 1 )
 __meta__ = {

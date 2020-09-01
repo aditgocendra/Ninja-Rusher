@@ -17,8 +17,8 @@ onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
 onready var col_body = $CollisionShape2D
 onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
-onready var health_bar = $UserInterface/HealthBar/HBoxContainer/HeatlhBG/TextureProgress
-
+onready var health_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/HeatlhBG/TextureProgress
+onready var mana_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/ManaBG/TextureProgress
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("pause"):
@@ -122,9 +122,12 @@ func _physics_process(_delta):
 	# throw player--------------------------------------------------
 	var throw = false
 	if Input.is_action_just_pressed("throw") and not is_dead and slide == false and not glide:
-		throw = spawn_kunai.throw($AnimatedPlayer.scale.x)
-		if throw:
-			$ThrowEffect.play()
+		if mana_bar.value != 0 :
+			throw = spawn_kunai.throw($AnimatedPlayer.scale.x)
+			if throw:
+				$ThrowEffect.play()
+				mana_bar.value -= 10
+		
 	#---------------------------------------------------------------
 	
 	
