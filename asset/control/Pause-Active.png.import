@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Direction-Active.png-25e9002877a09f4affc28dcab062734c.stex"
+path="res://.import/Pause-Active.png-27e719a59532f34477dd109eb54d22e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/control/Direction-Active.png"
-dest_files=[ "res://.import/Direction-Active.png-25e9002877a09f4affc28dcab062734c.stex" ]
+source_file="res://asset/control/Pause-Active.png"
+dest_files=[ "res://.import/Pause-Active.png-27e719a59532f34477dd109eb54d22e8.stex" ]
 
 [params]
 

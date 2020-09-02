@@ -11,6 +11,7 @@ onready var dash = $ControlUI/Dash
 onready var jump = $ControlUI/Jump
 onready var left = $ControlUI/Left
 onready var right = $ControlUI/Right
+onready var pause = $ControlUI/Pause
 
 #label position
 onready var label_x = $Panel/VBoxContainer/HBoxPosition/X
@@ -39,6 +40,7 @@ func set_pos_btn(data_game):
 	var pos_jump = control_sett["jump"]["position"]
 	var pos_left = control_sett["left"]["position"]
 	var pos_right = control_sett["right"]["position"]
+	var pos_pause = control_sett["pause"]["position"]
 	var pos_basic_attack = control_sett["basic_attack"]["position"]
 	
 	throw.position = Vector2(pos_throw["x"],pos_throw["y"])
@@ -48,6 +50,7 @@ func set_pos_btn(data_game):
 	jump.position = Vector2(pos_jump["x"],pos_jump["y"])
 	left.position = Vector2(pos_left["x"],pos_left["y"])
 	right.position = Vector2(pos_right["x"],pos_right["y"])
+	pause.position = Vector2(pos_pause["x"],pos_pause["y"])
 	basic_attack.position = Vector2(pos_basic_attack["x"],pos_basic_attack["y"])
 
 
@@ -61,6 +64,7 @@ func set_scale_btn(data_game):
 	var scale_jump = control_sett["jump"]["scale"]
 	var scale_left = control_sett["left"]["scale"]
 	var scale_right = control_sett["right"]["scale"]
+	var scale_pause = control_sett["pause"]["scale"]
 	var scale_basic_attack = control_sett["basic_attack"]["scale"]
 	
 	throw.scale = Vector2(scale_throw["x"],scale_throw["y"])
@@ -70,6 +74,7 @@ func set_scale_btn(data_game):
 	jump.scale = Vector2(scale_jump["x"],scale_jump["y"])
 	left.scale = Vector2(scale_left["x"],scale_left["y"])
 	right.scale = Vector2(scale_right["x"],scale_right["y"])
+	pause.scale = Vector2(scale_pause["x"],scale_pause["y"])
 	basic_attack.scale = Vector2(scale_basic_attack["x"],scale_basic_attack["y"])
 
 
@@ -83,6 +88,7 @@ func set_transparency_btn(data_game):
 	var modulate_jump = control_sett["jump"]["modulate"]
 	var modulate_left = control_sett["left"]["modulate"]
 	var modulate_right = control_sett["right"]["modulate"]
+	var modulate_pause = control_sett["pause"]["modulate"]
 	var modulate_basic_attack = control_sett["basic_attack"]["modulate"]
 	
 	throw.modulate = Color(modulate_throw["r"], modulate_throw["g"], modulate_throw["b"], modulate_throw["a"])
@@ -92,6 +98,7 @@ func set_transparency_btn(data_game):
 	jump.modulate = Color(modulate_jump["r"], modulate_jump["g"], modulate_jump["b"], modulate_jump["a"])
 	left.modulate = Color(modulate_left["r"], modulate_left["g"], modulate_left["b"], modulate_left["a"])
 	right.modulate = Color(modulate_right["r"], modulate_right["g"], modulate_right["b"], modulate_right["a"])
+	pause.modulate = Color(modulate_pause["r"], modulate_pause["g"], modulate_pause["b"], modulate_pause["a"])
 	basic_attack.modulate = Color(modulate_basic_attack["r"], modulate_basic_attack["g"], modulate_basic_attack["b"], modulate_basic_attack["a"])
 
 
@@ -224,6 +231,22 @@ func setNewControl() -> void :
 		  scale={
 			x=left.scale.x,
 			y=left.scale.y
+		  }
+		},
+		pause= {
+		  modulate= {
+			a= pause.modulate.a,
+			b= pause.modulate.b,
+			g= pause.modulate.g,
+			r= pause.modulate.r
+		  },
+		  position= {
+			x= pause.position.x,
+			y= pause.position.y
+		  },
+		  scale={
+			x=pause.scale.x,
+			y=pause.scale.y
 		  }
 		}
 	}

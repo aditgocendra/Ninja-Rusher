@@ -1,1 +1,154 @@
-{"game_settings":{"control":{"basic_attack":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":700.455,"y":335.531},"scale":{"x":1,"y":1}},"dash":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":548.271,"y":392.852},"scale":{"x":1,"y":1}},"glide":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":685.535,"y":274.821},"scale":{"x":1,"y":1}},"jump":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":764.051,"y":249.549},"scale":{"x":1,"y":1}},"left":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":96.786,"y":439.781},"scale":{"x":1,"y":1}},"right":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":107.799,"y":373.11},"scale":{"x":1,"y":1}},"slide":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":624.639,"y":391.961},"scale":{"x":1,"y":1}},"throw":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":620.736,"y":318.945},"scale":{"x":1,"y":1}}},"fps":{"show_fps":true,"target_fps":60}}}
+{
+  "game_settings": {
+    "control": {
+      "basic_attack": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 700.455,
+          "y": 335.531
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "dash": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 548.271,
+          "y": 392.852
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "glide": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 685.535,
+          "y": 274.821
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "jump": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 764.051,
+          "y": 249.549
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "left": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 33.218,
+          "y": 373.034
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "pause": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 801.474,
+          "y": 5.776
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "right": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 107.799,
+          "y": 373.11
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "slide": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 624.639,
+          "y": 391.961
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "throw": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 620.736,
+          "y": 318.945
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    },
+    "fps": {
+      "show_fps": true,
+      "target_fps": 60
+    }
+  }
+}
