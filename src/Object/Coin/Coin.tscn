@@ -68,6 +68,7 @@ scale = Vector2( 28.24, 28.24 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
 anims/_start = SubResource( 2 )
 anims/get_coin = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]

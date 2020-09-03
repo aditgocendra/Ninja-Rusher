@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=139 format=2]
 
 [ext_resource path="res://asset/player/png/Idle__006.png" type="Texture" id=1]
 [ext_resource path="res://asset/player/png/Idle__005.png" type="Texture" id=2]
@@ -124,12 +124,15 @@
 [ext_resource path="res://asset/control/Left.png" type="Texture" id=122]
 [ext_resource path="res://asset/control/Pause.png" type="Texture" id=123]
 [ext_resource path="res://asset/control/Pause-Active.png" type="Texture" id=124]
+[ext_resource path="res://asset/coins/Coin-resize1.png" type="Texture" id=125]
+[ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=126]
+[ext_resource path="res://src/Actor/Player/Score.gd" type="Script" id=127]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
+"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "Slide",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
@@ -137,9 +140,9 @@ animations = [ {
 "name": "Glide",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
-"loop": true,
-"name": "Slide",
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "Jump",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
@@ -275,6 +278,33 @@ visible = false
 [node name="Pause" parent="UserInterface" instance=ExtResource( 105 )]
 visible = false
 
+[node name="Score" type="HBoxContainer" parent="UserInterface"]
+margin_left = 207.701
+margin_top = 8.57479
+margin_right = 302.701
+margin_bottom = 53.5748
+script = ExtResource( 127 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="UserInterface/Score"]
+margin_right = 45.0
+margin_bottom = 45.0
+texture = ExtResource( 125 )
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/Score"]
+margin_left = 49.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 126 )
+custom_colors/font_color = Color( 0.196078, 0.0235294, 0.211765, 1 )
+text = "X 0"
+
+[node name="ThrowEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 106 )
+
 [node name="ControlUI" type="CanvasLayer" parent="."]
 
 [node name="Right" type="TouchScreenButton" parent="ControlUI"]
@@ -286,7 +316,7 @@ action = "move_right"
 visibility_mode = 1
 
 [node name="Left" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 29.9235, 373.039 )
+position = Vector2( 33.2185, 373.034 )
 normal = ExtResource( 122 )
 pressed = ExtResource( 107 )
 shape = SubResource( 4 )
@@ -316,7 +346,6 @@ position = Vector2( 685.535, 274.821 )
 normal = ExtResource( 110 )
 pressed = ExtResource( 117 )
 shape = SubResource( 7 )
-passby_press = true
 action = "glide"
 visibility_mode = 1
 
@@ -337,7 +366,7 @@ action = "dash"
 visibility_mode = 1
 
 [node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 708.455, 335.531 )
+position = Vector2( 705.458, 335.531 )
 normal = ExtResource( 108 )
 pressed = ExtResource( 114 )
 shape = SubResource( 10 )
@@ -346,17 +375,13 @@ action = "attack"
 visibility_mode = 1
 
 [node name="Pause" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 801.474, 5.776 )
+position = Vector2( 801.474, 5.77612 )
 normal = ExtResource( 123 )
 pressed = ExtResource( 124 )
 shape = SubResource( 11 )
 passby_press = true
 action = "pause"
-
-[node name="ThrowEffect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 106 )
-
-[node name="JumpEffect" type="AudioStreamPlayer2D" parent="."]
+visibility_mode = 1
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]

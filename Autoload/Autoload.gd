@@ -1,5 +1,6 @@
 extends Node
 
+signal update_score
 
 var _file
 var db_path = "res://Autoload/database.json"
@@ -160,6 +161,9 @@ var default_data = {
 	}
 }
 
+var coin_score : int setget _update_coin
+
+
 func _ready():
 	var data_game = load_data()
 	set_target_fps(data_game)
@@ -197,3 +201,7 @@ func set_target_fps(data_game):
 	else : OS.vsync_enabled = true
 	
 	Engine.target_fps = targetFPS
+
+func _update_coin(_score):
+	coin_score = _score
+	emit_signal("update_score")

@@ -12,6 +12,8 @@ var glide = false
 var stomp_direct = 0
 
 var max_health = 100
+var max_mana = 100
+
 
 onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
 onready var col_body = $CollisionShape2D
@@ -19,6 +21,7 @@ onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
 onready var health_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/HeatlhBG/TextureProgress
 onready var mana_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/ManaBG/TextureProgress
+
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("pause"):
@@ -33,7 +36,6 @@ func _physics_process(_delta):
 	# is player dead -------------------------------------------------
 	var is_dead = false
 	if max_health <= 0:
-		
 		is_dead = true
 	# ----------------------------------------------------------------
 	
@@ -89,7 +91,6 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, FLOOR_NORMAL, is_on_platform, 4, 0.9, true)
 	# -----------------------------------------------------------------------
 	
-	_play_sound()
 	
 	#Show game over scene-------------
 	showGameOver(is_dead)
@@ -107,7 +108,6 @@ func _physics_process(_delta):
 	var is_attack = false
 	if Input.is_action_just_pressed("attack") and not glide and not is_dead:
 		is_attack = true
-		
 	#----------------------------------------------------------------
 	
 	
@@ -126,7 +126,8 @@ func _physics_process(_delta):
 			throw = spawn_kunai.throw($AnimatedPlayer.scale.x)
 			if throw:
 				$ThrowEffect.play()
-				mana_bar.value -= 10
+				max_mana -= 10
+				mana_bar.value = max_mana
 		
 	#---------------------------------------------------------------
 	
@@ -141,7 +142,6 @@ func _physics_process(_delta):
 	
 	
 	#Scale body glide or not-----------------------------------------
-#	col_body.scale = Vector2(1, 0.7) if slide else Vector2(1,1)
 	if slide:
 		$AnimatedPlayer.position = Vector2(0, 68.751)
 	else : $AnimatedPlayer.position = Vector2(0, 0)
@@ -168,15 +168,10 @@ func calculate_direction():
 	
 # calculate movement player
 func calculate_velocity(new_velocity : Vector2, direction, is_jump_interrupted) -> Vector2:
-	
 	if $AttackTimer.is_stopped() == false :
 		new_velocity = new_velocity.move_toward(Vector2(0, new_velocity.y), acceleration) 
 	else:new_velocity = new_velocity.move_toward(Vector2(direction.x * max_speed, new_velocity.y), acceleration) 
-	
-#	if $AttackTimer.is_stopped() == false :
-#		new_velocity.x = 0
-#	else : new_velocity.x = direction.x * max_speed
-	
+
 	if direction.y != 0.0:
 		new_velocity.y = jump_power * direction.y
 		
@@ -227,8 +222,7 @@ func _die(_direction_stomp, damage):
 	
 	max_health -= damage
 	self.health_bar.value = max_health
-		
-
+	
 
 #Show Game Over Scene
 func showGameOver(is_dead):
@@ -260,6 +254,3 @@ func _on_StompTimer_timeout():
 
 
 
-func _play_sound():
-	if Input.is_action_just_pressed("jump"):
-		$JumpEffect.play()
