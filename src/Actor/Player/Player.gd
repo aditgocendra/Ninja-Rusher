@@ -11,8 +11,8 @@ var dashing = false
 var glide = false
 var stomp_direct = 0
 
-var max_health = 100
-var max_mana = 100
+var _health = Autoload.max_health
+var _mana = Autoload.max_mana
 
 
 onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
@@ -21,6 +21,13 @@ onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
 onready var health_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/HeatlhBG/TextureProgress
 onready var mana_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/ManaBG/TextureProgress
+
+
+func _ready():
+# warning-ignore:return_value_discarded
+	Autoload.connect("health_pick", self , "health_update")
+# warning-ignore:return_value_discarded
+	Autoload.connect("mana_pick", self, "mana_update")
 
 
 func _physics_process(_delta):
@@ -35,7 +42,7 @@ func _physics_process(_delta):
 	
 	# is player dead -------------------------------------------------
 	var is_dead = false
-	if max_health <= 0:
+	if _health <= 0:
 		is_dead = true
 	# ----------------------------------------------------------------
 	
@@ -126,8 +133,8 @@ func _physics_process(_delta):
 			throw = spawn_kunai.throw($AnimatedPlayer.scale.x)
 			if throw:
 				$ThrowEffect.play()
-				max_mana -= 10
-				mana_bar.value = max_mana
+				Autoload.max_mana -= 10 
+				self.mana_bar.value = Autoload.max_mana
 		
 	#---------------------------------------------------------------
 	
@@ -220,8 +227,8 @@ func _die(_direction_stomp, damage):
 		stomp_attack = true
 		$StompTimer.start()
 	
-	max_health -= damage
-	self.health_bar.value = max_health
+	Autoload.max_health -= damage
+	self.health_bar.value = Autoload.max_health
 	
 
 #Show Game Over Scene
@@ -252,5 +259,15 @@ func _on_AreaAttack_body_entered(body):
 func _on_StompTimer_timeout():
 	stomp_attack = false
 
+
+func health_update():
+	_health = Autoload.max_health
+	self.health_bar.value = _health
+
+
+func mana_update():
+# warning-ignore:standalone_expression
+	_mana = Autoload.max_mana
+	self.mana_bar.value = _mana
 
 

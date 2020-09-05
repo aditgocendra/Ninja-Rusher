@@ -150,11 +150,6 @@ animations = [ {
 "name": "Throw",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
-"loop": true,
-"name": "JumpThrow",
-"speed": 18.0
-}, {
 "frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
 "loop": false,
 "name": "Dead",
@@ -179,6 +174,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 102 ), ExtResource( 101 ), ExtResource( 99 ), ExtResource( 96 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 98 ), ExtResource( 100 ), ExtResource( 93 ), ExtResource( 97 ) ],
+"loop": true,
+"name": "JumpThrow",
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

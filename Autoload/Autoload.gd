@@ -1,6 +1,8 @@
 extends Node
 
 signal update_score
+signal health_pick
+signal mana_pick
 
 var _file
 var db_path = "res://Autoload/database.json"
@@ -162,7 +164,8 @@ var default_data = {
 }
 
 var coin_score : int setget _update_coin
-
+var max_health : int = 100 setget _update_health
+var max_mana : int = 100 setget _update_mana
 
 func _ready():
 	var data_game = load_data()
@@ -202,6 +205,16 @@ func set_target_fps(data_game):
 	
 	Engine.target_fps = targetFPS
 
+
 func _update_coin(_score):
 	coin_score = _score
 	emit_signal("update_score")
+
+
+func _update_health(_health):
+	max_health = _health
+	emit_signal("health_pick")
+
+func _update_mana(_mana):
+	max_mana = _mana
+	emit_signal("mana_pick")
