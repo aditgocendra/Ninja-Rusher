@@ -6,4 +6,6 @@ func _on_ManaPotion_body_entered(body):
 	if body is Player:
 		if Autoload.max_mana < 100:
 			Autoload.max_mana += 10
+			if Autoload.max_mana > 100:
+				Autoload.max_mana = 100
 			queue_free()
