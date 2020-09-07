@@ -6,7 +6,7 @@ var velocity = Vector2.ZERO
 var gravity = 1000.0
 var FLOOR_NORMAL = Vector2.UP
 
-var speed = 300
+var speed = 350
 var speed_up = false
 
 var health = 100
@@ -15,7 +15,7 @@ var damage_player = 20
 var direct_player_attack = 0
 
 var _state = State.WALK 
-enum State {IDLE, ATTACK, WALK, DEAD}
+enum State {IDLE, ATTACK, WALK, DEAD, HURT}
 
 
 onready var floor_left = $FloorLeftDetect
@@ -27,7 +27,7 @@ onready var update_tween = $UpdateTween
 
 func _ready():
 	enemy_walk()
-	
+
 
 func _physics_process(_delta):
 #	if direct_player_attack != 0:
@@ -64,9 +64,11 @@ func _physics_process(_delta):
 		yield($AnimatedSprite, "animation_finished")
 		queue_free()
 		
-	
-	
-
+	if _state == State.HURT:
+		yield($AnimatedSprite, "animation_finished")
+		enemy_walk()
+		
+		
 func set_velocity(linear_velocity):
 	var new_velocity = linear_velocity
 	
@@ -82,6 +84,7 @@ func set_velocity(linear_velocity):
 	
 	return new_velocity
 
+
 func set_anim():
 	var new_anim
 	if _state == State.WALK:
@@ -90,10 +93,11 @@ func set_anim():
 		new_anim = "attack"
 	elif _state == State.DEAD:
 		new_anim = "dead"
-#	elif _state == State.IDLE:
-#		new_anim = "idle"
+	elif _state == State.HURT:
+		new_anim = "hurt"
 	
 	return new_anim
+
 
 func enemy_walk():
 	if _state != State.DEAD:
@@ -110,14 +114,19 @@ func enemy_attack():
 	
 
 func enemy_dead():
-	
 	if health != 0:
-		health -= 25
-		$HealthBar.value = health
-	
+		enemy_hurt()
+		
 	if health == 0:
 		_state = State.DEAD
-		velocity.x = 0
+	velocity.x = 0
+
+
+func enemy_hurt():
+	_state = State.HURT
+	health -= 25
+	$HealthBar.value = health
+
 
 func _on_AreaAttack_body_entered(body):
 	if body.name == "Player":
@@ -133,8 +142,7 @@ func _on_SwordAttack_body_entered(body):
 	if body.name == "Player":
 		body._die($AnimatedSprite.scale.x, damage_player)
 		enemy_walk()
-		
-		
+
 
 func _on_HealthBar_value_changed(_value):
 	if $HealthBar.visible == false:

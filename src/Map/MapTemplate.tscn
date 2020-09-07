@@ -564,6 +564,9 @@ position = Vector2( 389.548, 660.6 )
 [node name="Bandit" parent="Enemy" instance=ExtResource( 23 )]
 position = Vector2( 1276.71, 646.608 )
 
+[node name="Bandit2" parent="Enemy" instance=ExtResource( 23 )]
+position = Vector2( 3136.77, 646.608 )
+
 [node name="ReaperMan" parent="Enemy" instance=ExtResource( 35 )]
 position = Vector2( 1962.95, -23.7516 )
 

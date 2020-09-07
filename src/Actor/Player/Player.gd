@@ -236,6 +236,8 @@ func showGameOver(is_dead):
 	if is_dead == true and $AnimatedPlayer.animation == "Dead" and velocity.y > 0:
 		yield($AnimatedPlayer,"animation_finished")
 		$UserInterface/GameOver.show()
+		Autoload.max_health = 100
+		Autoload.max_mana = 100
 		get_tree().paused = true
 
 
