@@ -1,0 +1,4 @@
+#Wed Sep 09 19:43:01 WIB 2020
+base.0=/home/gocendra/GameProject/Ninja-Rusher/android/build/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

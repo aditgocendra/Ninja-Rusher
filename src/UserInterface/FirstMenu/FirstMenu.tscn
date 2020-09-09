@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://asset/UI/FirstMenu/background.png" type="Texture" id=1]
 [ext_resource path="res://asset/UI/FirstMenu/logo_ninja_rusher.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://asset/UI/button/score_btn.png" type="Texture" id=14]
 [ext_resource path="res://asset/UI/button/share_pressed.png" type="Texture" id=15]
 [ext_resource path="res://asset/UI/FirstMenu/player.png" type="Texture" id=16]
+[ext_resource path="res://src/Ads/AdsenseMobile.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "_start"
@@ -171,7 +172,10 @@ texture_pressed = ExtResource( 15 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "_start"
 anims/_start = SubResource( 1 )
+
+[node name="AdsenseMobile" parent="." instance=ExtResource( 17 )]
 [connection signal="pressed" from="Background/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="gui_input" from="Background/HBoxContainer/HighScore" to="." method="_on_HighScore_gui_input"]
 [connection signal="pressed" from="Background/HBoxContainer/Share" to="." method="_on_Share_pressed"]

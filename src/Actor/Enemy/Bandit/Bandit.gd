@@ -22,6 +22,7 @@ onready var floor_left = $FloorLeftDetect
 onready var floor_right = $FloorRightDetect
 onready var area_attack = $AreaAttack
 onready var col_sword_attack = $SwordAttack/CollisionPolygon2D
+onready var col_area_attack = $AreaAttack/CollisionShape2D
 onready var update_tween = $UpdateTween
 
 
@@ -30,11 +31,6 @@ func _ready():
 
 
 func _physics_process(_delta):
-#	if direct_player_attack != 0:
-#		if direct_player_attack == -1: 
-#			$AnimatedSprite.scale.x = 1
-#		else: 
-#			$AnimatedSprite.scale.x = 1
 	if velocity.x != 0:
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
@@ -44,8 +40,6 @@ func _physics_process(_delta):
 			$AnimatedSprite.scale.x = -1
 			col_sword_attack.scale.x = -1
 			area_attack.position = Vector2(-100,0)
-	
-	
 	
 	velocity = set_velocity(velocity)
 	velocity.y = move_and_slide(velocity, FLOOR_NORMAL).y
@@ -65,8 +59,11 @@ func _physics_process(_delta):
 		queue_free()
 		
 	if _state == State.HURT:
+		col_area_attack.disabled = true
 		yield($AnimatedSprite, "animation_finished")
+		col_area_attack.disabled = false
 		enemy_walk()
+	
 		
 		
 func set_velocity(linear_velocity):
@@ -78,9 +75,14 @@ func set_velocity(linear_velocity):
 	elif not floor_right.is_colliding():
 		new_velocity.x = -speed
 	
-	if is_on_wall():
-		new_velocity.x *= -1
+	var body_player = false
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "Player":
+			body_player = true
 	
+	if is_on_wall() and not body_player:
+		new_velocity.x *= -1
 	
 	return new_velocity
 

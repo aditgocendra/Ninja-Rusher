@@ -130,24 +130,24 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
+"frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
 "loop": true,
-"name": "Throw",
+"name": "Glide",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 10.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Slide",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
 "loop": true,
-"name": "Glide",
+"name": "Throw",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],

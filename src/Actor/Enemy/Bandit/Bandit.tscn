@@ -56,25 +56,25 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "attack",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "dead",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "hurt",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 14 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "walk",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 29 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "attack",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

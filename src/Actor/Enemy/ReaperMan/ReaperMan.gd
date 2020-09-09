@@ -103,7 +103,6 @@ func enemy_attack():
 	
 
 func enemy_dead():
-	
 	if health != 0:
 		health -= 25
 		$HealthBar.value = health

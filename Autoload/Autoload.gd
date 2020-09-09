@@ -5,8 +5,8 @@ signal health_pick
 signal mana_pick
 
 var _file
-var db_path = "res://Autoload/database.json"
-
+#var db_path = "res://Autoload/database.json"
+var db_path = "res://users/database.json"
 var json_data
 var default_data = {
 	"game_settings":{
