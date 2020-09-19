@@ -149,7 +149,7 @@ pointing/emulate_touch_from_mouse=true
 
 [memory]
 
-limits/message_queue/max_size_kb=100000
+limits/message_queue/max_size_kb=2048
 
 [rendering]
 

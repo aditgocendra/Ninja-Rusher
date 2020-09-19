@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/tileset/png/Tiles/13.png" type="Texture" id=1]
+[ext_resource path="res://asset/tileset/png/Tiles/14.png" type="Texture" id=2]
+[ext_resource path="res://asset/tileset/png/Tiles/15.png" type="Texture" id=3]
+
+[node name="Platform" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 64
+collision_mask = 0
+collision/safe_margin = 0.12
+motion/sync_to_physics = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 127.816, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 255.801, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -57.1416, -46.3704, 313.556, -46.8284, 317.332, -42.6989, 318.557, -39.0908, 319.188, -34.8863, 319.608, -27.3182, 319.608, -21.4319, 318.136, -17.8581, 315.193, -16.807, 314.773, -11.7616, 313.511, -9.02871, 312.25, -6.71624, 310.148, -2.93221, 305.733, 0.851822, 300.267, 3.79496, 292.91, 5.8972, 287.023, 7.15855, 279.245, 7.36877, 276.092, 6.94833, 272.938, 8.84034, 269.785, 12.4142, 264.109, 22.5049, 256.12, 27.7605, 247.501, 33.0161, 237.621, 38.0615, 229.212, 41.8455, 219.752, 44.158, 207.979, 45.8398, 195.786, 46.05, 183.383, 45.8398, 175.605, 43.7375, 170.349, 40.7944, 164.463, 39.7433, 155.423, 40.7944, 148.486, 43.1069, 140.077, 44.9989, 135.031, 46.05, 128.304, 45.4193, 118.634, 43.7375, 113.168, 41.4251, 103.077, 39.1126, 95.0887, 39.7433, 85.4184, 42.0558, 78.2708, 44.158, 71.1232, 45.4193, 44.6349, 46.05, 32.2317, 43.7375, 24.033, 41.0046, 15.2036, 36.8001, 2.16968, 29.4423, -5.81884, 25.0276, -10.0233, 19.772, -12.9665, 14.3062, -17.3811, 7.78922, -22.4265, 6.94832, -31.2559, 6.73809, -40.9262, 4.84608, -48.0738, 2.32339, -54.3806, -2.30154, -57.5339, -8.60826, -58.7953, -15.7559, -61.7384, -17.4377, -63.8406, -19.7501, -63.6304, -36.1476, -61.7384, -41.8237 )
+one_way_collision = true

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://admob-lib/admob.gd" type="Script" id=1]
 [ext_resource path="res://src/Ads/AdsenseMobile.gd" type="Script" id=2]
-[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=3]
 
 [node name="AdsenseMobile" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -12,18 +11,3 @@ script = ExtResource( 1 )
 banner_id = "ca-app-pub-1344999220025041/2833047944"
 interstitial_id = "ca-app-pub-1344999220025041/5915642323"
 rewarded_id = "ca-app-pub-1344999220025041/4622741952"
-
-[node name="ErrorLabel" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -236.512
-margin_top = -35.0
-margin_right = -128.512
-custom_fonts/font = ExtResource( 3 )
-text = "ErrorLabel"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="interstitial_failed_to_load" from="AdMob" to="." method="_on_AdMob_interstitial_failed_to_load"]

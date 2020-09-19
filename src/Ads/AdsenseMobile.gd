@@ -23,5 +23,3 @@ func show_interesial():
 	admob.show_interstitial()
 
 
-func _on_AdMob_interstitial_failed_to_load(error_code):
-	$ErrorLabel.text = str(error_code)

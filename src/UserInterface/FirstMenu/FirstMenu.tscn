@@ -156,15 +156,15 @@ texture_pressed = ExtResource( 11 )
 
 [node name="HighScore" type="TextureButton" parent="Background/HBoxContainer"]
 margin_left = 377.0
-margin_right = 750.0
+margin_right = 751.0
 margin_bottom = 69.0
 size_flags_horizontal = 3
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 13 )
 
 [node name="Share" type="TextureButton" parent="Background/HBoxContainer"]
-margin_left = 754.0
-margin_right = 819.0
+margin_left = 755.0
+margin_right = 820.0
 margin_bottom = 69.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 15 )

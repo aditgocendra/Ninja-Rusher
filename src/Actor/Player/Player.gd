@@ -69,6 +69,7 @@ func _physics_process(_delta):
 	var is_on_platform = platform.is_colliding()
 	#var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
 	
+
 	
 	# calculate movement-----------------------------------------------------
 	if not is_dead:
@@ -95,7 +96,7 @@ func _physics_process(_delta):
 	#-------------------------------------------------------------------------
 	
 	# excecute movement player-----------------------------------------------
-	velocity = move_and_slide(velocity, FLOOR_NORMAL, is_on_platform, 4, 0.9, true)
+	velocity = move_and_slide(velocity, FLOOR_NORMAL, not is_on_platform, 4, 0.9, false)
 	# -----------------------------------------------------------------------
 	
 	
