@@ -153,7 +153,6 @@ limits/message_queue/max_size_kb=2048
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

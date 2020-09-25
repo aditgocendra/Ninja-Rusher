@@ -23,7 +23,7 @@ onready var floor_right = $FloorRightDetect
 onready var area_attack = $AreaAttack
 onready var col_sword_attack = $SwordAttack/CollisionPolygon2D
 onready var col_area_attack = $AreaAttack/CollisionShape2D
-onready var update_tween = $UpdateTween
+
 
 
 func _ready():
@@ -149,5 +149,4 @@ func _on_SwordAttack_body_entered(body):
 func _on_HealthBar_value_changed(_value):
 	if $HealthBar.visible == false:
 		$HealthBar.visible = true
-	update_tween.interpolate_property($HealthBar, "value", $HealthBar.value, health, 0.4, Tween.TRANS_SINE, Tween.EASE_OUT, 0.4)
-	update_tween.start()
+	

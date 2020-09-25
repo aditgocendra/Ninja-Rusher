@@ -141,8 +141,6 @@ shape = SubResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordAttack"]
 polygon = PoolVector2Array( 137.287, 125.517, 297.972, 104.328, 284.879, -141.214, 156.711, -157.006 )
 disabled = true
-
-[node name="UpdateTween" type="Tween" parent="."]
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="body_exited" from="AreaAttack" to="." method="_on_AreaAttack_body_exited"]
