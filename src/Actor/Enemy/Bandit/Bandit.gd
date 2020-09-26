@@ -7,7 +7,7 @@ var gravity = 1000.0
 var FLOOR_NORMAL = Vector2.UP
 
 var speed = 350
-var speed_up = false
+
 
 var health = 100
 var damage_player = 20
@@ -25,12 +25,12 @@ onready var col_sword_attack = $SwordAttack/CollisionPolygon2D
 onready var col_area_attack = $AreaAttack/CollisionShape2D
 
 
-
 func _ready():
 	enemy_walk()
 
 
 func _physics_process(_delta):
+#	print(_state)
 	if velocity.x != 0:
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
@@ -45,14 +45,10 @@ func _physics_process(_delta):
 	velocity.y = move_and_slide(velocity, FLOOR_NORMAL).y
 	
 	var animation = set_anim()
+	
 	if $AnimatedSprite.animation != animation:
 		$AnimatedSprite.play(animation)
 	
-	if _state == State.ATTACK:
-		if $AnimatedSprite.animation == "attack":
-			yield($AnimatedSprite, "animation_finished")
-			col_sword_attack.disabled = false
-	else : col_sword_attack.disabled = true
 	
 	if _state == State.DEAD:
 		yield($AnimatedSprite, "animation_finished")
@@ -65,11 +61,11 @@ func _physics_process(_delta):
 		enemy_walk()
 	
 		
-		
 func set_velocity(linear_velocity):
 	var new_velocity = linear_velocity
 	
 	new_velocity.y += gravity * get_physics_process_delta_time()
+
 	if not floor_left.is_colliding():
 		new_velocity.x = speed
 	elif not floor_right.is_colliding():
@@ -119,7 +115,7 @@ func enemy_dead():
 	if health != 0:
 		enemy_hurt()
 		
-	if health == 0:
+	if health <= 0:
 		_state = State.DEAD
 	velocity.x = 0
 
@@ -131,12 +127,12 @@ func enemy_hurt():
 
 
 func _on_AreaAttack_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and _state != State.HURT:
 		enemy_attack()
 
 
 func _on_AreaAttack_body_exited(body):
-	if body.name == "Player":
+	if body.name == "Player" and _state != State.HURT:
 		enemy_walk()
 
 
@@ -150,3 +146,9 @@ func _on_HealthBar_value_changed(_value):
 	if $HealthBar.visible == false:
 		$HealthBar.visible = true
 	
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "attack":
+		col_sword_attack.disabled = false
+	else : col_sword_attack.disabled = true
