@@ -637,7 +637,7 @@ texture = ExtResource( 38 )
 position = Vector2( 3677.33, 479.488 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2807.91, 584.296 )
+position = Vector2( 3784.16, 331.899 )
 
 [node name="HealthPotion" parent="." instance=ExtResource( 39 )]
 position = Vector2( 3098.21, 630.272 )

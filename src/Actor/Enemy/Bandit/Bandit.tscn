@@ -78,10 +78,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 146.913, 167.797 )
+extents = Vector2( 146.913, 164.167 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 68.1468, 149.233 )
+extents = Vector2( 68.1468, 148.035 )
 
 [node name="Bandit" type="KinematicBody2D"]
 scale = Vector2( 0.3, 0.3 )
@@ -139,9 +139,10 @@ shape = SubResource( 3 )
 [node name="SwordAttack" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordAttack"]
-polygon = PoolVector2Array( 137.287, 125.517, 297.972, 104.328, 284.879, -141.214, 156.711, -157.006 )
+polygon = PoolVector2Array( 98.3619, 119.059, 297.972, 104.328, 284.879, -141.214, 103.317, -152.476 )
 disabled = true
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="body_exited" from="AreaAttack" to="." method="_on_AreaAttack_body_exited"]
 [connection signal="body_entered" from="SwordAttack" to="." method="_on_SwordAttack_body_entered"]

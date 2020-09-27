@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/particles/dust.png" type="Texture" id=1]
+[ext_resource path="res://asset/particles/JumpDust.tres" type="Material" id=2]
+[ext_resource path="res://src/Actor/Effect/JumpParticle.gd" type="Script" id=3]
+
+[node name="JumpParticle" type="Particles2D"]
+emitting = false
+amount = 30
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = ExtResource( 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -22,6 +22,8 @@ onready var col_attack = $AreaAttack/CollAttack
 onready var health_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/HeatlhBG/TextureProgress
 onready var mana_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/ManaBG/TextureProgress
 
+onready var dust_pos = $DustPos
+
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -38,6 +40,8 @@ func _physics_process(_delta):
 	
 	var direction = Vector2.ZERO
 	direction = calculate_direction()
+	
+	_handler_particles()
 	
 	
 	# is player dead -------------------------------------------------
@@ -240,6 +244,12 @@ func showGameOver(is_dead):
 		Autoload.max_health = 100
 		Autoload.max_mana = 100
 		get_tree().paused = true
+
+
+func _handler_particles():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		#foot_dust_jump.global_position = Vector2(self.global_position.x, self.global_position.y + 50)
+		dust_pos.effect_dust()
 
 
 #dash loop ghost

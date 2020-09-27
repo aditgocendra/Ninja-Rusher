@@ -141,7 +141,6 @@ func _on_SwordAttack_body_entered(body):
 		body._die($AnimatedSprite.scale.x, damage_player)
 		enemy_walk()
 
-
 func _on_HealthBar_value_changed(_value):
 	if $HealthBar.visible == false:
 		$HealthBar.visible = true

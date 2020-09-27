@@ -6,7 +6,7 @@ onready var cooldown = $Cooldown
 
 
 func throw(direction = 1):
-	print(cooldown.is_stopped())
+#	print(cooldown.is_stopped())
 	if not cooldown.is_stopped():
 		return false
 	else:
