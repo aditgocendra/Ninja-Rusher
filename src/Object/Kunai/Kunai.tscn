@@ -5,7 +5,7 @@
 
 [node name="Kunai" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 2
+collision_mask = 6
 mass = 0.918367
 custom_integrator = true
 continuous_cd = 2

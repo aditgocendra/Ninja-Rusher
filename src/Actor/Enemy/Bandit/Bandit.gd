@@ -2,6 +2,8 @@ extends KinematicBody2D
 class_name Bandit
 
 
+
+
 var velocity = Vector2.ZERO
 var gravity = 1000.0
 var FLOOR_NORMAL = Vector2.UP
@@ -35,14 +37,14 @@ func _physics_process(_delta):
 		if velocity.x > 0:
 			$AnimatedSprite.scale.x = 1
 			col_sword_attack.scale.x = 1
-			area_attack.position = Vector2(100,0)
+			area_attack.position.x = 100
 		else: 
 			$AnimatedSprite.scale.x = -1
 			col_sword_attack.scale.x = -1
-			area_attack.position = Vector2(-100,0)
-	
+			area_attack.position.x = -100
+			
 	velocity = set_velocity(velocity)
-	velocity.y = move_and_slide(velocity, FLOOR_NORMAL).y
+	velocity.y = move_and_slide(velocity, FLOOR_NORMAL, false).y
 	
 	var animation = set_anim()
 	
@@ -52,6 +54,7 @@ func _physics_process(_delta):
 	
 	if _state == State.DEAD:
 		yield($AnimatedSprite, "animation_finished")
+		
 		queue_free()
 		
 	if _state == State.HURT:
@@ -122,7 +125,7 @@ func enemy_dead():
 
 func enemy_hurt():
 	_state = State.HURT
-	health -= 25
+	health -= Autoload.arcade_damage
 	$HealthBar.value = health
 
 

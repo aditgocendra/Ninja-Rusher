@@ -131,16 +131,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
-"loop": true,
-"name": "Throw",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "Slide",
@@ -151,14 +141,19 @@ animations = [ {
 "name": "Glide",
 "speed": 15.0
 }, {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 90 ), ExtResource( 83 ), ExtResource( 91 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 89 ), ExtResource( 86 ), ExtResource( 88 ), ExtResource( 87 ) ],
+"loop": true,
+"name": "Throw",
+"speed": 15.0
+}, {
 "frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Run",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "JumpAttack",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
@@ -180,10 +175,15 @@ animations = [ {
 "loop": false,
 "name": "Dead",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "JumpAttack",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 79.9429, 220.026 )
+extents = Vector2( 88.1149, 220.026 )
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 32.0
@@ -192,7 +192,7 @@ radius = 32.0
 radius = 32.0
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 32.0
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 32.0
@@ -207,10 +207,10 @@ radius = 32.0
 radius = 32.0
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 64.0
+radius = 32.0
 
 [sub_resource type="CircleShape2D" id=11]
-radius = 16.0
+radius = 64.0
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.2, 0.2 )
@@ -273,6 +273,104 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
+[node name="ControlUI" type="CanvasLayer" parent="."]
+
+[node name="Right" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 107.799, 373.11 )
+normal = ExtResource( 120 )
+pressed = ExtResource( 121 )
+shape = SubResource( 3 )
+action = "move_right"
+visibility_mode = 1
+
+[node name="Left" type="TouchScreenButton" parent="ControlUI"]
+position = Vector2( 33.2185, 373.034 )
+normal = ExtResource( 122 )
+pressed = ExtResource( 107 )
+shape = SubResource( 4 )
+action = "move_left"
+visibility_mode = 1
+
+[node name="ContainerLeftUp" type="Control" parent="ControlUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -840.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="TouchScreenButton" parent="ControlUI/ContainerLeftUp"]
+position = Vector2( 801.474, 5.77612 )
+normal = ExtResource( 123 )
+pressed = ExtResource( 124 )
+shape = SubResource( 5 )
+passby_press = true
+action = "pause"
+visibility_mode = 1
+
+[node name="ContainerRightBot" type="Control" parent="ControlUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -840.0
+margin_top = -480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 764.051, 249.549 )
+normal = ExtResource( 111 )
+pressed = ExtResource( 116 )
+shape = SubResource( 6 )
+passby_press = true
+action = "jump"
+visibility_mode = 1
+
+[node name="Throw" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 620.736, 318.945 )
+normal = ExtResource( 112 )
+pressed = ExtResource( 115 )
+shape = SubResource( 7 )
+passby_press = true
+action = "throw"
+visibility_mode = 1
+
+[node name="Glide" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 685.535, 274.821 )
+normal = ExtResource( 110 )
+pressed = ExtResource( 117 )
+shape = SubResource( 8 )
+action = "glide"
+visibility_mode = 1
+
+[node name="Slide" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 624.639, 391.961 )
+normal = ExtResource( 109 )
+pressed = ExtResource( 119 )
+shape = SubResource( 9 )
+action = "slide"
+visibility_mode = 1
+
+[node name="Dash" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 548.271, 392.852 )
+normal = ExtResource( 113 )
+pressed = ExtResource( 118 )
+shape = SubResource( 10 )
+action = "dash"
+visibility_mode = 1
+
+[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI/ContainerRightBot"]
+position = Vector2( 705.458, 335.531 )
+normal = ExtResource( 108 )
+pressed = ExtResource( 114 )
+shape = SubResource( 11 )
+passby_press = true
+action = "attack"
+visibility_mode = 1
+
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="UserInterface" instance=ExtResource( 103 )]
@@ -309,84 +407,6 @@ text = "X 0"
 
 [node name="ThrowEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 106 )
-
-[node name="ControlUI" type="CanvasLayer" parent="."]
-
-[node name="Right" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 107.799, 373.11 )
-normal = ExtResource( 120 )
-pressed = ExtResource( 121 )
-shape = SubResource( 3 )
-action = "move_right"
-visibility_mode = 1
-
-[node name="Left" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 33.2185, 373.034 )
-normal = ExtResource( 122 )
-pressed = ExtResource( 107 )
-shape = SubResource( 4 )
-action = "move_left"
-visibility_mode = 1
-
-[node name="Jump" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 764.051, 249.549 )
-normal = ExtResource( 111 )
-pressed = ExtResource( 116 )
-shape = SubResource( 5 )
-passby_press = true
-action = "jump"
-visibility_mode = 1
-
-[node name="Throw" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 620.736, 318.945 )
-normal = ExtResource( 112 )
-pressed = ExtResource( 115 )
-shape = SubResource( 6 )
-passby_press = true
-action = "throw"
-visibility_mode = 1
-
-[node name="Glide" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 685.535, 274.821 )
-normal = ExtResource( 110 )
-pressed = ExtResource( 117 )
-shape = SubResource( 7 )
-action = "glide"
-visibility_mode = 1
-
-[node name="Slide" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 624.639, 391.961 )
-normal = ExtResource( 109 )
-pressed = ExtResource( 119 )
-shape = SubResource( 8 )
-action = "slide"
-visibility_mode = 1
-
-[node name="Dash" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 548.271, 392.852 )
-normal = ExtResource( 113 )
-pressed = ExtResource( 118 )
-shape = SubResource( 9 )
-action = "dash"
-visibility_mode = 1
-
-[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 705.458, 335.531 )
-normal = ExtResource( 108 )
-pressed = ExtResource( 114 )
-shape = SubResource( 10 )
-passby_press = true
-action = "attack"
-visibility_mode = 1
-
-[node name="Pause" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 801.474, 5.77612 )
-normal = ExtResource( 123 )
-pressed = ExtResource( 124 )
-shape = SubResource( 11 )
-passby_press = true
-action = "pause"
-visibility_mode = 1
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="StompTimer" to="." method="_on_StompTimer_timeout"]

@@ -4,9 +4,17 @@ signal update_score
 signal health_pick
 signal mana_pick
 
+
 var _file
 var db_path = "res://Autoload/database.json"
+
+#android path -----------------------
 #var db_path = "res://users/database.json"
+#end android path -----------------------
+
+var arcade_damage = 100
+
+
 var json_data
 var default_data = {
 	"game_settings":{
@@ -159,13 +167,15 @@ var default_data = {
 			  "y": 1
 			}
 		  }
-	}
+		}
 	}
 }
+
 
 var coin_score : int setget _update_coin
 var max_health : int = 100 setget _update_health
 var max_mana : int = 100 setget _update_mana
+
 
 func _ready():
 	var data_game = load_data()
@@ -218,3 +228,5 @@ func _update_health(_health):
 func _update_mana(_mana):
 	max_mana = _mana
 	emit_signal("mana_pick")
+
+

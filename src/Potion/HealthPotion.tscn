@@ -1,15 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://asset/potion/health-potion.png" type="Texture" id=1]
 [ext_resource path="res://src/Potion/HealthPotion.gd" type="Script" id=2]
 
-[node name="HealthPotion" type="Area2D"]
-scale = Vector2( 0.2, 0.2 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.7265
+
+[node name="HealthPotion" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+gravity_scale = 35.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.2, 0.2 )
 polygon = PoolVector2Array( -24.4401, -84.5243, -9.57506, -90.4703, -4.81824, -104.146, 1.12781, -110.687, 10.6415, -113.66, 24.3174, -108.308, 38.5878, -101.173, 57.0205, -95.2271, 64.7504, -87.4973, 67.1288, -76.7944, 64.1558, -66.0916, 70.1018, -59.5509, 70.1018, -48.8481, 61.7774, -39.929, 43.3447, -12.5772, 59.399, 3.47705, 66.5342, 14.7745, 71.8856, 29.6396, 73.0748, 43.3155, 72.4802, 58.1806, 68.9126, 72.451, 62.9666, 85.5323, 49.2907, 102.776, 30.2634, 115.263, 10.0469, 121.209, -9.57506, 122.992, -28.0078, 118.236, -43.4675, 107.533, -54.7649, 98.019, -66.0624, 81.9647, -73.1976, 66.505, -75.576, 43.3155, -72.603, 24.8828, -63.684, 5.85547, -50.6027, -9.00961, -38.116, -18.5233, -25.6293, -25.0639 )
-[connection signal="body_entered" from="." to="." method="_on_HealthPotion_body_entered"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_HealthPotion_body_entered"]
