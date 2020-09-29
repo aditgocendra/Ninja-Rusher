@@ -11,8 +11,8 @@ var dashing = false
 var glide = false
 var stomp_direct = 0
 
-var _health = Autoload.max_health
-var _mana = Autoload.max_mana
+
+
 
 
 onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
@@ -41,12 +41,13 @@ func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	direction = calculate_direction()
 	
+	
 	_handler_particles()
 	
 	
 	# is player dead -------------------------------------------------
 	var is_dead = false
-	if _health <= 0:
+	if Autoload.max_health <= 0:
 		is_dead = true
 	# ----------------------------------------------------------------
 	
@@ -274,13 +275,10 @@ func _on_StompTimer_timeout():
 
 
 func health_update():
-	_health = Autoload.max_health
-	self.health_bar.value = _health
+	self.health_bar.value = Autoload.max_health
 
 
 func mana_update():
-# warning-ignore:standalone_expression
-	_mana = Autoload.max_mana
-	self.mana_bar.value = _mana
+	self.mana_bar.value = Autoload.max_mana
 
 
