@@ -12,9 +12,6 @@ var glide = false
 var stomp_direct = 0
 
 
-
-
-
 onready var spawn_kunai = $AnimatedPlayer/SpawnKunai
 onready var col_body = $CollisionShape2D
 onready var platform = $PlatformerDetector
@@ -77,7 +74,7 @@ func _physics_process(_delta):
 
 	
 	# calculate movement-----------------------------------------------------
-	if not is_dead:
+	if not is_dead and not stomp_attack:
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	#------------------------------------------------------------------------
 	
@@ -92,7 +89,7 @@ func _physics_process(_delta):
 		stomp_enemy = is_stomping
 		
 		if stomp_enemy:
-			velocity.y = -500
+			velocity.y = -400
 	#---------------------------------------------------------------------------
 	
 	#stomp attack enemy-------------------------------------------------------
@@ -229,7 +226,7 @@ func setAnimation(is_attack, throw, slide, is_dead):
 func _die(_direction_stomp, damage):
 	stomp_direct = _direction_stomp
 	if $StompTimer.is_stopped():
-		velocity.y -= 500
+		velocity.y -= 300
 		stomp_attack = true
 		$StompTimer.start()
 	
@@ -239,7 +236,7 @@ func _die(_direction_stomp, damage):
 
 #Show Game Over Scene
 func showGameOver(is_dead):
-	if is_dead == true and $AnimatedPlayer.animation == "Dead" and velocity.y > 0:
+	if is_dead == true and $AnimatedPlayer.animation == "Dead":
 		yield($AnimatedPlayer,"animation_finished")
 		$UserInterface/GameOver.show()
 		Autoload.max_health = 100

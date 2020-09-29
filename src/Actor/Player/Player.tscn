@@ -246,6 +246,7 @@ shape = SubResource( 2 )
 collision_mask = 2
 
 [node name="CollAttack" type="CollisionPolygon2D" parent="AreaAttack"]
+position = Vector2( -43.1087, 0 )
 polygon = PoolVector2Array( 49.8756, -193.307, 94.0227, -195.409, 143.425, -183.846, 197.032, -151.262, 228.566, -119.728, 249.588, -82.9389, 263.253, -42.9963, 268.509, 3.25294, 260.1, 51.6045, 243.282, 98.9049, 215.953, 134.643, 179.163, 165.126, 140.272, 185.097, 102.432, 193.506, 60.3868, 196.659, 49.8756, 196.659 )
 disabled = true
 
@@ -382,6 +383,7 @@ visible = false
 visible = false
 
 [node name="Score" type="HBoxContainer" parent="UserInterface"]
+visible = false
 margin_left = 207.701
 margin_top = 8.57479
 margin_right = 302.701
