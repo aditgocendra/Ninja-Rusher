@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gamedeveloperstudio.png-0edf322e9d383f3de273b0e4dc631bb6.stex"
+path="res://.import/crafpix.png-c166970adfe5a21c0c09b750d7ae6692.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/support/gamedeveloperstudio.png"
-dest_files=[ "res://.import/gamedeveloperstudio.png-0edf322e9d383f3de273b0e4dc631bb6.stex" ]
+source_file="res://asset/credit/crafpix.png"
+dest_files=[ "res://.import/crafpix.png-c166970adfe5a21c0c09b750d7ae6692.stex" ]
 
 [params]
 

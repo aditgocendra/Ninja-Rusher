@@ -22,8 +22,11 @@ func _spawn():
 
 
 func _on_SpawnTimer_timeout():
-	x_random = rand_range(70, 1550)
-	y_random = rand_range(-256, 400)
-	spawn_effect.global_position = Vector2(x_random, y_random)
-	spawn_effect.emitting = true
-	_spawn()
+	if get_child_count() >= 20:
+		Autoload.max_health = 0
+	else:
+		x_random = rand_range(70, 1550)
+		y_random = rand_range(-256, 400)
+		spawn_effect.global_position = Vector2(x_random, y_random)
+		spawn_effect.emitting = true
+		_spawn()

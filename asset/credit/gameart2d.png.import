@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crafpix.png-dcdbfa12523ac40cf32d29e2c63be20c.stex"
+path="res://.import/gameart2d.png-01f75465f3658207d16407677701ccf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/support/crafpix.png"
-dest_files=[ "res://.import/crafpix.png-dcdbfa12523ac40cf32d29e2c63be20c.stex" ]
+source_file="res://asset/credit/gameart2d.png"
+dest_files=[ "res://.import/gameart2d.png-01f75465f3658207d16407677701ccf0.stex" ]
 
 [params]
 

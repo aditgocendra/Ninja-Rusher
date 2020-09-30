@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/credit/crafpix.png" type="Texture" id=2]
+[ext_resource path="res://asset/credit/gamedeveloperstudio.png" type="Texture" id=3]
+[ext_resource path="res://src/UserInterface/Credits/Credits.gd" type="Script" id=4]
+[ext_resource path="res://asset/credit/gameart2d.png" type="Texture" id=5]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -42.5
+margin_top = 22.6786
+margin_right = 42.5
+margin_bottom = 64.6786
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.0
+margin_top = -40.5
+margin_right = 107.0
+margin_bottom = 40.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 214.0
+margin_bottom = 81.0
+
+[node name="CraftPix" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 81.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GDS" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 64.0
+margin_right = 144.0
+margin_bottom = 81.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameArt2D" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 148.0
+margin_right = 214.0
+margin_bottom = 81.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.728
+margin_top = -23.8995
+margin_right = -12.7279
+margin_bottom = -9.89954
+text = "Click the logo to visit the website"
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/CraftPix" to="." method="_on_CraftPix_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/GDS" to="." method="_on_GDS_gui_input"]
+[connection signal="gui_input" from="VBoxContainer/HBoxContainer/GameArt2D" to="." method="_on_Free2DGame_gui_input"]

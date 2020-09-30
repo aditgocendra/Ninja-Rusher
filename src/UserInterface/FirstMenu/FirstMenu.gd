@@ -27,3 +27,8 @@ func _on_HighScore_gui_input(event):
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			ads_mobile.show_interesial()
+
+
+func _on_Credit_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://src/UserInterface/Credits/Credits.tscn")

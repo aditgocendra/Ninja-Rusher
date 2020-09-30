@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gameart2d.png-49e0a3096975091ee3acf7dedef96ffa.stex"
+path="res://.import/gamedeveloperstudio.png-0dd8dd17532d569926c89587f327b526.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/support/gameart2d.png"
-dest_files=[ "res://.import/gameart2d.png-49e0a3096975091ee3acf7dedef96ffa.stex" ]
+source_file="res://asset/credit/gamedeveloperstudio.png"
+dest_files=[ "res://.import/gamedeveloperstudio.png-0dd8dd17532d569926c89587f327b526.stex" ]
 
 [params]
 

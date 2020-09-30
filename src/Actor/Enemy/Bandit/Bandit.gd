@@ -2,10 +2,8 @@ extends KinematicBody2D
 class_name Bandit
 
 
-
-
 var velocity = Vector2.ZERO
-var gravity = 1000.0
+var gravity = 1500.0
 var FLOOR_NORMAL = Vector2.UP
 
 var speed = 350
@@ -79,7 +77,6 @@ func set_velocity(linear_velocity):
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "Player":
 			body_player = true
-	
 	if is_on_wall() and not body_player:
 		new_velocity.x *= -1
 	

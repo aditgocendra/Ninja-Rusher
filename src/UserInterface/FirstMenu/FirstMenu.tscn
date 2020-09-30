@@ -147,7 +147,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="About" type="TextureButton" parent="Background/HBoxContainer"]
+[node name="Credit" type="TextureButton" parent="Background/HBoxContainer"]
 margin_right = 373.0
 margin_bottom = 69.0
 size_flags_horizontal = 15
@@ -177,5 +177,6 @@ anims/_start = SubResource( 1 )
 [connection signal="pressed" from="Background/VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/Credit" to="." method="_on_Credit_pressed"]
 [connection signal="gui_input" from="Background/HBoxContainer/HighScore" to="." method="_on_HighScore_gui_input"]
 [connection signal="pressed" from="Background/HBoxContainer/Share" to="." method="_on_Share_pressed"]
