@@ -3,7 +3,7 @@ extends Node
 signal update_score
 signal health_pick
 signal mana_pick
-
+signal score_arcade
 
 var _file
 var db_path = "res://Autoload/database.json"
@@ -175,6 +175,7 @@ var default_data = {
 var coin_score : int setget _update_coin
 var max_health : int = 100 setget _update_health
 var max_mana : int = 100 setget _update_mana
+var score_arcade : int setget _update_score_arcade
 
 
 func _ready():
@@ -229,4 +230,6 @@ func _update_mana(_mana):
 	max_mana = _mana
 	emit_signal("mana_pick")
 
-
+func _update_score_arcade(_score):
+	score_arcade = _score
+	emit_signal("score_arcade")

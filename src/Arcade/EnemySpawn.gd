@@ -19,11 +19,10 @@ func _spawn():
 	spawn_timer.start()
 
 
-
-
 func _on_SpawnTimer_timeout():
 	if get_child_count() >= 20:
 		Autoload.max_health = 0
+		Autoload.score_arcade = 0
 	else:
 		x_random = rand_range(70, 1550)
 		y_random = rand_range(-256, 400)

@@ -1,12 +1,30 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Map/Tileset/Tileset1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actor/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Map/Background/ParallaxBackground1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Arcade/EnemySpawn.gd" type="Script" id=4]
+[ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=5]
 [ext_resource path="res://asset/particles/smoke1.png" type="Texture" id=6]
 [ext_resource path="res://asset/particles/DustEnemySpawn.tres" type="Material" id=7]
 [ext_resource path="res://src/Trap/WoodTrap/WoodTrap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Arcade/Score.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "update_score"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Arcade" type="Node"]
 __meta__ = {
@@ -84,4 +102,21 @@ explosiveness = 1.0
 randomness = 1.0
 process_material = ExtResource( 7 )
 texture = ExtResource( 6 )
+
+[node name="ScoreLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="ScoreLayer"]
+margin_left = 206.9
+margin_right = 271.9
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score : 0"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScoreLayer/Score"]
+anims/update_score = SubResource( 1 )
 [connection signal="timeout" from="Enemy/SpawnTimer" to="Enemy/EnemySpawn" method="_on_SpawnTimer_timeout"]

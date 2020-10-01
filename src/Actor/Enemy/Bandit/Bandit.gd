@@ -158,5 +158,6 @@ func dead_state():
 	yield($AnimatedSprite, "animation_finished")
 	if has_node("PotionSpawner"):
 		$PotionSpawner.spawn()
+	Autoload.score_arcade += 10
 	queue_free()
 
