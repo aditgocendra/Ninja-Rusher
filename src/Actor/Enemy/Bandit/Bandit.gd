@@ -76,8 +76,10 @@ func set_velocity(linear_velocity):
 	var body_player = false
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider.name == "Player":
-			body_player = true
+		if collision.collider != null:
+			if collision.collider.name == "Player":
+				body_player = true
+			
 	if is_on_wall() and not body_player:
 		new_velocity.x *= -1
 	

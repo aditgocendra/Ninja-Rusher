@@ -85,6 +85,7 @@ extents = Vector2( 134.039, 164.167 )
 extents = Vector2( 59.8047, 132.658 )
 
 [node name="Bandit" type="KinematicBody2D"]
+process_priority = 1
 scale = Vector2( 0.3, 0.3 )
 z_index = 2
 collision_layer = 2
@@ -109,13 +110,13 @@ __meta__ = {
 }
 
 [node name="FloorLeftDetect" type="RayCast2D" parent="."]
-position = Vector2( -140, 0 )
+position = Vector2( -130, 0 )
 enabled = true
 cast_to = Vector2( 0, 170 )
 collision_mask = 4
 
 [node name="FloorRightDetect" type="RayCast2D" parent="."]
-position = Vector2( 140, 0 )
+position = Vector2( 130, 0 )
 enabled = true
 cast_to = Vector2( 0, 170 )
 collision_mask = 4
