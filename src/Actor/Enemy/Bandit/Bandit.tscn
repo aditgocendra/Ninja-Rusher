@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/Actor/Enemy/Bandit/Bandit.gd" type="Script" id=1]
 [ext_resource path="res://asset/enemy/EnemyGuy/01-Idle/__Bandit02_Idle_000.png" type="Texture" id=2]
@@ -48,6 +48,7 @@
 [ext_resource path="res://asset/bar/health_bar_enemy_1.png" type="Texture" id=46]
 [ext_resource path="res://asset/bar/heatl_bar_enemy_3.png" type="Texture" id=47]
 [ext_resource path="res://asset/bar/health_bar_enemy_2.png" type="Texture" id=48]
+[ext_resource path="res://src/Actor/Enemy/Bandit/PotionSpawner.gd" type="Script" id=49]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -140,6 +141,12 @@ shape = SubResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordAttack"]
 polygon = PoolVector2Array( 98.3619, 119.059, 297.972, 104.328, 284.879, -141.214, 103.317, -152.476 )
 disabled = true
+
+[node name="PotionSpawner" type="Position2D" parent="."]
+script = ExtResource( 49 )
+
+[node name="StateChanger" type="Timer" parent="."]
+one_shot = true
 [connection signal="value_changed" from="HealthBar" to="." method="_on_HealthBar_value_changed"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="AreaAttack" to="." method="_on_AreaAttack_body_entered"]

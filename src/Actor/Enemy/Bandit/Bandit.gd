@@ -51,9 +51,10 @@ func _physics_process(_delta):
 	
 	
 	if _state == State.DEAD:
-		yield($AnimatedSprite, "animation_finished")
+		if $StateChanger.is_stopped():
+			$StateChanger.start()
+			dead_state()
 		
-		queue_free()
 		
 	if _state == State.HURT:
 		col_area_attack.disabled = true
@@ -151,3 +152,11 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "attack":
 		col_sword_attack.disabled = false
 	else : col_sword_attack.disabled = true
+
+
+func dead_state():
+	yield($AnimatedSprite, "animation_finished")
+	if has_node("PotionSpawner"):
+		$PotionSpawner.spawn()
+	queue_free()
+

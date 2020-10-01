@@ -5,8 +5,8 @@ onready var enemy = preload("res://src/Actor/Enemy/Bandit/Bandit.tscn")
 var x_random
 var y_random
 
-onready var spawn_timer = $SpawnTimer
-onready var spawn_effect = $SpawnEffect
+onready var spawn_timer = get_parent().get_node("SpawnTimer")
+onready var spawn_effect = get_parent().get_node("SpawnEffect")
 
 func _ready():
 	spawn_timer.start()

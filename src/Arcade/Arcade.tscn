@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Map/Tileset/Tileset1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actor/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Map/Background/ParallaxBackground1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Arcade/EnemySpawn.gd" type="Script" id=4]
-[ext_resource path="res://src/Arcade/PotionSpawn.gd" type="Script" id=5]
 [ext_resource path="res://asset/particles/smoke1.png" type="Texture" id=6]
 [ext_resource path="res://asset/particles/DustEnemySpawn.tres" type="Material" id=7]
 [ext_resource path="res://src/Trap/WoodTrap/WoodTrap.tscn" type="PackedScene" id=8]
@@ -22,28 +21,6 @@ tile_data = PoolIntArray( -1703873, 5, 0, -1703872, 10, 0, -1703871, 10, 0, -170
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 281.681, 125.91 )
-
-[node name="EnemySpawn" type="Node2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="SpawnEffect" type="Particles2D" parent="EnemySpawn"]
-position = Vector2( 441.832, 145.498 )
-z_index = 3
-emitting = false
-amount = 150
-lifetime = 0.4
-one_shot = true
-explosiveness = 1.0
-randomness = 1.0
-process_material = ExtResource( 7 )
-texture = ExtResource( 6 )
-
-[node name="SpawnTimer" type="Timer" parent="EnemySpawn"]
-wait_time = 2.5
-one_shot = true
-
-[node name="PotionSpawn" type="Node2D" parent="."]
-script = ExtResource( 5 )
 
 [node name="GroupTrap" type="Node2D" parent="."]
 
@@ -85,4 +62,25 @@ position = Vector2( 1030.34, 410.285 )
 
 [node name="WoodTrap13" parent="GroupTrap" instance=ExtResource( 8 )]
 position = Vector2( 992.967, 410.285 )
-[connection signal="timeout" from="EnemySpawn/SpawnTimer" to="EnemySpawn" method="_on_SpawnTimer_timeout"]
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="EnemySpawn" type="Node2D" parent="Enemy"]
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="Enemy"]
+wait_time = 2.5
+one_shot = true
+
+[node name="SpawnEffect" type="Particles2D" parent="Enemy"]
+position = Vector2( 441.832, 145.498 )
+z_index = 3
+emitting = false
+amount = 150
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = ExtResource( 7 )
+texture = ExtResource( 6 )
+[connection signal="timeout" from="Enemy/SpawnTimer" to="Enemy/EnemySpawn" method="_on_SpawnTimer_timeout"]

@@ -233,6 +233,8 @@ func _die(_direction_stomp, damage):
 	Autoload.max_health -= damage
 	self.health_bar.value = Autoload.max_health
 	
+	
+	
 
 #Show Game Over Scene
 func showGameOver(is_dead):
