@@ -74,7 +74,7 @@ func _physics_process(_delta):
 
 	
 	# calculate movement-----------------------------------------------------
-	if not is_dead:
+	if not is_dead and not stomp_attack:
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	#------------------------------------------------------------------------
 	
@@ -95,7 +95,9 @@ func _physics_process(_delta):
 	#stomp attack enemy-------------------------------------------------------
 	if stomp_attack:
 		velocity.x = 400 * stomp_direct
-		velocity.y -= 25
+		if velocity.y >= -300:
+			
+			velocity.y -= 30
 	#-------------------------------------------------------------------------
 	
 	# excecute movement player-----------------------------------------------
@@ -219,8 +221,6 @@ func setAnimation(is_attack, throw, slide, is_dead):
 		
 	if is_dead:
 		new_animation = "Dead"
-		
-
 	
 	return new_animation
 
