@@ -20,6 +20,7 @@ func _spawn():
 
 
 func _on_SpawnTimer_timeout():
+	print(get_child_count())
 	if get_child_count() >= 20:
 		Autoload.max_health = 0
 		Autoload.score_arcade = 0

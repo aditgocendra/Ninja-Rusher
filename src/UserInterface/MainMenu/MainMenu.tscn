@@ -166,6 +166,7 @@ anims/_start = SubResource( 1 )
 
 [node name="AdsenseMobile" parent="." instance=ExtResource( 10 )]
 [connection signal="pressed" from="Background/VBoxContainer/Adventure" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Background/VBoxContainer/Arcade" to="." method="_on_Arcade_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Credit" to="." method="_on_Credit_pressed"]

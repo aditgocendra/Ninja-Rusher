@@ -4,7 +4,7 @@ onready var label_setting = $Background/ContainerSetting/LabelSetting
 onready var sound_setting = preload("res://src/UserInterface/SubSettings/Sound/Sound.tscn").instance()
 onready var general_setting = preload("res://src/UserInterface/SubSettings/General/General.tscn").instance()
 onready var control_scene = "res://src/UserInterface/SubSettings/Control/Control.tscn"
-onready var first_menu = "res://src/UserInterface/FirstMenu/FirstMenu.tscn"
+onready var main_menu = "res://src/UserInterface/MainMenu/MainMenu.tscn"
 
 
 func _on_TouchGeneral_pressed():
@@ -28,4 +28,4 @@ func _on_TouchControl_pressed():
 
 func _on_TouchBack_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene(first_menu)
+	get_tree().change_scene(main_menu)

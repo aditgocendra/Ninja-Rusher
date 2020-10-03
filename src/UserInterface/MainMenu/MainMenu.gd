@@ -32,3 +32,8 @@ func _on_Admob_gui_input(event):
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
 			ads_mobile.show_interesial()
+
+
+func _on_Arcade_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://src/Arcade/Arcade.tscn")
