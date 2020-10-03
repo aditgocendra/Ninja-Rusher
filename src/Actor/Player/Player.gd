@@ -74,7 +74,7 @@ func _physics_process(_delta):
 
 	
 	# calculate movement-----------------------------------------------------
-	if not is_dead and not stomp_attack:
+	if not is_dead:
 		velocity = calculate_velocity(velocity, direction, is_jump_interrupted)
 	#------------------------------------------------------------------------
 	
@@ -94,7 +94,8 @@ func _physics_process(_delta):
 	
 	#stomp attack enemy-------------------------------------------------------
 	if stomp_attack:
-		velocity.x = 500 * stomp_direct
+		velocity.x = 400 * stomp_direct
+		velocity.y -= 25
 	#-------------------------------------------------------------------------
 	
 	# excecute movement player-----------------------------------------------
@@ -218,6 +219,8 @@ func setAnimation(is_attack, throw, slide, is_dead):
 		
 	if is_dead:
 		new_animation = "Dead"
+		
+
 	
 	return new_animation
 
@@ -226,10 +229,8 @@ func setAnimation(is_attack, throw, slide, is_dead):
 func _die(_direction_stomp, damage):
 	stomp_direct = _direction_stomp
 	if $StompTimer.is_stopped():
-		velocity.y -= 300
 		stomp_attack = true
 		$StompTimer.start()
-	
 	Autoload.max_health -= damage
 	self.health_bar.value = Autoload.max_health
 	
