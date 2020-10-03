@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo_ninja_rusher.png-bb417d74158dd229e00b600a5a797c15.stex"
+path="res://.import/logo_ninja_rusher.png-0dc7d8ae83671bde6d46b4f7f661dea5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/UI/FirstMenu/logo_ninja_rusher.png"
-dest_files=[ "res://.import/logo_ninja_rusher.png-bb417d74158dd229e00b600a5a797c15.stex" ]
+source_file="res://asset/UI/MainMenu/logo_ninja_rusher.png"
+dest_files=[ "res://.import/logo_ninja_rusher.png-0dc7d8ae83671bde6d46b4f7f661dea5.stex" ]
 
 [params]
 
