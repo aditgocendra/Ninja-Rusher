@@ -21,7 +21,7 @@ centered = false
 
 [node name="Cloud" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 840, 480 )
+motion_mirroring = Vector2( 840, 0 )
 
 [node name="Sprite" type="Sprite" parent="Cloud"]
 position = Vector2( 0, 0.148478 )

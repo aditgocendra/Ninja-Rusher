@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Map/Background/ParallaxBackground1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actor/Player/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,15 @@
 [ext_resource path="res://asset/tileset/png/Object/Mushroom_1.png" type="Texture" id=11]
 [ext_resource path="res://asset/tileset/png/Object/Mushroom_2.png" type="Texture" id=12]
 [ext_resource path="res://src/Trap/SwingSpike/SwingSpike.tscn" type="PackedScene" id=13]
+[ext_resource path="res://asset/control/Left.png" type="Texture" id=14]
+[ext_resource path="res://asset/control/Right.png" type="Texture" id=15]
+[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=16]
+[ext_resource path="res://asset/control/Jump.png" type="Texture" id=17]
+[ext_resource path="res://asset/control/Dash.png" type="Texture" id=18]
+[ext_resource path="res://src/Actor/Enemy/Bandit/Bandit.tscn" type="PackedScene" id=19]
+[ext_resource path="res://asset/control/BasicAttack.png" type="Texture" id=20]
+[ext_resource path="res://asset/control/Throw.png" type="Texture" id=21]
+[ext_resource path="res://asset/control/Glide.png" type="Texture" id=22]
 
 [node name="Level1" type="Node"]
 
@@ -33,8 +42,7 @@ position = Vector2( 355.177, 348.254 )
 position = Vector2( 1035.66, 443.757 )
 
 [node name="Create3" parent="ObjectGroup" instance=ExtResource( 4 )]
-position = Vector2( 1949.92, 670.964 )
-z_index = 1
+position = Vector2( 919.714, 670.532 )
 
 [node name="GroupTrap" type="Node2D" parent="."]
 
@@ -62,6 +70,9 @@ position = Vector2( 1464.63, 506.321 )
 [node name="WoodTrap11" parent="GroupTrap" instance=ExtResource( 6 )]
 position = Vector2( 1549.01, 506.321 )
 
+[node name="WoodTrap12" parent="GroupTrap" instance=ExtResource( 6 )]
+position = Vector2( 1507.01, 506.321 )
+
 [node name="WoodTrap4" parent="GroupTrap" instance=ExtResource( 6 )]
 position = Vector2( 1775.35, 660.006 )
 
@@ -77,13 +88,13 @@ position = Vector2( 263.323, 438.658 )
 [node name="CoinGroup" type="Node2D" parent="."]
 
 [node name="Coin" parent="CoinGroup" instance=ExtResource( 5 )]
-position = Vector2( 910.918, 681.041 )
+position = Vector2( 974.174, 607.419 )
 
 [node name="Coin2" parent="CoinGroup" instance=ExtResource( 5 )]
-position = Vector2( 956.224, 681.041 )
+position = Vector2( 999.67, 635.594 )
 
 [node name="Coin3" parent="CoinGroup" instance=ExtResource( 5 )]
-position = Vector2( 1007.19, 681.041 )
+position = Vector2( 1006.65, 673.735 )
 
 [node name="Coin4" parent="CoinGroup" instance=ExtResource( 5 )]
 position = Vector2( 833.305, 471.471 )
@@ -233,3 +244,211 @@ texture = ExtResource( 12 )
 [node name="Mushroom_3" type="Sprite" parent="GroupDecoration"]
 position = Vector2( 578.839, 272.39 )
 texture = ExtResource( 12 )
+
+[node name="EnemyGroup" type="Node2D" parent="."]
+
+[node name="Bandit" parent="EnemyGroup" instance=ExtResource( 19 )]
+position = Vector2( 2029.15, 660.997 )
+
+[node name="Bandit2" parent="EnemyGroup" instance=ExtResource( 19 )]
+position = Vector2( 1207.5, 660.997 )
+
+[node name="ControlTutorial" type="Node" parent="."]
+
+[node name="Direction" type="Control" parent="ControlTutorial"]
+margin_left = 217.0
+margin_top = 610.0
+margin_right = 398.0
+margin_bottom = 659.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/Direction"]
+margin_top = -11.9563
+margin_right = 180.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for direction"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="TextureRect" parent="ControlTutorial/Direction"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 56.6324
+margin_top = 19.4975
+margin_right = 122.632
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="TextureRect" parent="ControlTutorial/Direction"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 96.6776
+margin_top = 19.4975
+margin_right = 162.678
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="Control" parent="ControlTutorial"]
+margin_left = 759.418
+margin_top = 568.128
+margin_right = 892.418
+margin_bottom = 618.128
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/Jump"]
+margin_top = -11.9563
+margin_right = 134.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="TextureRect" parent="ControlTutorial/Jump"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 47.7936
+margin_top = 19.4975
+margin_right = 113.794
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dash" type="Control" parent="ControlTutorial"]
+margin_left = 1438.15
+margin_top = 432.531
+margin_right = 1571.15
+margin_bottom = 482.531
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/Dash"]
+margin_top = -11.9563
+margin_right = 134.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for dash"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dash" type="TextureRect" parent="ControlTutorial/Dash"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 47.7936
+margin_top = 19.4975
+margin_right = 113.794
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Throw" type="Control" parent="ControlTutorial"]
+margin_left = 1839.23
+margin_top = 623.99
+margin_right = 1972.23
+margin_bottom = 673.99
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/Throw"]
+margin_top = -11.9563
+margin_right = 134.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for throw"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Throw" type="TextureRect" parent="ControlTutorial/Throw"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 47.7936
+margin_top = 19.4975
+margin_right = 113.794
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Glide" type="Control" parent="ControlTutorial"]
+margin_left = 2231.07
+margin_top = 584.932
+margin_right = 2364.07
+margin_bottom = 634.932
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/Glide"]
+margin_top = -11.9563
+margin_right = 134.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for open parachute"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Glide" type="TextureRect" parent="ControlTutorial/Glide"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 111.702
+margin_top = 19.4975
+margin_right = 177.702
+margin_bottom = 85.4975
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasicAttack" type="Control" parent="ControlTutorial"]
+margin_left = 1027.54
+margin_top = 566.367
+margin_right = 1228.54
+margin_bottom = 650.367
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTutor" type="Label" parent="ControlTutorial/BasicAttack"]
+margin_top = -11.9563
+margin_right = 134.0
+margin_bottom = 23.0437
+custom_fonts/font = ExtResource( 16 )
+text = "Tap for basic attack"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasicAttack" type="TextureRect" parent="ControlTutorial/BasicAttack"]
+modulate = Color( 1, 1, 1, 0.313726 )
+margin_left = 67.9377
+margin_top = 19.4975
+margin_right = 197.938
+margin_bottom = 149.497
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
