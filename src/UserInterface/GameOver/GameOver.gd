@@ -16,4 +16,4 @@ func _on_Quit_pressed():
 func _on_Menu_pressed():
 	get_tree().paused = false
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://src/UserInterface/FirstMenu/FirstMenu.tscn")
+	get_tree().change_scene("res://src/UserInterface/MainMenu/MainMenu.tscn")

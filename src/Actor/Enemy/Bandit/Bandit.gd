@@ -10,7 +10,8 @@ var speed = 350
 
 
 var health = 100
-var damage_player = 20
+var enemy_damage
+var hurt_damage 
 
 var direct_player_attack = 0
 
@@ -26,7 +27,9 @@ onready var col_area_attack = $AreaAttack/CollisionShape2D
 
 
 func _ready():
+	set_level()
 	enemy_walk()
+	print(enemy_damage)
 
 
 func _physics_process(_delta):
@@ -125,7 +128,7 @@ func enemy_dead():
 
 func enemy_hurt():
 	_state = State.HURT
-	health -= Autoload.arcade_damage
+	health -= hurt_damage
 	$HealthBar.value = health
 
 
@@ -141,7 +144,7 @@ func _on_AreaAttack_body_exited(body):
 
 func _on_SwordAttack_body_entered(body):
 	if body.name == "Player":
-		body._die($AnimatedSprite.scale.x, damage_player)
+		body._die($AnimatedSprite.scale.x, enemy_damage)
 		enemy_walk()
 
 func _on_HealthBar_value_changed(_value):
@@ -163,3 +166,30 @@ func dead_state():
 	Autoload.score_arcade += 10
 	queue_free()
 
+
+func set_level():
+	var data = Autoload.load_data()
+	var get_data_level = data["arcade_mode"]["level"]
+	var level_data
+	
+	if Autoload.level_arcade == 1:
+		level_data = get_data_level["easy"]
+	elif Autoload.level_arcade == 2:
+		level_data = get_data_level["medium"]
+	else : level_data = get_data_level["hard"]
+	
+	enemy_damage = level_data["enemy_damage"]
+	hurt_damage = level_data["hurt_damage"]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -12,7 +12,12 @@ var db_path = "res://Autoload/database.json"
 #var db_path = "res://users/database.json"
 #end android path -----------------------
 
-var arcade_damage = 100
+
+
+#arcade mode--------------------
+var level_arcade : int = 1 setget set_level_arcade
+#-------------------------------
+
 
 
 var json_data
@@ -172,15 +177,15 @@ var default_data = {
 	"arcade_mode":{
 		"level":{
 		  "easy":{
-			"player_damage": 100,
+			"hurt_damage": 100,
 			"enemy_damage" : 25
 		  },
 		  "medium":{
-			"player_damage": 50,
+			"hurt_damage": 50,
 			"enemy_damage" : 50
 		  },
 		  "hard":{
-			"player_damage": 25,
+			"hurt_damage": 25,
 			"enemy_damage" : 75
 		  }
 		}
@@ -193,6 +198,7 @@ var coin_score : int setget _update_coin
 var max_health : int = 100 setget _update_health
 var max_mana : int = 100 setget _update_mana
 var score_arcade : int setget _update_score_arcade
+var game_mode : bool setget setup_game_mode
 
 
 func _ready():
@@ -243,10 +249,32 @@ func _update_health(_health):
 	max_health = _health
 	emit_signal("health_pick")
 
+
 func _update_mana(_mana):
 	max_mana = _mana
 	emit_signal("mana_pick")
 
+
 func _update_score_arcade(_score):
 	score_arcade = _score
 	emit_signal("score_arcade")
+
+
+func setup_game_mode(new_game_mode):
+	# true is adventure
+	# false is arcade
+	game_mode = new_game_mode
+
+
+func set_level_arcade(new_arcade_level):
+	# 1 is easy
+	# 2 is medium
+	# 3 is hard
+	level_arcade = new_arcade_level
+	
+	
+	
+	
+	
+	
+	
