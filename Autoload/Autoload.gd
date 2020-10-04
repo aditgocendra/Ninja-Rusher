@@ -168,7 +168,24 @@ var default_data = {
 			}
 		  }
 		}
-	}
+	},
+	"arcade_mode":{
+		"level":{
+		  "easy":{
+			"player_damage": 100,
+			"enemy_damage" : 25
+		  },
+		  "medium":{
+			"player_damage": 50,
+			"enemy_damage" : 50
+		  },
+		  "hard":{
+			"player_damage": 25,
+			"enemy_damage" : 75
+		  }
+		}
+  }
+	
 }
 
 

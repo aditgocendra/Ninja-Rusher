@@ -1,1 +1,170 @@
-{"game_settings":{"control":{"basic_attack":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":700.455017,"y":335.531006},"scale":{"x":1,"y":1}},"dash":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":548.270996,"y":392.85199},"scale":{"x":1,"y":1}},"glide":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":685.534973,"y":274.821014},"scale":{"x":1,"y":1}},"jump":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":764.051025,"y":249.548996},"scale":{"x":1,"y":1}},"left":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":33.217999,"y":373.033997},"scale":{"x":1,"y":1}},"pause":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":801.473999,"y":5.776},"scale":{"x":1,"y":1}},"right":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":107.799004,"y":373.109985},"scale":{"x":1,"y":1}},"slide":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":624.638977,"y":391.960999},"scale":{"x":1,"y":1}},"throw":{"modulate":{"a":1,"b":1,"g":1,"r":1},"position":{"x":620.736023,"y":318.945007},"scale":{"x":1,"y":1}}},"fps":{"show_fps":true,"target_fps":60}}}
+{
+  "game_settings": {
+    "control": {
+      "basic_attack": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 700.455017,
+          "y": 335.531006
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "dash": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 548.270996,
+          "y": 392.85199
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "glide": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 685.534973,
+          "y": 274.821014
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "jump": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 764.051025,
+          "y": 249.548996
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "left": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 33.217999,
+          "y": 373.033997
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "pause": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 801.473999,
+          "y": 5.776
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "right": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 107.799004,
+          "y": 373.109985
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "slide": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 624.638977,
+          "y": 391.960999
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      "throw": {
+        "modulate": {
+          "a": 1,
+          "b": 1,
+          "g": 1,
+          "r": 1
+        },
+        "position": {
+          "x": 620.736023,
+          "y": 318.945007
+        },
+        "scale": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    },
+    "fps": {
+      "show_fps": true,
+      "target_fps": 60
+    }
+  },
+  "arcade_mode":{
+    "level":{
+      "easy":{
+        "player_damage": 100,
+        "enemy_damage" : 25
+      },
+      "medium":{
+        "player_damage": 50,
+        "enemy_damage" : 50
+      },
+      "hard":{
+        "player_damage": 25,
+        "enemy_damage" : 75
+      }
+    }
+  }
+}
