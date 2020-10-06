@@ -132,6 +132,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "Slide",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 76 ), ExtResource( 74 ), ExtResource( 80 ), ExtResource( 75 ), ExtResource( 73 ), ExtResource( 81 ), ExtResource( 72 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ) ],
 "loop": true,
 "name": "Glide",
@@ -142,26 +147,6 @@ animations = [ {
 "name": "Throw",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "JumpAttack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 69 ) ],
-"loop": true,
-"name": "Hurt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 53 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 54 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 57 ), ExtResource( 58 ) ],
-"loop": true,
-"name": "Slide",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
 "loop": true,
 "name": "Attack",
@@ -171,6 +156,11 @@ animations = [ {
 "loop": true,
 "name": "Run",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 69 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 63 ), ExtResource( 66 ) ],
 "loop": false,
@@ -186,6 +176,16 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 48 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 51 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "JumpAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 69 ) ],
+"loop": true,
+"name": "Hurt",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -393,7 +393,6 @@ visible = false
 visible = false
 
 [node name="Score" type="HBoxContainer" parent="UserInterface"]
-visible = false
 margin_left = 207.701
 margin_top = 8.57479
 margin_right = 302.701

@@ -27,7 +27,9 @@ onready var col_area_attack = $AreaAttack/CollisionShape2D
 
 
 func _ready():
-	set_level()
+	if Autoload.game_mode == false:
+		set_level_arcade()
+	else : set_level_adventure()
 	enemy_walk()
 	print(enemy_damage)
 
@@ -167,7 +169,7 @@ func dead_state():
 	queue_free()
 
 
-func set_level():
+func set_level_arcade():
 	var data = Autoload.load_data()
 	var get_data_level = data["arcade_mode"]["level"]
 	var level_data
@@ -182,8 +184,9 @@ func set_level():
 	hurt_damage = level_data["hurt_damage"]
 	
 	
-	
-	
+func set_level_adventure():
+	enemy_damage = 25
+	hurt_damage = 25
 	
 	
 	

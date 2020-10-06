@@ -57,11 +57,6 @@ animations = [ {
 "name": "idle",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ) ],
-"loop": true,
-"name": "hurt",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 34 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 32 ) ],
 "loop": true,
 "name": "dead",
@@ -76,6 +71,11 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
+
+[node name="LevelSucsess" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -96.0
+margin_top = 51.1359
+margin_right = 96.0
+margin_bottom = 93.1359
+custom_fonts/font = ExtResource( 1 )
+text = "Congratulations"

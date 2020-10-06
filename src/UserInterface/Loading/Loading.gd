@@ -1,6 +1,6 @@
 extends Node
 
-var scene_adventure = "res://src/Map/MapTemplate.tscn"
+var scene_adventure = "res://src/Adventure/Level1.tscn"
 var scene_arcade = "res://src/UserInterface/ArcadeLevel/ArcadeLevel.tscn"
 var scene_load
 var queue = preload("res://src/UserInterface/Loading/resource_queue.gd").new()
