@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Map/Tileset/Tileset1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actor/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://asset/particles/DustEnemySpawn.tres" type="Material" id=7]
 [ext_resource path="res://src/Trap/WoodTrap/WoodTrap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Arcade/Score.gd" type="Script" id=9]
+[ext_resource path="res://src/Map/Water.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "update_score"
@@ -119,4 +120,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScoreLayer/Score"]
 anims/update_score = SubResource( 1 )
+
+[node name="AreaWater" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1872.65, 833.057 )
 [connection signal="timeout" from="Enemy/SpawnTimer" to="Enemy/EnemySpawn" method="_on_SpawnTimer_timeout"]
