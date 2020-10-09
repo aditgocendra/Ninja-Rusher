@@ -166,5 +166,22 @@
         "enemy_damage" : 75
       }
     }
+  },
+  "adventure_mode":{
+    "Level1":{
+      "limit_camera":{
+        "left" : 0,
+        "right" : 3650,
+        "bottom" : 1200
+      }
+    },
+    "Level2":{
+      "limit_camera":{
+        "left" : 0,
+        "right" : 3650,
+        "bottom" : 1100
+      }
+    }
   }
+
 }
