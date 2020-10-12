@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://asset/UI/button/bg_click_btn.png" type="Texture" id=1]
+[ext_resource path="res://asset/font/segoe_print20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://asset/UI/button/bg_btn.png" type="Texture" id=3]
+[ext_resource path="res://src/UserInterface/LevelMenu/LevelOpen.gd" type="Script" id=4]
+
+[node name="LevelOpen" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.0
+margin_top = -17.5
+margin_right = 38.0
+margin_bottom = 17.5
+custom_fonts/font = ExtResource( 2 )
+text = "Level 1"
+[connection signal="pressed" from="." to="." method="_on_LevelButton_pressed"]

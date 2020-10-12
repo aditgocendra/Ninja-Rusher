@@ -11,6 +11,7 @@ func _ready():
 func _process(_delta):
 	if player.global_position.x >= camera_player.limit_right:
 		$LayerLevelSuccsess.add_child(level_succsess_scene)
+		
 		get_tree().paused = true
 
 

@@ -1,16 +1,13 @@
 extends Node
 
-var scene_adventure = "res://src/Adventure/Level1.tscn"
-var scene_arcade = "res://src/UserInterface/ArcadeLevel/ArcadeLevel.tscn"
 var scene_load
 var queue = preload("res://src/UserInterface/Loading/resource_queue.gd").new()
 
 
 func _ready():
 	queue.start()
-	if Autoload.game_mode:
-		scene_load = scene_adventure
-	else : scene_load = scene_arcade
+	scene_load = Autoload.path_load
+	
 	queue.queue_resource(scene_load, true)
 	
 	

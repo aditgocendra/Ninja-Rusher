@@ -1,18 +1,22 @@
 {
   "adventure_mode": {
     "Level1": {
+      "level_open": true,
       "limit_camera": {
         "bottom": 1200,
         "left": 0,
         "right": 3650
-      }
+      },
+      "path": "res://src/Adventure/Level1.tscn"
     },
     "Level2": {
+      "level_open": true,
       "limit_camera": {
         "bottom": 1100,
         "left": 0,
         "right": 3650
-      }
+      },
+      "path": "res://src/Adventure/Level2.tscn"
     }
   },
   "arcade_mode": {
@@ -32,7 +36,7 @@
     }
   },
   "data_player": {
-    "coin": 0
+    "coin": 178
   },
   "game_settings": {
     "control": {

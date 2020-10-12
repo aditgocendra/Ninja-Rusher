@@ -13,14 +13,23 @@ var db_path = "res://Autoload/database.json"
 #end android path -----------------------
 
 
-
 #arcade mode--------------------
 var level_arcade : int = 1 setget set_level_arcade
 #-------------------------------
 
 
+# path loading scene------------
+var path_load
+#-------------------------------
+
+
+# level succsess------------------
+var index_level
+#---------------------------------
+
 
 var json_data
+# android set default data-----------------------------
 var default_data = {
 	"game_settings":{
 		"fps":{
