@@ -1,4 +1,39 @@
 {
+  "adventure_mode": {
+    "Level1": {
+      "limit_camera": {
+        "bottom": 1200,
+        "left": 0,
+        "right": 3650
+      }
+    },
+    "Level2": {
+      "limit_camera": {
+        "bottom": 1100,
+        "left": 0,
+        "right": 3650
+      }
+    }
+  },
+  "arcade_mode": {
+    "level": {
+      "easy": {
+        "enemy_damage": 25,
+        "hurt_damage": 100
+      },
+      "hard": {
+        "enemy_damage": 75,
+        "hurt_damage": 25
+      },
+      "medium": {
+        "enemy_damage": 50,
+        "hurt_damage": 50
+      }
+    }
+  },
+  "data_player": {
+    "coin": 0
+  },
   "game_settings": {
     "control": {
       "basic_attack": {
@@ -150,38 +185,5 @@
       "show_fps": true,
       "target_fps": 60
     }
-  },
-  "arcade_mode":{
-    "level":{
-      "easy":{
-        "hurt_damage": 100,
-        "enemy_damage" : 25
-      },
-      "medium":{
-        "hurt_damage": 50,
-        "enemy_damage" : 50
-      },
-      "hard":{
-        "hurt_damage": 25,
-        "enemy_damage" : 75
-      }
-    }
-  },
-  "adventure_mode":{
-    "Level1":{
-      "limit_camera":{
-        "left" : 0,
-        "right" : 3650,
-        "bottom" : 1200
-      }
-    },
-    "Level2":{
-      "limit_camera":{
-        "left" : 0,
-        "right" : 3650,
-        "bottom" : 1100
-      }
-    }
   }
-
 }

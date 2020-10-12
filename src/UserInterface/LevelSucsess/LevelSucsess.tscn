@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://asset/UI/button/next_level_btn.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://asset/UI/button/retry_button.png" type="Texture" id=5]
 [ext_resource path="res://asset/UI/button/main_menu_btn.png" type="Texture" id=6]
 [ext_resource path="res://asset/UI/button/main_menu_click.png" type="Texture" id=7]
+[ext_resource path="res://src/UserInterface/LevelSucsess/LevelSucsess.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "start"
@@ -124,6 +125,7 @@ tracks/8/keys = {
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -131,19 +133,18 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.607843 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Header" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -96.0
-margin_top = 26.1907
+margin_top = 44.0087
 margin_right = 96.0
-margin_bottom = 68.1907
+margin_bottom = 86.0087
 custom_fonts/font = ExtResource( 1 )
 text = "Congratulations"
 __meta__ = {
@@ -151,15 +152,14 @@ __meta__ = {
 }
 
 [node name="NextLevelBtn" type="TextureButton" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -57.5
-margin_top = -102.613
+margin_top = -71.5
 margin_right = 57.5
-margin_bottom = -57.6132
+margin_bottom = -26.5
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 __meta__ = {
@@ -167,28 +167,29 @@ __meta__ = {
 }
 
 [node name="RetryBtn" type="TextureButton" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -57.5
-margin_top = -53.2244
+margin_top = -22.5
 margin_right = 57.5
-margin_bottom = -8.22443
+margin_bottom = 22.5
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainMenu" type="TextureButton" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -57.5
-margin_top = -2.10553
+margin_top = 26.5
 margin_right = 57.5
-margin_bottom = 42.8946
+margin_bottom = 71.5001
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 __meta__ = {
@@ -198,3 +199,5 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "start"
 anims/start = SubResource( 1 )
+[connection signal="pressed" from="NextLevelBtn" to="." method="_on_NextLevelBtn_pressed"]
+[connection signal="pressed" from="RetryBtn" to="." method="_on_RetryBtn_pressed"]
