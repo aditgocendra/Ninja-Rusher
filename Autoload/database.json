@@ -17,6 +17,15 @@
         "right": 3845
       },
       "path": "res://src/Adventure/Level2.tscn"
+    },
+    "Level3": {
+      "level_open": true,
+      "limit_camera": {
+        "bottom": 1100,
+        "left": 0,
+        "right": 4500
+      },
+      "path": "res://src/Adventure/Level2.tscn"
     }
   },
   "arcade_mode": {

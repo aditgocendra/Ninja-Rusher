@@ -18,8 +18,9 @@ onready var platform = $PlatformerDetector
 onready var col_attack = $AreaAttack/CollAttack
 onready var health_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/HeatlhBG/TextureProgress
 onready var mana_bar = $UserInterface/HealthBar/HBoxContainer/VBoxContainer/ManaBG/TextureProgress
-
 onready var dust_pos = $DustPos
+
+onready var gameover_scene = preload("res://src/UserInterface/GameOver/GameOver.tscn").instance()
 
 
 func _ready():
@@ -242,6 +243,7 @@ func showGameOver(is_dead):
 	if is_dead == true and $AnimatedPlayer.animation == "Dead":
 		yield($AnimatedPlayer,"animation_finished")
 		$UserInterface/GameOver.show()
+		$UserInterface/GameOver.get_node("AnimationPlayer").play("start")
 		Autoload.max_health = 100
 		Autoload.max_mana = 100
 		Autoload.score_arcade = 0
