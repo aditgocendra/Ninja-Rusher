@@ -41,6 +41,9 @@ tile_data = PoolIntArray( -1703865, 5, 0, -1703864, 10, 0, -1703863, 10, 0, -170
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1119.84, -68.5279 )
 
+[node name="Score" parent="Player/UserInterface" index="3"]
+visible = false
+
 [node name="GroupTrap" type="Node2D" parent="."]
 
 [node name="WoodTrap" parent="GroupTrap" instance=ExtResource( 8 )]
@@ -124,3 +127,5 @@ anims/update_score = SubResource( 1 )
 [node name="AreaWater" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1872.65, 833.057 )
 [connection signal="timeout" from="Enemy/SpawnTimer" to="Enemy/EnemySpawn" method="_on_SpawnTimer_timeout"]
+
+[editable path="Player"]

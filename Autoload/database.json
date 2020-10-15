@@ -14,7 +14,7 @@
       "limit_camera": {
         "bottom": 1100,
         "left": 0,
-        "right": 3650
+        "right": 3845
       },
       "path": "res://src/Adventure/Level2.tscn"
     }
@@ -36,7 +36,7 @@
     }
   },
   "data_player": {
-    "coin": 178
+    "coin": 0
   },
   "game_settings": {
     "control": {
