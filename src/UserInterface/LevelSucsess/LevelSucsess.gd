@@ -3,6 +3,7 @@ extends Control
 
 onready var data = Autoload.load_data()
 
+
 func _on_RetryBtn_pressed():
 	get_tree().paused = false
 # warning-ignore:return_value_discarded
@@ -22,6 +23,7 @@ func save_coin_player():
 	Autoload.save_data(data)
 
 func change_new_open_level():
+	
 	Autoload.index_level += 1
 	var index = Autoload.index_level
 	var string_level = "Level" + str(index + 1)
@@ -30,7 +32,9 @@ func change_new_open_level():
 		data["adventure_mode"][string_level]["level_open"] = true
 		Autoload.path_load = data["adventure_mode"][string_level]["path"] 
 		Autoload.save_data(data)
+	else : Autoload.path_load = "res://src/UserInterface/EndGame/EndGame.tscn"
 	
 	
-	
-	
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "start":
+		$AdsenseMobile.show_ads()

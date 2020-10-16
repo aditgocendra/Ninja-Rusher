@@ -33,7 +33,7 @@ func _on_Credit_pressed():
 func _on_Admob_gui_input(event):
 	if event is InputEventScreenTouch:
 		if event.is_pressed():
-			ads_mobile.show_interesial()
+			ads_mobile.show_ads()
 
 
 func _on_Arcade_pressed():

@@ -11,7 +11,7 @@ func _ready():
 
 
 func loadAds():
-	admob.load_interstitial()
+	admob.load_rewarded_video()
 
 #func _on_resize():
 #	admob.banner_resize()
@@ -19,7 +19,7 @@ func loadAds():
 #func show_banner():
 #	admob.show_banner()
 	
-func show_interesial():
-	admob.show_interstitial()
+func show_ads():
+	admob.show_rewarded_video()
 
 

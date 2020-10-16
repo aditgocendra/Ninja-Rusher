@@ -24,7 +24,7 @@ var path_load
 
 
 # level succsess------------------
-var index_level
+var index_level : int
 #---------------------------------
 
 
