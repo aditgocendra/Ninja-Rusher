@@ -211,3 +211,5 @@ anims/start = SubResource( 1 )
 [connection signal="pressed" from="Easy" to="." method="_on_Easy_pressed"]
 [connection signal="pressed" from="Medium" to="." method="_on_Medium_pressed"]
 [connection signal="pressed" from="Hard" to="." method="_on_Hard_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="HighScore" to="." method="_on_HighScore_pressed"]

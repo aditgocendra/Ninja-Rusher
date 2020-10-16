@@ -41,7 +41,7 @@ tile_data = PoolIntArray( -1703865, 5, 0, -1703864, 10, 0, -1703863, 10, 0, -170
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1119.84, -68.5279 )
 
-[node name="Score" parent="Player/UserInterface" index="3"]
+[node name="Score" parent="Player/UserInterface" index="2"]
 visible = false
 
 [node name="GroupTrap" type="Node2D" parent="."]

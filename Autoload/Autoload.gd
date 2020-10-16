@@ -9,7 +9,7 @@ var _file
 var db_path = "res://Autoload/database.json"
 
 #android path -----------------------
-#var db_path = "res://users/database.json"
+#var db_path = "user://users/database.json"
 #end android path -----------------------
 
 
@@ -31,176 +31,210 @@ var index_level : int
 var json_data
 # android set default data-----------------------------
 var default_data = {
-	"game_settings":{
-		"fps":{
-			"show_fps": true,
-			"target_fps": 60
+  "adventure_mode": {
+	"Level1": {
+	  "level_open": true,
+	  "limit_camera": {
+		"bottom": 1200,
+		"left": 0,
+		"right": 3650
+	  },
+	  "path": "res://src/Adventure/Level1.tscn"
+	},
+	"Level2": {
+	  "level_open": false,
+	  "limit_camera": {
+		"bottom": 1100,
+		"left": 0,
+		"right": 3845
+	  },
+	  "path": "res://src/Adventure/Level2.tscn"
+	},
+	"Level3": {
+	  "level_open": false,
+	  "limit_camera": {
+		"bottom": 1100,
+		"left": 0,
+		"right": 4500
+	  },
+	  "path": "res://src/Adventure/Level3.tscn"
+	}
+  },
+  "arcade_mode": {
+	"level": {
+	  "easy": {
+		"enemy_damage": 25,
+		"hurt_damage": 100
+	  },
+	  "hard": {
+		"enemy_damage": 75,
+		"hurt_damage": 25
+	  },
+	  "medium": {
+		"enemy_damage": 50,
+		"hurt_damage": 50
+	  }
+	},
+	"highest_score" : 0
+  },
+  "data_player": {
+	"coin": 0
+  },
+  "game_settings": {
+	"control": {
+	  "basic_attack": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
 		},
-		"control":{
-		"basic_attack": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 700.455,
-			  "y": 335.531
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
-	  },
-	  "throw": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 620.736,
-			  "y": 318.945
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
-	  },
-	  "slide": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 624.639,
-			  "y": 391.961
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
-	  },
-	  "glide": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 685.535,
-			  "y": 274.821
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
+		"position": {
+		  "x": 700.455017,
+		  "y": 335.531006
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
 	  },
 	  "dash": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 548.271,
-			  "y": 392.852
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 548.270996,
+		  "y": 392.85199
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
+	  },
+	  "glide": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 685.534973,
+		  "y": 274.821014
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
 	  },
 	  "jump": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 764.051,
-			  "y": 249.549
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
-	  },
-	  "right": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 107.799,
-			  "y": 373.11
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 764.051025,
+		  "y": 249.548996
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
 	  },
 	  "left": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 33.218,
-			  "y": 373.034
-			},
-			"scale":{
-			  "x":1,
-			  "y":1
-			}
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 33.217999,
+		  "y": 373.033997
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
 	  },
-		"pause": {
-			"modulate": {
-			  "a": 1,
-			  "b": 1,
-			  "g": 1,
-			  "r": 1
-			},
-			"position": {
-			  "x": 801.474,
-			  "y": 5.776
-			},
-			"scale": {
-			  "x": 1,
-			  "y": 1
-			}
-		  }
+	  "pause": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 801.473999,
+		  "y": 5.776
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
 		}
+	  },
+	  "right": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 107.799004,
+		  "y": 373.109985
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
+	  },
+	  "slide": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 624.638977,
+		  "y": 391.960999
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
+	  },
+	  "throw": {
+		"modulate": {
+		  "a": 1,
+		  "b": 1,
+		  "g": 1,
+		  "r": 1
+		},
+		"position": {
+		  "x": 620.736023,
+		  "y": 318.945007
+		},
+		"scale": {
+		  "x": 1,
+		  "y": 1
+		}
+	  }
 	},
-	"arcade_mode":{
-		"level":{
-		  "easy":{
-			"hurt_damage": 100,
-			"enemy_damage" : 25
-		  },
-		  "medium":{
-			"hurt_damage": 50,
-			"enemy_damage" : 50
-		  },
-		  "hard":{
-			"hurt_damage": 25,
-			"enemy_damage" : 75
-		  }
-		}
+	"fps": {
+	  "show_fps": true,
+	  "target_fps": 60
+	}
   }
-	
 }
+
+
 
 
 var coin_score : int setget _update_coin

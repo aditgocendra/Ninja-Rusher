@@ -246,7 +246,6 @@ func showGameOver(is_dead):
 		$UserInterface/GameOver.get_node("AnimationPlayer").play("start")
 		Autoload.max_health = 100
 		Autoload.max_mana = 100
-		Autoload.score_arcade = 0
 		Autoload.coin_score = 0
 		get_tree().paused = true
 
