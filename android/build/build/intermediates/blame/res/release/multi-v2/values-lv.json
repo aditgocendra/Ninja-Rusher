@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9c1e93caf0e18ad9cd58383293dcb32b/godot-lib.release/res/values-lv/values-lv.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "330",
-                        "endColumns": "75",
-                        "endOffsets": "401"
-                    }
-                },
-                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/dcf172275f0304a0da1563b5e4e74e8c/jetified-play-services-ads-19.1.0/res/values-lv/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -52,6 +35,23 @@
                         "startOffsets": "406,485,592,662,732,820,930",
                         "endColumns": "78,106,69,69,87,109,74",
                         "endOffsets": "480,587,657,727,815,925,1000"
+                    }
+                },
+                {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9598f4913ca8f70187c748fc49817deb/godot-lib.release/res/values-lv/values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "330",
+                        "endColumns": "75",
+                        "endOffsets": "401"
                     }
                 },
                 {

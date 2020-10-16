@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/res/values-hi/values-hi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "310",
-                        "endColumns": "75",
-                        "endOffsets": "381"
-                    }
-                },
-                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/aff2cf037f208d3acd87b70f1781c7b4/jetified-play-services-basement-17.0.0/res/values-hi/values.xml",
                     "from": {
                         "startLines": "4",
@@ -69,6 +52,23 @@
                         "startOffsets": "386,460,590,663,735,816,914",
                         "endColumns": "73,129,72,71,80,97,74",
                         "endOffsets": "455,585,658,730,811,909,984"
+                    }
+                },
+                {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/res/values-hi/values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "310",
+                        "endColumns": "75",
+                        "endOffsets": "381"
                     }
                 }
             ]

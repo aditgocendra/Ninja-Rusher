@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9598f4913ca8f70187c748fc49817deb/godot-lib.release/res/values-zh-rHK/values-zh-rHK.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "78",
+                        "endOffsets": "129"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "272",
+                        "endColumns": "78",
+                        "endOffsets": "346"
+                    }
+                },
+                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/aff2cf037f208d3acd87b70f1781c7b4/jetified-play-services-basement-17.0.0/res/values-zh-rHK/values.xml",
                     "from": {
                         "startLines": "4",
@@ -52,23 +69,6 @@
                         "startOffsets": "105",
                         "endColumns": "166",
                         "endOffsets": "267"
-                    }
-                },
-                {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9c1e93caf0e18ad9cd58383293dcb32b/godot-lib.release/res/values-zh-rHK/values-zh-rHK.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "78",
-                        "endOffsets": "129"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "272",
-                        "endColumns": "78",
-                        "endOffsets": "346"
                     }
                 }
             ]

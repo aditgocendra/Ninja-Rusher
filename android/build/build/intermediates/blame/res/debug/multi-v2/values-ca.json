@@ -38,23 +38,6 @@
                     }
                 },
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/res/values-ca/values-ca.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "299",
-                        "endColumns": "75",
-                        "endOffsets": "370"
-                    }
-                },
-                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/947833f03979c6d84fcd9a8feba7ce42/core-1.0.0/res/values-ca/values-ca.xml",
                     "from": {
                         "startLines": "2",
@@ -69,6 +52,23 @@
                         "startOffsets": "1011",
                         "endColumns": "100",
                         "endOffsets": "1107"
+                    }
+                },
+                {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/res/values-ca/values-ca.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "299",
+                        "endColumns": "75",
+                        "endOffsets": "370"
                     }
                 }
             ]

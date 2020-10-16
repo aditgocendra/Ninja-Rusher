@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9598f4913ca8f70187c748fc49817deb/godot-lib.release/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "341",
+                        "endColumns": "75",
+                        "endOffsets": "412"
+                    }
+                },
+                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/aff2cf037f208d3acd87b70f1781c7b4/jetified-play-services-basement-17.0.0/res/values-hu/values.xml",
                     "from": {
                         "startLines": "4",
@@ -52,23 +69,6 @@
                         "startOffsets": "1039",
                         "endColumns": "100",
                         "endOffsets": "1135"
-                    }
-                },
-                {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/9c1e93caf0e18ad9cd58383293dcb32b/godot-lib.release/res/values-hu/values-hu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "341",
-                        "endColumns": "75",
-                        "endOffsets": "412"
                     }
                 }
             ]

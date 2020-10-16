@@ -34,15 +34,15 @@
 24-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:21:9-32
 25
 26    <instrumentation
-26-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:11:5-15:57
+26-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:11:5-15:57
 27        android:name=".GodotInstrumentation"
-27-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:12:9-45
+27-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:12:9-45
 28        android:icon="@mipmap/icon"
-28-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:13:9-36
+28-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:13:9-36
 29        android:label="@string/godot_project_name_string"
-29-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:14:9-58
+29-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:14:9-58
 30        android:targetPackage="org.godotengine.godot" />
-30-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:15:9-54
+30-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:15:9-54
 31
 32    <uses-permission android:name="android.permission.INTERNET" />
 32-->[GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:11:5-67
@@ -70,7 +70,7 @@
 45        android:label="@string/godot_project_name_string"
 45-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:30:18-67
 46        android:requestLegacyExternalStorage="true" >
-46-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:18:18-61
+46-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:18:18-61
 47
 48        <!-- The following metadata values are replaced when Godot exports, modifying them here has no effect. -->
 49        <!-- Do these changes in the export preset. Adding new ones is fine. -->
@@ -109,13 +109,13 @@
 69            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
 69-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:48:13-77
 70
-71            <!-- Focus awareness metadata populated at export time if the user enables it in the 'Xr Features' section. -->
+71            <!-- Focus awareness metadata is updated at export time if the user enables it in the 'Xr Features' section. -->
 72            <meta-data
-72-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:13-107
+72-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:13-88
 73                android:name="com.oculus.vr.focusaware"
 73-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:24-63
-74                android:value="oculus_focus_aware_value" />
-74-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:64-104
+74                android:value="false" />
+74-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:64-85
 75
 76            <intent-filter>
 76-->/home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:58:13-61:29
@@ -134,8 +134,8 @@
 85        <!-- CHUNK_APPLICATION_END -->
 86
 87        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-87-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:19:9-80
-87-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:19:18-77
+87-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:19:9-80
+87-->[godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:19:18-77
 88
 89        <meta-data
 89-->[GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:14:9-16:82

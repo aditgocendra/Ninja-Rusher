@@ -4,23 +4,6 @@
             "outputFile": "/home/gocendra/GameProject/Ninja-Rusher/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml",
             "map": [
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/res/values-ja/values-ja.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "286",
-                        "endColumns": "75",
-                        "endOffsets": "357"
-                    }
-                },
-                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/aff2cf037f208d3acd87b70f1781c7b4/jetified-play-services-basement-17.0.0/res/values-ja/values.xml",
                     "from": {
                         "startLines": "4",
@@ -69,6 +52,23 @@
                         "startOffsets": "362,428,518,584,651,724,812",
                         "endColumns": "65,89,65,66,72,87,66",
                         "endOffsets": "423,513,579,646,719,807,874"
+                    }
+                },
+                {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "286",
+                        "endColumns": "75",
+                        "endOffsets": "357"
                     }
                 }
             ]

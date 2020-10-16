@@ -4,7 +4,7 @@ ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:2:1-70:12
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:2:1-70:12
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:2:1-70:12
-MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:2:1-22:12
+MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:2:1-22:12
 MERGED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/72b4d95a0e8b43ee4215c0c4e8b0fb72/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-ads:19.1.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/dcf172275f0304a0da1563b5e4e74e8c/jetified-play-services-ads-19.1.0/AndroidManifest.xml:17:1-25:12
@@ -80,8 +80,8 @@ ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest
 		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:21:9-32
 application
 ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:30:5-68:19
-MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:18:5-20:19
-MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:18:5-20:19
+MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:18:5-20:19
+MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:18:5-20:19
 MERGED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:13:5-17:19
 MERGED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:13:5-17:19
 MERGED from [com.google.android.gms:play-services-gass:19.1.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/49f7fb5786c2adffd681f67343ea1366/play-services-gass-19.1.0/AndroidManifest.xml:7:5-20
@@ -103,7 +103,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/gocen
 MERGED from [com.google.android.gms:play-services-ads-base:19.1.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/a06c1a4daf3b27b55a7f4b1e2a1f8b3f/play-services-ads-base-19.1.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-ads-base:19.1.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/a06c1a4daf3b27b55a7f4b1e2a1f8b3f/play-services-ads-base-19.1.0/AndroidManifest.xml:7:5-20
 	android:requestLegacyExternalStorage
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:18:18-61
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:18:18-61
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/947833f03979c6d84fcd9a8feba7ce42/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:label
@@ -145,9 +145,9 @@ ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest
 	android:name
 		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:46:13-37
 meta-data#com.oculus.vr.focusaware
-ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:13-107
+ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:13-88
 	android:value
-		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:64-104
+		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:64-85
 	android:name
 		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml:56:24-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
@@ -164,8 +164,8 @@ uses-sdk
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml
 INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml
-MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:7:5-9:41
-MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:7:5-9:41
 MERGED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:7:5-9:41
 MERGED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/72b4d95a0e8b43ee4215c0c4e8b0fb72/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
@@ -251,19 +251,19 @@ INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManif
 		ADDED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml
 		INJECTED from /home/gocendra/GameProject/Ninja-Rusher/android/build/AndroidManifest.xml
 instrumentation
-ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:11:5-15:57
+ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:11:5-15:57
 	android:label
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:14:9-58
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:14:9-58
 	android:icon
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:13:9-36
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:13:9-36
 	android:targetPackage
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:15:9-54
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:15:9-54
 	android:name
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:12:9-45
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:12:9-45
 service#org.godotengine.godot.GodotDownloaderService
-ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:19:9-80
+ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:19:9-80
 	android:name
-		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/6e5ea6175c2953f049400cdf78dd4338/godot-lib.debug/AndroidManifest.xml:19:18-77
+		ADDED from [godot-lib.debug.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/AndroidManifest.xml:19:18-77
 uses-permission#android.permission.INTERNET
 ADDED from [GodotAdMob.release.aar] /home/gocendra/.gradle/caches/transforms-2/files-2.1/127bbdc047a9cd1c3dac657b88ae58c9/GodotAdMob.release/AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-ads-lite:19.1.0] /home/gocendra/.gradle/caches/transforms-2/files-2.1/3c753941a76f4c279839d5cf29b50ade/play-services-ads-lite-19.1.0/AndroidManifest.xml:23:5-67

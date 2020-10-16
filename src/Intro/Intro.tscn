@@ -28,7 +28,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 2.5 ),
 "transitions": PoolRealArray( 0.5, 2 ),
 "update": 0,
-"values": [ Vector2( 312, 242.157 ), Vector2( 306, 164.5 ) ]
+"values": [ Vector2( 306, 242.157 ), Vector2( 306, 164.5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("BG2:color")
@@ -65,9 +65,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -108.0
-margin_top = 2.157
-margin_right = 120.0
+margin_left = -114.0
+margin_top = 2.15701
+margin_right = 114.0
 margin_bottom = 153.157
 texture = ExtResource( 1 )
 __meta__ = {
@@ -77,7 +77,7 @@ __meta__ = {
 [node name="BG2" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -9,7 +9,7 @@ var _file
 var db_path = "res://Autoload/database.json"
 
 #android path -----------------------
-#var db_path = "user://users/database.json"
+#var db_path = "user://Autoload/database.json"
 #end android path -----------------------
 
 
@@ -61,6 +61,11 @@ var default_data = {
 	}
   },
   "arcade_mode": {
+	"highest_score": {
+	  "easy": 0,
+	  "hard": 0,
+	  "medium": 0
+	},
 	"level": {
 	  "easy": {
 		"enemy_damage": 25,
@@ -74,8 +79,7 @@ var default_data = {
 		"enemy_damage": 50,
 		"hurt_damage": 50
 	  }
-	},
-	"highest_score" : 0
+	}
   },
   "data_player": {
 	"coin": 0
@@ -233,8 +237,6 @@ var default_data = {
 	}
   }
 }
-
-
 
 
 var coin_score : int setget _update_coin

@@ -40,6 +40,7 @@
     <dimen name="subtitle_outline_width">2dp</dimen>
     <dimen name="subtitle_shadow_offset">2dp</dimen>
     <dimen name="subtitle_shadow_radius">2dp</dimen>
+    <dimen name="text_edit_height">48dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="line1" type="id"/>

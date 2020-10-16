@@ -30,9 +30,9 @@
   },
   "arcade_mode": {
     "highest_score": {
-      "easy": 20,
-      "hard": 100,
-      "medium": 30
+      "easy": 0,
+      "hard": 0,
+      "medium": 0
     },
     "level": {
       "easy": {

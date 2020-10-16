@@ -62,6 +62,7 @@ dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
 dimen subtitle_shadow_radius
+dimen text_edit_height
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

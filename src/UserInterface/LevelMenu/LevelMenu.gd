@@ -23,9 +23,8 @@ func add_button_level():
 			duplicate_btn.path_level = scene_level[i].path
 			Autoload.index_level = i
 			duplicate_btn.get_node("Label").text = "Level " + str(i + 1)
-		else: duplicate_btn = close_level.duplicate() 
-		
-		list_level.add_child(duplicate_btn)
+	
+			list_level.add_child(duplicate_btn)
 		
 	
 func get_data_level():
