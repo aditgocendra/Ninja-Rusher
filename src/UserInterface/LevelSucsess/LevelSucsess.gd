@@ -3,6 +3,10 @@ extends Control
 
 onready var data = Autoload.load_data()
 
+onready var admob = $AdMob
+func _ready():
+	admob.load_rewarded_video()
+	
 
 func _on_RetryBtn_pressed():
 	get_tree().paused = false
@@ -37,4 +41,9 @@ func change_new_open_level():
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "start":
-		$AdsenseMobile.show_ads()
+		pass
+
+
+func _on_MainMenu_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://src/UserInterface/MainMenu/MainMenu.tscn")

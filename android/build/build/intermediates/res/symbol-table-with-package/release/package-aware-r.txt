@@ -1,4 +1,4 @@
-org.arkgames.ninjarusher
+com.arkgames.ninjarusher
 attr adSize
 attr adSizes
 attr adUnitId

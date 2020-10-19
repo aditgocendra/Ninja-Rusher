@@ -4,20 +4,20 @@
             "outputFile": "/home/gocendra/GameProject/Ninja-Rusher/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml",
             "map": [
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/dcf172275f0304a0da1563b5e4e74e8c/jetified-play-services-ads-19.1.0/res/values-be/values.xml",
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6a77ca9617b9a773fc888786c7db7828/jetified-play-services-ads-19.3.0/res/values-be/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
                         "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "199,272,386,451,517,600,702",
-                        "endColumns": "72,113,64,65,82,101,73",
-                        "endOffsets": "271,385,450,516,599,701,775"
+                        "startOffsets": "199,272,386,451,517,602,704",
+                        "endColumns": "72,113,64,65,84,101,73",
+                        "endOffsets": "271,385,450,516,601,703,777"
                     },
                     "to": {
                         "startLines": "3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "310,387,505,574,644,731,837",
-                        "endColumns": "76,117,68,69,86,105,77",
-                        "endOffsets": "382,500,569,639,726,832,910"
+                        "startOffsets": "310,387,505,574,644,733,839",
+                        "endColumns": "76,117,68,69,88,105,77",
+                        "endOffsets": "382,500,569,639,728,834,912"
                     }
                 },
                 {
@@ -32,9 +32,9 @@
                     "to": {
                         "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "915",
+                        "startOffsets": "917",
                         "endColumns": "100",
-                        "endOffsets": "1011"
+                        "endOffsets": "1013"
                     }
                 },
                 {

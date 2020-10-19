@@ -243,7 +243,7 @@ func showGameOver(is_dead):
 	if is_dead == true and $AnimatedPlayer.animation == "Dead":
 		yield($AnimatedPlayer,"animation_finished")
 		$UserInterface/GameOver.show()
-		$UserInterface/GameOver.get_node("AnimationPlayer").play("start")
+		
 		Autoload.max_health = 100
 		Autoload.max_mana = 100
 		Autoload.coin_score = 0

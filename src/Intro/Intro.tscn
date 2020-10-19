@@ -19,24 +19,12 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("NinjaLogo:rect_position")
+tracks/1/path = NodePath("BG2:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 0.5, 2 ),
-"update": 0,
-"values": [ Vector2( 306, 242.157 ), Vector2( 306, 164.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("BG2:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 3, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -66,9 +54,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -114.0
-margin_top = 2.15701
+margin_top = -75.5
 margin_right = 114.0
-margin_bottom = 153.157
+margin_bottom = 75.5001
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,7 +65,7 @@ __meta__ = {
 [node name="BG2" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.2 )
+color = Color( 0, 0, 0, 0.3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

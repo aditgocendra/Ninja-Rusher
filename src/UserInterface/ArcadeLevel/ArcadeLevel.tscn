@@ -64,36 +64,12 @@ tracks/3/keys = {
 "values": [ Vector2( -133.375, 266 ), Vector2( -133.375, 266 ), Vector2( 597, 266 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("BackButton:rect_position")
+tracks/4/path = NodePath("AnimCharacter:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 7.6, -40 ), Vector2( 7.6, -40 ), Vector2( 7.6, 7.6 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("HighScore:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 2.5, 3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 799.012, -42.217 ), Vector2( 799.012, -42.217 ), Vector2( 799.012, 7.578 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("AnimCharacter:rect_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 2, 2.5 ),
 "transitions": PoolRealArray( 2, 1, 0.5 ),
 "update": 0,
@@ -121,10 +97,10 @@ __meta__ = {
 }
 
 [node name="AnimCharacter" type="TextureRect" parent="."]
-margin_left = -217.579
-margin_top = -222.918
-margin_right = -27.5787
-margin_bottom = -22.9182
+margin_left = 188.116
+margin_top = 157.578
+margin_right = 378.116
+margin_bottom = 357.578
 texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,7 +109,7 @@ __meta__ = {
 [node name="Transition" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -143,9 +119,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -973.375
+margin_left = -243.0
 margin_top = -72.0
-margin_right = -858.375
+margin_right = -128.0
 margin_bottom = -27.0
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 2 )
@@ -158,9 +134,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -973.375
+margin_left = -243.0
 margin_top = -23.0
-margin_right = -858.375
+margin_right = -128.0
 margin_bottom = 22.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
@@ -173,9 +149,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -973.375
+margin_left = -243.0
 margin_top = 26.0
-margin_right = -858.375
+margin_right = -128.0
 margin_bottom = 72.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
@@ -185,9 +161,9 @@ __meta__ = {
 
 [node name="BackButton" type="TextureButton" parent="."]
 margin_left = 7.6
-margin_top = -40.0
+margin_top = 7.6
 margin_right = 40.6
-margin_bottom = -7.0
+margin_bottom = 40.6
 texture_normal = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -197,9 +173,9 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -40.988
-margin_top = -42.217
+margin_top = 7.578
 margin_right = -7.98792
-margin_bottom = -9.217
+margin_bottom = 40.578
 texture_normal = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false

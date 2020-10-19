@@ -25,9 +25,6 @@ func _on_Menu_pressed():
 	get_tree().change_scene("res://src/UserInterface/MainMenu/MainMenu.tscn")
 
 
-
-
-
 # saving arcade score
 func save_arcade_score():
 	var data = Autoload.load_data()

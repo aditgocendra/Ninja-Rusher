@@ -4,42 +4,6 @@
             "outputFile": "/home/gocendra/GameProject/Ninja-Rusher/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/dcf172275f0304a0da1563b5e4e74e8c/jetified-play-services-ads-19.1.0/res/values/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "170,208,281,315,350,399,463",
-                        "endColumns": "37,72,33,34,48,63,34",
-                        "endOffsets": "207,280,314,349,398,462,497"
-                    },
-                    "to": {
-                        "startLines": "61,62,63,64,65,66,67",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "3924,3966,4043,4081,4120,4173,4241",
-                        "endColumns": "41,76,37,38,52,67,38",
-                        "endOffsets": "3961,4038,4076,4115,4168,4236,4275"
-                    }
-                },
-                {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/3c753941a76f4c279839d5cf29b50ade/play-services-ads-lite-19.1.0/res/values/values.xml",
-                    "from": {
-                        "startLines": "4,14",
-                        "startColumns": "0,0",
-                        "startOffsets": "167,661",
-                        "endLines": "11,20",
-                        "endColumns": "8,20",
-                        "endOffsets": "560,836"
-                    },
-                    "to": {
-                        "startLines": "133,146",
-                        "startColumns": "4,4",
-                        "startOffsets": "8992,9674",
-                        "endLines": "140,152",
-                        "endColumns": "8,20",
-                        "endOffsets": "9385,9849"
-                    }
-                },
-                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/4eedcd9fb85c83d327a030e0c47db35e/godot-lib.debug/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,41,44,51",
@@ -93,6 +57,23 @@
                     }
                 },
                 {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6a77ca9617b9a773fc888786c7db7828/jetified-play-services-ads-19.3.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "170,208,281,315,350,399,463",
+                        "endColumns": "37,72,33,34,48,63,34",
+                        "endOffsets": "207,280,314,349,398,462,497"
+                    },
+                    "to": {
+                        "startLines": "61,62,63,64,65,66,67",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "3924,3966,4043,4081,4120,4173,4241",
+                        "endColumns": "41,76,37,38,52,67,38",
+                        "endOffsets": "3961,4038,4076,4115,4168,4236,4275"
+                    }
+                },
+                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/366555e0658123cedccaf0883b3651bc/coordinatorlayout-1.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,102,3,13",
@@ -109,6 +90,25 @@
                         "endLines": "2,145,169,258",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "161,9669,10755,15966"
+                    }
+                },
+                {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/d92a04b3463e4fa1d7d09fa4a789e569/play-services-ads-lite-19.3.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,14",
+                        "startColumns": "0,0",
+                        "startOffsets": "167,661",
+                        "endLines": "11,20",
+                        "endColumns": "8,20",
+                        "endOffsets": "560,836"
+                    },
+                    "to": {
+                        "startLines": "133,146",
+                        "startColumns": "4,4",
+                        "startOffsets": "8992,9674",
+                        "endLines": "140,152",
+                        "endColumns": "8,20",
+                        "endOffsets": "9385,9849"
                     }
                 },
                 {

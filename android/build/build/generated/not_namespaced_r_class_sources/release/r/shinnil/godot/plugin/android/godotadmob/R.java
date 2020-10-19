@@ -83,6 +83,7 @@ public final class R {
         public static final int subtitle_outline_width = 0x7f030019;
         public static final int subtitle_shadow_offset = 0x7f03001a;
         public static final int subtitle_shadow_radius = 0x7f03001b;
+        public static final int text_edit_height = 0x7f03001c;
     }
     public static final class drawable {
         private drawable() {}

@@ -839,3 +839,18 @@ position = Vector2( 3838.27, 659.387 )
 position = Vector2( 1872.65, 984.846 )
 
 [node name="LayerLevelSuccsess" type="CanvasLayer" parent="."]
+
+[node name="LayerFPS" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="LayerFPS"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -47.6632
+margin_top = 54.7447
+margin_right = -5.66321
+margin_bottom = 68.7447
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "60 FPS"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -4,6 +4,23 @@
             "outputFile": "/home/gocendra/GameProject/Ninja-Rusher/android/build/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es/values-es.xml",
             "map": [
                 {
+                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/6a77ca9617b9a773fc888786c7db7828/jetified-play-services-ads-19.3.0/res/values-es/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "0,0,0,0,0,0,0",
+                        "startOffsets": "199,270,397,462,528,612,724",
+                        "endColumns": "70,126,64,65,83,111,74",
+                        "endOffsets": "269,396,461,527,611,723,798"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "400,475,606,675,745,833,949",
+                        "endColumns": "74,130,68,69,87,115,78",
+                        "endOffsets": "470,601,670,740,828,944,1023"
+                    }
+                },
+                {
                     "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/aff2cf037f208d3acd87b70f1781c7b4/jetified-play-services-basement-17.0.0/res/values-es/values.xml",
                     "from": {
                         "startLines": "4",
@@ -52,23 +69,6 @@
                         "startOffsets": "324",
                         "endColumns": "75",
                         "endOffsets": "395"
-                    }
-                },
-                {
-                    "source": "/home/gocendra/.gradle/caches/transforms-2/files-2.1/dcf172275f0304a0da1563b5e4e74e8c/jetified-play-services-ads-19.1.0/res/values-es/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "0,0,0,0,0,0,0",
-                        "startOffsets": "199,270,397,462,528,612,724",
-                        "endColumns": "70,126,64,65,83,111,74",
-                        "endOffsets": "269,396,461,527,611,723,798"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "400,475,606,675,745,833,949",
-                        "endColumns": "74,130,68,69,87,115,78",
-                        "endOffsets": "470,601,670,740,828,944,1023"
                     }
                 }
             ]

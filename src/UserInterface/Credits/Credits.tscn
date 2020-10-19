@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://asset/credit/crafpix.png" type="Texture" id=2]
 [ext_resource path="res://asset/credit/gamedeveloperstudio.png" type="Texture" id=3]
 [ext_resource path="res://src/UserInterface/Credits/Credits.gd" type="Script" id=4]
 [ext_resource path="res://asset/credit/gameart2d.png" type="Texture" id=5]
+[ext_resource path="res://asset/UI/button/back_btn.png" type="Texture" id=6]
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -80,6 +81,14 @@ margin_top = -23.8995
 margin_right = -12.7279
 margin_bottom = -9.89954
 text = "Click the logo to visit the website"
+
+[node name="Back" type="TextureButton" parent="."]
+margin_left = 8.32446
+margin_top = 9.51366
+margin_right = 41.3245
+margin_bottom = 42.5137
+texture_normal = ExtResource( 6 )
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/CraftPix" to="." method="_on_CraftPix_gui_input"]
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/GDS" to="." method="_on_GDS_gui_input"]
 [connection signal="gui_input" from="VBoxContainer/HBoxContainer/GameArt2D" to="." method="_on_Free2DGame_gui_input"]
+[connection signal="pressed" from="Back" to="." method="_on_TextureButton_pressed"]

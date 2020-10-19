@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.arkgames.ninjarusher"
+    package="com.arkgames.ninjarusher"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -97,7 +97,7 @@
 
         <provider
             android:name="com.google.android.gms.ads.MobileAdsInitProvider"
-            android:authorities="org.arkgames.ninjarusher.mobileadsinitprovider"
+            android:authorities="com.arkgames.ninjarusher.mobileadsinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

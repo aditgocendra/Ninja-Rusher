@@ -3,15 +3,21 @@ extends Node
 onready var camera_player = $Player/Camera2D
 onready var player = $Player
 onready var level_succsess_scene = preload("res://src/UserInterface/LevelSucsess/LevelSucsess.tscn").instance()
-
+var show_fps
+onready var fps_label = $LayerFPS/Label
 
 func _ready():
 	setup_level()
+	var data = Autoload.json_data
+	show_fps = data["game_settings"]["fps"]["show_fps"]
+	
 
 func _process(_delta):
+	if show_fps:
+		fps_label.text = str(Engine.get_frames_per_second()) + "FPS"
+		
 	if player.global_position.x >= camera_player.limit_right:
 		$LayerLevelSuccsess.add_child(level_succsess_scene)
-		
 		get_tree().paused = true
 
 

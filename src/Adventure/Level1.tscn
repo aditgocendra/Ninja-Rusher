@@ -266,7 +266,7 @@ position = Vector2( 2029.15, 660.997 )
 position = Vector2( 1207.5, 660.997 )
 
 [node name="AreaWater" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1872.65, 955.845 )
+position = Vector2( 1872.65, 803.454 )
 
 [node name="ControlTutorial" type="Node" parent="."]
 
@@ -469,3 +469,19 @@ __meta__ = {
 }
 
 [node name="LayerLevelSuccsess" type="CanvasLayer" parent="."]
+
+[node name="LayerFPS" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="LayerFPS"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -49.1924
+margin_top = 80.8173
+margin_right = -7.19238
+margin_bottom = 94.8173
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "60 FPS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

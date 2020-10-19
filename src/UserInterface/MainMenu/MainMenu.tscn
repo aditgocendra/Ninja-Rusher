@@ -9,7 +9,7 @@
 [ext_resource path="res://asset/UI/button/arcade_btn.png" type="Texture" id=7]
 [ext_resource path="res://asset/UI/button/adventure_btn.png" type="Texture" id=8]
 [ext_resource path="res://asset/UI/button/share_btn.png" type="Texture" id=9]
-[ext_resource path="res://src/Ads/AdsenseMobile.tscn" type="PackedScene" id=10]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=10]
 [ext_resource path="res://asset/UI/button/settings_btn.png" type="Texture" id=11]
 [ext_resource path="res://asset/UI/button/admob_btn.png" type="Texture" id=12]
 [ext_resource path="res://asset/UI/button/admob_click.png" type="Texture" id=13]
@@ -165,11 +165,23 @@ texture_pressed = ExtResource( 14 )
 autoplay = "_start"
 anims/_start = SubResource( 1 )
 
-[node name="AdsenseMobile" parent="." instance=ExtResource( 10 )]
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 10 )
+is_real = true
+banner_id = "ca-app-pub-1344999220025041/2732338532"
+interstitial_id = "ca-app-pub-1344999220025041/7984665212"
+rewarded_id = "ca-app-pub-1344999220025041/1171844852"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 257.709
+margin_top = 394.055
+margin_right = 297.709
+margin_bottom = 408.055
+text = "dw"
 [connection signal="pressed" from="Background/VBoxContainer/Adventure" to="." method="_on_Adventure_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Arcade" to="." method="_on_Arcade_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Credit" to="." method="_on_Credit_pressed"]
-[connection signal="gui_input" from="Background/HBoxContainer/Admob" to="." method="_on_Admob_gui_input"]
+[connection signal="pressed" from="Background/HBoxContainer/Admob" to="." method="_on_Admob_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Share" to="." method="_on_Share_pressed"]

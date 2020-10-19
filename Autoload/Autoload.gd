@@ -6,10 +6,10 @@ signal mana_pick
 signal score_arcade
 
 var _file
-var db_path = "res://Autoload/database.json"
+#var db_path = "res://Autoload/database.json"
 
 #android path -----------------------
-#var db_path = "user://Autoload/database.json"
+var db_path = "user://database.json"
 #end android path -----------------------
 
 
@@ -246,9 +246,9 @@ var score_arcade : int setget _update_score_arcade
 var game_mode : bool setget setup_game_mode
 
 
-func _ready():
-	var data_game = load_data()
-	set_target_fps(data_game)
+#func _ready():
+#	var data_game = load_data()
+#	set_target_fps(data_game)
 	
 # database local--------------------------------------
 func load_data():
