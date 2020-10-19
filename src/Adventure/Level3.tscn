@@ -836,7 +836,7 @@ position = Vector2( 3328.8, 658.942 )
 position = Vector2( 3838.27, 659.387 )
 
 [node name="AreaWater" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1872.65, 984.846 )
+position = Vector2( 1872.65, 820.032 )
 
 [node name="LayerLevelSuccsess" type="CanvasLayer" parent="."]
 
