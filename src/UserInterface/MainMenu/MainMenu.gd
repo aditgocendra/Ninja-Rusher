@@ -2,11 +2,11 @@ extends Control
 
 
 onready var setting_scene = "res://src/UserInterface/Settings/Settings.tscn"
-#onready var admob = $AdMob
+onready var admob = $AdMob
 
 
-#func _ready():
-#	admob.load_rewarded_video()
+func _ready():
+	admob.load_rewarded_video()
 	
 
 
@@ -44,7 +44,10 @@ func _on_Arcade_pressed():
 
 
 func _on_Admob_pressed():
-#	admob.show_rewarded_video()
-	pass
+	admob.show_rewarded_video()
 
 
+
+
+func _on_AdMob_rewarded_video_failed_to_load(error_code):
+	$Label.text = str(error_code)

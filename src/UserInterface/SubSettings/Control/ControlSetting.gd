@@ -3,15 +3,15 @@ extends Control
 onready var setting_scene = "res://src/UserInterface/Settings/Settings.tscn"
 
 # button
-onready var basic_attack = $ControlUI/BasicAttack
-onready var throw = $ControlUI/Throw
-onready var glide = $ControlUI/Glide
-onready var slide = $ControlUI/Slide
-onready var dash = $ControlUI/Dash
-onready var jump = $ControlUI/Jump
+onready var basic_attack = $ControlUI/RightBottomContainer/BasicAttack
+onready var throw = $ControlUI/RightBottomContainer/Throw
+onready var glide = $ControlUI/RightBottomContainer/Glide
+onready var slide = $ControlUI/RightBottomContainer/Slide
+onready var dash = $ControlUI/RightBottomContainer/Dash
+onready var jump = $ControlUI/RightBottomContainer/Jump
 onready var left = $ControlUI/Left
 onready var right = $ControlUI/Right
-onready var pause = $ControlUI/Pause
+onready var pause = $ControlUI/RightTopContainer/Pause
 
 #label position
 onready var label_x = $Panel/VBoxContainer/HBoxPosition/X
@@ -21,7 +21,7 @@ onready var label_y = $Panel/VBoxContainer/HBoxPosition/Y
 onready var slider_scale = $Panel/VBoxContainer/HboxScale/HSlider
 onready var slide_transparency = $Panel/VBoxContainer/HboxTransparency/HSlider
 
-onready var data  = Autoload.json_data
+onready var data  = Autoload.load_data()
 
 var current_node = null
 
