@@ -3,9 +3,9 @@ extends Control
 
 onready var data = Autoload.load_data()
 
-onready var admob = $AdMob
-func _ready():
-	admob.load_rewarded_video()
+
+#func _ready():
+#	admob.load_rewarded_video()
 	
 
 func _on_RetryBtn_pressed():

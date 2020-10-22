@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asset/font/segoe_print24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://asset/UI/button/next_level_btn.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://asset/UI/button/main_menu_btn.png" type="Texture" id=6]
 [ext_resource path="res://asset/UI/button/main_menu_click.png" type="Texture" id=7]
 [ext_resource path="res://src/UserInterface/LevelSucsess/LevelSucsess.gd" type="Script" id=8]
-[ext_resource path="res://admob-lib/admob.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "start"
@@ -196,12 +195,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/start = SubResource( 1 )
-
-[node name="AdMob" type="Node" parent="."]
-script = ExtResource( 9 )
-is_real = true
-interstitial_id = "ca-app-pub-1344999220025041/5915642323"
-rewarded_id = "ca-app-pub-1344999220025041/4622741952"
 [connection signal="pressed" from="VBoxContainer/NextLevelBtn" to="." method="_on_NextLevelBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/RetryBtn" to="." method="_on_RetryBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
