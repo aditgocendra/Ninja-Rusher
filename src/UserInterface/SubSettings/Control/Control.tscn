@@ -219,7 +219,18 @@ shape = SubResource( 2 )
 visibility_mode = 1
 script = ExtResource( 15 )
 
-[node name="Jump" type="TouchScreenButton" parent="ControlUI"]
+[node name="RightBottomContainer" type="Control" parent="ControlUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -840.0
+margin_top = -480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jump" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 764.051, 249.549 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 11 )
@@ -227,7 +238,7 @@ shape = SubResource( 3 )
 visibility_mode = 1
 script = ExtResource( 16 )
 
-[node name="Throw" type="TouchScreenButton" parent="ControlUI"]
+[node name="Throw" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 620.736, 318.945 )
 normal = ExtResource( 13 )
 pressed = ExtResource( 10 )
@@ -235,7 +246,7 @@ shape = SubResource( 4 )
 visibility_mode = 1
 script = ExtResource( 21 )
 
-[node name="Glide" type="TouchScreenButton" parent="ControlUI"]
+[node name="Glide" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 685.535, 274.821 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 9 )
@@ -243,7 +254,7 @@ shape = SubResource( 5 )
 visibility_mode = 1
 script = ExtResource( 18 )
 
-[node name="Slide" type="TouchScreenButton" parent="ControlUI"]
+[node name="Slide" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 624.639, 391.961 )
 normal = ExtResource( 8 )
 pressed = ExtResource( 2 )
@@ -251,7 +262,7 @@ shape = SubResource( 6 )
 visibility_mode = 1
 script = ExtResource( 19 )
 
-[node name="Dash" type="TouchScreenButton" parent="ControlUI"]
+[node name="Dash" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 548.271, 392.852 )
 normal = ExtResource( 4 )
 pressed = ExtResource( 5 )
@@ -259,7 +270,7 @@ shape = SubResource( 7 )
 visibility_mode = 1
 script = ExtResource( 17 )
 
-[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI"]
+[node name="BasicAttack" type="TouchScreenButton" parent="ControlUI/RightBottomContainer"]
 position = Vector2( 705.458, 335.531 )
 normal = ExtResource( 12 )
 pressed = ExtResource( 3 )
@@ -267,8 +278,17 @@ shape = SubResource( 8 )
 visibility_mode = 1
 script = ExtResource( 20 )
 
-[node name="Pause" type="TouchScreenButton" parent="ControlUI"]
-position = Vector2( 801.474, 5.77612 )
+[node name="RightTopContainer" type="Control" parent="ControlUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -840.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="TouchScreenButton" parent="ControlUI/RightTopContainer"]
+position = Vector2( 786.971, 16.6953 )
 normal = ExtResource( 26 )
 pressed = ExtResource( 27 )
 shape = SubResource( 9 )
@@ -283,17 +303,17 @@ script = ExtResource( 28 )
 [connection signal="released" from="ControlUI/Right" to="ControlUI/Right" method="_on_Right_released"]
 [connection signal="pressed" from="ControlUI/Left" to="ControlUI/Left" method="_on_Left_pressed"]
 [connection signal="released" from="ControlUI/Left" to="ControlUI/Left" method="_on_Left_released"]
-[connection signal="pressed" from="ControlUI/Jump" to="ControlUI/Jump" method="_on_Jump_pressed"]
-[connection signal="released" from="ControlUI/Jump" to="ControlUI/Jump" method="_on_Jump_released"]
-[connection signal="pressed" from="ControlUI/Throw" to="ControlUI/Throw" method="_on_Throw_pressed"]
-[connection signal="released" from="ControlUI/Throw" to="ControlUI/Throw" method="_on_Throw_released"]
-[connection signal="pressed" from="ControlUI/Glide" to="ControlUI/Glide" method="_on_Glide_pressed"]
-[connection signal="released" from="ControlUI/Glide" to="ControlUI/Glide" method="_on_Glide_released"]
-[connection signal="pressed" from="ControlUI/Slide" to="ControlUI/Slide" method="_on_Slide_pressed"]
-[connection signal="released" from="ControlUI/Slide" to="ControlUI/Slide" method="_on_Slide_released"]
-[connection signal="pressed" from="ControlUI/Dash" to="ControlUI/Dash" method="_on_Dash_pressed"]
-[connection signal="released" from="ControlUI/Dash" to="ControlUI/Dash" method="_on_Dash_released"]
-[connection signal="pressed" from="ControlUI/BasicAttack" to="ControlUI/BasicAttack" method="_on_BasicAttack_pressed"]
-[connection signal="released" from="ControlUI/BasicAttack" to="ControlUI/BasicAttack" method="_on_BasicAttack_released"]
-[connection signal="pressed" from="ControlUI/Pause" to="ControlUI/Pause" method="_on_Pause_pressed"]
-[connection signal="released" from="ControlUI/Pause" to="ControlUI/Pause" method="_on_Pause_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/Jump" to="ControlUI/RightBottomContainer/Jump" method="_on_Jump_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/Jump" to="ControlUI/RightBottomContainer/Jump" method="_on_Jump_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/Throw" to="ControlUI/RightBottomContainer/Throw" method="_on_Throw_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/Throw" to="ControlUI/RightBottomContainer/Throw" method="_on_Throw_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/Glide" to="ControlUI/RightBottomContainer/Glide" method="_on_Glide_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/Glide" to="ControlUI/RightBottomContainer/Glide" method="_on_Glide_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/Slide" to="ControlUI/RightBottomContainer/Slide" method="_on_Slide_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/Slide" to="ControlUI/RightBottomContainer/Slide" method="_on_Slide_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/Dash" to="ControlUI/RightBottomContainer/Dash" method="_on_Dash_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/Dash" to="ControlUI/RightBottomContainer/Dash" method="_on_Dash_released"]
+[connection signal="pressed" from="ControlUI/RightBottomContainer/BasicAttack" to="ControlUI/RightBottomContainer/BasicAttack" method="_on_BasicAttack_pressed"]
+[connection signal="released" from="ControlUI/RightBottomContainer/BasicAttack" to="ControlUI/RightBottomContainer/BasicAttack" method="_on_BasicAttack_released"]
+[connection signal="pressed" from="ControlUI/RightTopContainer/Pause" to="ControlUI/RightTopContainer/Pause" method="_on_Pause_pressed"]
+[connection signal="released" from="ControlUI/RightTopContainer/Pause" to="ControlUI/RightTopContainer/Pause" method="_on_Pause_released"]
