@@ -168,17 +168,6 @@ anims/_start = SubResource( 1 )
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 10 )
 rewarded_id = "ca-app-pub-7973392951366806/2830556208"
-
-[node name="Label" type="Label" parent="."]
-margin_left = 245.795
-margin_top = 290.293
-margin_right = 285.795
-margin_bottom = 304.293
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "error"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="Background/VBoxContainer/Adventure" to="." method="_on_Adventure_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Arcade" to="." method="_on_Arcade_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
@@ -186,4 +175,3 @@ __meta__ = {
 [connection signal="pressed" from="Background/HBoxContainer/Credit" to="." method="_on_Credit_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Admob" to="." method="_on_Admob_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Share" to="." method="_on_Share_pressed"]
-[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]

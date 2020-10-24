@@ -26,3 +26,10 @@ func _on_Free2DGame_gui_input(event):
 func _on_TextureButton_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://src/UserInterface/MainMenu/MainMenu.tscn")
+
+
+func _on_LudicArts_gui_input(event):
+	if event is InputEventScreenTouch:
+		if event.is_pressed():
+# warning-ignore:return_value_discarded
+			OS.shell_open("https://www.ludicarts.com/")

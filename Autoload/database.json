@@ -3,6 +3,7 @@
     "Level1": {
       "level_open": true,
       "limit_camera": {
+        "top" : 0,
         "bottom": 1200,
         "left": 0,
         "right": 3650
@@ -12,6 +13,7 @@
     "Level2": {
       "level_open": false,
       "limit_camera": {
+        "top" : 0,
         "bottom": 1100,
         "left": 0,
         "right": 3845
@@ -21,11 +23,22 @@
     "Level3": {
       "level_open": false,
       "limit_camera": {
+        "top" : 0,
         "bottom": 1100,
         "left": 0,
         "right": 4500
       },
       "path": "res://src/Adventure/Level3.tscn"
+    },
+    "Level4": {
+      "level_open": false,
+      "limit_camera": {
+        "top" : 0,
+        "bottom": 1100,
+        "left": 0,
+        "right": 8000
+      },
+      "path": "res://src/Adventure/Level4.tscn"
     }
   },
   "arcade_mode": {

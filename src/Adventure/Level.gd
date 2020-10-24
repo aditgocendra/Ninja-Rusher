@@ -20,9 +20,6 @@ func _process(_delta):
 		$LayerLevelSuccsess.add_child(level_succsess_scene)
 		get_tree().paused = true
 
-
-
-
 func setup_level():
 	var level = self.name
 	var data_level =  Autoload.load_data()
@@ -31,5 +28,6 @@ func setup_level():
 	camera_player.limit_left = limit_camera_level["left"]
 	camera_player.limit_right = limit_camera_level["right"]
 	camera_player.limit_bottom = limit_camera_level["bottom"]
+	camera_player.limit_top = limit_camera_level["top"]
 	
 	

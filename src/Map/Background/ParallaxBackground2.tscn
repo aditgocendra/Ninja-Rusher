@@ -5,7 +5,7 @@
 [node name="ParallaxBackground2" type="ParallaxBackground"]
 scale = Vector2( 1.5, 1.5 )
 transform = Transform2D( 1.5, 0, 0, 1.5, 0, 0 )
-scroll_base_scale = Vector2( 0.5, 0.5 )
+scroll_base_scale = Vector2( 0.6, 0.6 )
 
 [node name="Sky" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2( 840, 0 )

@@ -49,5 +49,4 @@ func _on_Admob_pressed():
 
 
 
-func _on_AdMob_rewarded_video_failed_to_load(error_code):
-	$Label.text = str(error_code)
+

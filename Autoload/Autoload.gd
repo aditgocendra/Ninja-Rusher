@@ -6,10 +6,10 @@ signal mana_pick
 signal score_arcade
 
 var _file
-#var db_path = "res://Autoload/database.json"
+var db_path = "res://Autoload/database.json"
 
 #android path -----------------------
-var db_path = "user://database.json"
+#var db_path = "user://database.json"
 #end android path -----------------------
 
 
@@ -35,6 +35,7 @@ var default_data = {
 	"Level1": {
 	  "level_open": true,
 	  "limit_camera": {
+		"top" : 0,
 		"bottom": 1200,
 		"left": 0,
 		"right": 3650
@@ -44,6 +45,7 @@ var default_data = {
 	"Level2": {
 	  "level_open": false,
 	  "limit_camera": {
+		"top" : 0,
 		"bottom": 1100,
 		"left": 0,
 		"right": 3845
@@ -53,11 +55,22 @@ var default_data = {
 	"Level3": {
 	  "level_open": false,
 	  "limit_camera": {
+		"top" : 0,
 		"bottom": 1100,
 		"left": 0,
 		"right": 4500
 	  },
 	  "path": "res://src/Adventure/Level3.tscn"
+	},
+	"Level4": {
+	  "level_open": false,
+	  "limit_camera": {
+		"top" : 0,
+		"bottom": 1100,
+		"left": 0,
+		"right": 4500
+	  },
+	  "path": "res://src/Adventure/Level4.tscn"
 	}
   },
   "arcade_mode": {
@@ -174,8 +187,8 @@ var default_data = {
 		  "r": 1
 		},
 		"position": {
-		  "x": 801.473999,
-		  "y": 5.776
+		  "x": 786.971,
+		  "y": 16.695
 		},
 		"scale": {
 		  "x": 1,
@@ -237,6 +250,7 @@ var default_data = {
 	}
   }
 }
+
 
 
 var coin_score : int setget _update_coin
