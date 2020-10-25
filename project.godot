@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actor/Enemy/Bandit/Bandit.gd"
 }, {
+"base": "RigidBody2D",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://src/Object/Chest/Chest.gd"
+}, {
 "base": "Area2D",
 "class": "Coin",
 "language": "GDScript",
@@ -53,6 +58,7 @@ _global_script_class_icons={
 "Actor": "",
 "AdMob": "res://admob-lib/icon.png",
 "Bandit": "",
+"Chest": "",
 "Coin": "",
 "ControlCustom": "",
 "Kunai": "",

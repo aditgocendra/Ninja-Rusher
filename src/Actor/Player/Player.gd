@@ -271,6 +271,9 @@ func _on_DashTimer_timeout():
 func _on_AreaAttack_body_entered(body):
 	if body is Bandit or body is ReaperMan:
 		body.enemy_dead()
+	
+	if body is Chest:
+		body.chest_free()
 
 
 func _on_StompTimer_timeout():
@@ -283,5 +286,3 @@ func health_update():
 
 func mana_update():
 	self.mana_bar.value = Autoload.max_mana
-
-
